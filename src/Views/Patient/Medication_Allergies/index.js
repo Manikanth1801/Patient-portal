@@ -1,0 +1,1 @@
+export { default as Medcication_Allergies } from './Medication_Allerigies';
