@@ -1,5 +1,6 @@
 import React from 'react';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
+import axios from 'axios';
 
 class Register extends React.Component{
     constructor(props){
@@ -12,7 +13,8 @@ class Register extends React.Component{
             retypePassword:'',
             dob:'',
             role:'',
-            mobile:''
+            mobile:'',
+            isDone: false
         }
     }
     handleChange = (e) => {
@@ -22,14 +24,46 @@ class Register extends React.Component{
     };
     handleSubmit = (e) => {
         e.preventDefault()
+        let data = {
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            email: this.state.email,
+            password: this.state.password,
+            retypePassword: this.state.retypePassword,
+            dob: this.state.dob,
+            role: this.state.role,
+            isRegistered: false,
+            mobile: this.state.mobile
+        }
+        axios.post("http://localhost:8000/user",data)
+        .then(res => {
+            if(res.data){
+                this.setState({ isDone: true })
+                alert("Your Registration is Success.")
+            }
+        })
+        .catch(err => {
+            if(err){
+                alert("something went wrong.Please try after some time")
+                console.log(err)
+            }
+        })
+        this.reset();
     };
+    reset = () => {
+        this.myFormRef && this.myFormRef.reset();
+        this.setState({
+            dob : ''
+        })
+    }
+    
     render(){
         return(
             <div className="border border-dark">
                 <h4 className="col-12 bg-primary text-light border border-dark py-2">Patient Portal</h4>
                 <span className="text-primary pl-4">Register here</span>
                 <div className="row pl-3 my-2 ml-2">
-                    <AvForm onSubmit={this.handleSubmit}>
+                    <AvForm onSubmit={this.handleSubmit} ref={c => (this.myFormRef = c)}>
                         <div className="row">
                             <div className="col-6">
                                 <label className="h6">First Name</label>
@@ -114,6 +148,9 @@ class Register extends React.Component{
                                     required: { value: true, errorMessage: 'Mobile Number is required' }
                                 }}/>
                             </div>
+                        </div>
+                        <div>
+                            <button className="btn btn-outline-primary">Register</button>
                         </div>
                     </AvForm>
                 </div>
