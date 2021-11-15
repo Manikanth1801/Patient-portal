@@ -1,0 +1,131 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "uuid": "",
+      "firstname": "Nistala",
+      "lastname": "Chaitanya",
+      "gender": "male",
+      "email": "chaitanya@gmail.com",
+      "password": 12345,
+      "retypePassword": 12345,
+      "dob": "683078400",
+      "role": "patient",
+      "isRegistered": "false",
+      "mobile": 7845122356,
+      "specialization": null,
+      "experience": "only for physician",
+      "isLogged": false,
+      "registrationDate": "currentDate",
+      "isApproved": "Need to approve or Phy and Admin, Patient Not required"
+    }
+  ],
+  "patientProfile": [
+    {
+      "id": 1,
+      "uuid": "",
+      "firstname": "Nistala",
+      "lastname": "Chatanya",
+      "gender": "male",
+      "ethnicity": "dropdown menu",
+      "education": "dropdown menu",
+      "employment": "dropdown menu",
+      "dob": "683078400",
+      "employmenyt": null,
+      "address": null,
+      "mobile": 7845122356,
+      "avatar": null
+    }
+  ],
+  "patientDemographics": [
+    {
+      "id": 1,
+      "uuid": "",
+      "medicalHistory": "",
+      "familyMedicalHistory": "",
+      "surgeries": "",
+      "insuranceProvider": null
+    }
+  ],
+  "patientAppointments": [
+    {
+      "id": 1,
+      "patientId": "UUID of patient",
+      "patientName": "Chaitanya",
+      "physicianId": "UUID of physician",
+      "physicianName": "",
+      "appointmentId": "Initially null, once TX is done success, it will be generated(nano Id)",
+      "specilization": "",
+      "dateOfAppointment": "",
+      "time": "",
+      "status": "need to changed to booked once done",
+      "notes": "Obtained from the physician"
+    }
+  ],
+  "medicationAndAllergies": [
+    {
+      "currentMedication": "Need to enter by Physician",
+      "OTC": "",
+      "healthProducts": "",
+      "socialDrugs": "",
+      "pastMedication": "",
+      "drugs": "",
+      "allergiesReaction": ""
+    }
+  ],
+  "patientImmunization": [
+    {
+      "COVID-19Vaccine": "",
+      "otherVaccnes": ""
+    }
+  ],
+  "patientVitals": [
+    {
+      "bloodPressure": "",
+      "respiration": "",
+      "height": "",
+      "weight": "",
+      "temperature": "",
+      "pulse": "",
+      "sugarLevel": ""
+    }
+  ],
+  "patientBilling": [
+    {
+      "userId": 1,
+      "uuid": "",
+      "billingAmount": "",
+      "bllingStatus": false,
+      "transactionId": null
+    }
+  ],
+  "physicianProfile": [
+    {
+      "id": 1,
+      "uuid": "",
+      "firstname": "Nistala",
+      "lastname": "Chatanya",
+      "gender": "male",
+      "mobile": 7845122356,
+      "specilization": "",
+      "experience": 12,
+      "avatar": null
+    }
+  ],
+  "physicianNotes": [
+    {
+      "notes": ""
+    }
+  ],
+  "adminProfile": [
+    {
+      "id": 1,
+      "uuid": "",
+      "firstname": "Nistala",
+      "lastname": "Chatanya",
+      "gender": "male",
+      "mobile": 7845122356
+    }
+  ]
+  
+}
