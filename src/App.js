@@ -1,14 +1,11 @@
-import "./App.css";
-import Header from "./Components/Common/Header";
-
-import SideBar from "./Components/Common/SideBar";
+import './App.css';
+import Routes from './Router/Routes';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-
-      <SideBar />
+    
+    <div className="Ap">
+        <Routes />
     </div>
   );
 }
