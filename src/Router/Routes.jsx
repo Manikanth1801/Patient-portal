@@ -1,6 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Login, Register, ErrorPage, ForgotPassword } from '../Views';
+import { Login, Register, ErrorPage, ForgotPassword, UserVerification } from '../Views';
 import { AppointmentHistory, PatientDashboard, Demographics, Immunization, Medcication_Allergies, PatientVitals, Profile, ScheduleAppointment, BillingDetails, Wallet }  from '../Views/Patient/';
 import { Billing, AdminDashboard, ManagePatientRecords, ManagePhysicianRecords, ManageUsers, PatientVisitHistory } from '../Views/Admin';
 import { PatientDetails, PhysicianDashboard, PhysicianProfile, PhysicianAppointmentHistory } from '../Views/Physician';
@@ -10,9 +10,11 @@ class Routes extends React.Component {
         return (
             <div>
                 <Switch>
-                    {/* patient Routes */}
+                    {/* General Routes */}
                     <Route path="/" exact render={() => <Login />} />
                     <Route path="/registration" render={() => <Register />} />
+                    <Route path="/userVerification" render={() => <UserVerification />} />
+                    {/* patient Routes */}
                     <Route path="/changePassword" render={() => <ForgotPassword />} />
                     <Route path="/patient/dashboard" render={() => <PatientDashboard />} />
                     <Route path="/patient/appointment_history" render={() => <AppointmentHistory />} />
