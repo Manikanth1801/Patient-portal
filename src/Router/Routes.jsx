@@ -8,7 +8,7 @@ import { PatientDetails, PhysicianDashboard, PhysicianProfile } from '../Views/P
 class Routes extends React.Component {
     render() {
         return (
-            <div className="container">
+            <div>
                 <Switch>
                     {/* patient Routes */}
                     <Route path="/" exact render={() => <Login />} />
