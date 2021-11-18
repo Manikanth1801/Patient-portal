@@ -1,11 +1,13 @@
 import './App.css';
 import Routes from './Router/Routes';
+// import Footer from './Common/Footer/Footer';
 
 function App() {
   return (
     
-    <div className="Ap">
+    <div>
         <Routes />
+        {/* <Footer /> */}
     </div>
   );
 }
