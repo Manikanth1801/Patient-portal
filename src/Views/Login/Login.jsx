@@ -54,7 +54,7 @@ class Login extends React.Component {
                                             validate={{
                                             required: { value: true, errorMessage: 'Password is required' }
                                         }} />
-                                        <span><Link>Forgot Password?</Link></span>
+                                        <span><Link to="/UserVerification">Forgot Password?</Link></span>
                                     </div>
                                 </div>
                                 <div className="text-center my-5">
