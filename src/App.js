@@ -1,11 +1,20 @@
-import './App.css';
-import Routes from './Router/Routes';
+import "./App.css";
+import Header from "./Common/Header/Header";
+import Routes from "./Router/Routes";
+import { useLocation } from "react-router-dom";
+import LeftNav from "./Common/LeftNav/LeftNav";
 
 function App() {
+  const location = useLocation();
+  const showHeader =
+    location.pathname.includes("patient") ||
+    location.pathname.includes("admin") ||
+    location.pathname.includes("physician");
   return (
-    
     <div className="Ap">
-        <Routes />
+      {showHeader && <Header />}
+      <LeftNav/>
+      <Routes />
     </div>
   );
 }

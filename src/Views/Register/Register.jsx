@@ -35,7 +35,7 @@ class Register extends React.Component{
             isRegistered: false,
             mobile: this.state.mobile
         }
-        axios.post("http://localhost:8000/user",data)
+        axios.post("http://localhost:8000/users",data)
         .then(res => {
             if(res.data){
                 this.setState({ isDone: true })

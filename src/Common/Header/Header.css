@@ -1,0 +1,32 @@
+.userMenu {
+  background: transparent;
+  border: 0px;
+  color: black;
+  font-size: 24px;
+  outline: 0px;
+  box-shadow: none;
+  margin: auto;
+}
+.userMenu:hover,
+.userMenu:active,
+.userMenu:focus {
+  background: transparent !important;
+  color: black !important;
+  box-shadow: none !important;
+}
+.userBell {
+  background: transparent;
+  border: 0px;
+  color: black;
+  font-size: 24px;
+  outline: 0px;
+  box-shadow: none;
+  margin: auto;
+  padding-right: 16px;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .userBell {
+    margin: unset;
+  }
+}
