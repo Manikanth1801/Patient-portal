@@ -12,9 +12,19 @@ function App() {
     location.pathname.includes("physician");
   return (
     <div className="Ap">
-      {showHeader && <Header />}
-      <LeftNav/>
-      <Routes />
+      {showHeader && (
+        <>
+          <Header />
+        </>
+      )}
+      <div className="d-flex">
+        {showHeader && (
+          <>
+            <LeftNav />
+          </>
+        )}
+        <Routes />
+      </div>
     </div>
   );
 }

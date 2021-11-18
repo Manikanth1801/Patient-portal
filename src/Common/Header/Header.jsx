@@ -1,108 +1,6 @@
-// import React, { Component } from "react";
-// import {
-//   MenuItem,
-//   IconButton,
-//   Button,
-//   Typography,
-//   Toolbar,
-//   Box,
-//   AppBar,
-//   Badge,
-//   Menu,
-// } from "@mui/material";
-// // import {NotificationsIcon, AccountCircle} from '@mui/icons-material';
-// import NotificationsIcon from "@mui/icons-material/Notifications";
-// import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
-// class Header extends Component {
-//   constructor(props) {
-//     super(props);
 
-//     this.state = {
-//       anchorEl: null,
-//       isMenuOpen: null
-//     };
-//     this.menuId = "primary-search-account-menu";
-//     this.renderMenu = (
-//       <Menu
-//         anchorEl={this.state.anchorEl}
-//         anchorOrigin={{
-//           vertical: "top",
-//           horizontal: "right",
-//         }}
-//         id={this.menuId}
-//         keepMounted
-//         transformOrigin={{
-//           vertical: "top",
-//           horizontal: "right",
-//         }}
-//         open={this.state.isMenuOpen}
-//         onClose={this.handleMenuClose}
-//       >
-//         <MenuItem onClick={this.handleMenuClose}>Profile</MenuItem>
-//         <MenuItem onClick={this.handleMenuClose}>My account</MenuItem>
-//       </Menu>
-//     );
-//   }
-//   handleProfileMenuOpen = (event) => {
-//     this.setState({ ...this.state, anchorEl: event.currentTarget, isMenuOpen: Boolean( event.currentTarget)});
-//   };
-
-//   render() {
-//     return (
-//       <Box sx={{ flexGrow: 1 }}>
-//         <AppBar position="static">
-//           <Toolbar>
-//             <IconButton
-//               size="large"
-//               edge="start"
-//               color="inherit"
-//               aria-label="menu"
-//               sx={{ mr: 2 }}
-//             ></IconButton>
-//             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-//               WelCome to Admin
-//             </Typography>
-//             <MenuItem>
-//               <IconButton
-//                 size="large"
-//                 aria-label="show 17 new notifications"
-//                 color="inherit"
-//               >
-//                 <Badge badgeContent={17} color="error">
-//                   <NotificationsIcon />
-//                 </Badge>
-//               </IconButton>
-//               {/* <p>Notifications</p> */}
-//             </MenuItem>
-//             <MenuItem onClick={this.handleProfileMenuOpen}>
-//               <IconButton
-//                 size="large"
-//                 edge="end"
-//                 aria-label="account of current user"
-//                 aria-controls={this.menuId}
-//                 aria-haspopup="true"
-//                 color="inherit"
-//               >
-//                 <AccountCircleIcon />
-//               </IconButton>
-//               {/* <p>Profile</p> */}
-//             </MenuItem>
-//           </Toolbar>
-//         </AppBar>
-//         {this.renderMenu}
-//       </Box>
-//     );
-//   }
-// }
-
-// export default Header;
-
-import {
-  faBell,
-  faHamburger,
-  faUserCircle,
-} from "@fortawesome/free-solid-svg-icons";
+import { faBell, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Header.css";
@@ -120,10 +18,15 @@ import {
   DropdownItem,
   Dropdown,
 } from "reactstrap";
+import { withRouter } from "react-router";
 
-export default class Example extends React.Component {
+class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.module =
+      (this.props.location.pathname.includes("/patient/") && "patient") ||
+      (this.props.location.pathname.includes("/admin/") && "admin") ||
+      (this.props.location.pathname.includes("/physician/") && "physician");
 
     this.toggleDropdown = this.toggleDropdown.bind(this);
     this.toggle = this.toggle.bind(this);
@@ -150,14 +53,16 @@ export default class Example extends React.Component {
   render() {
     return (
       <div>
-        <Navbar color="light" light expand="md">
+        <Navbar expand="md" className="header">
           <NavbarBrand>
-            <FontAwesomeIcon
-              icon={faHamburger}
-              onClick={(e) => this.menuButtonClick(e)}
-            ></FontAwesomeIcon>
-            <img src="/CTLogo.jpg" width="200px"></img>
+            <div className="d-flex">
+              <img src="/CTLogo.jpg" height="34px"></img>
+              <h2 className="pl-2" style={{color:"white"}}>
+                WelCome to <span style={{textTransform:'capitalize'}}>{this.module}</span>
+              </h2>
+            </div>
           </NavbarBrand>
+
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -172,7 +77,7 @@ export default class Example extends React.Component {
                   <DropdownToggle className="userMenu user p-0">
                     <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
                   </DropdownToggle>
-                  <DropdownMenu right>
+                  <DropdownMenu end>
                     <DropdownItem>My profile</DropdownItem>
 
                     <DropdownItem>Sign Out</DropdownItem>
@@ -186,3 +91,5 @@ export default class Example extends React.Component {
     );
   }
 }
+
+export default withRouter(Header);
