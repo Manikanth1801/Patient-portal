@@ -4,13 +4,11 @@ import './Footer.css';
 import logo from '../../Assets/Images/logo.png';
 
 class Footer extends Component {
-    constructor(props) {
-        super(props)
+  constructor(props) {
+    super(props);
 
-        this.state = {
-            
-        }
-    }
+    this.state = {};
+  }
 
     render() {
         return (
