@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Login, Register, ErrorPage, ForgotPassword } from '../Views';
-import { AppointmentHistory, PatientDashboard, Demographics, Immunization, Medcication_Allergies, PatientVitals, Profile, ScheduleAppointment, BillingDetails }  from '../Views/Patient/';
-import { Billing, AdminDashboard, ManagePatientRecords, ManagePhysicianRecords, ManageUsers } from '../Views/Admin';
-import { PatientDetails, PhysicianDashboard, PhysicianProfile } from '../Views/Physician';
+import { AppointmentHistory, PatientDashboard, Demographics, Immunization, Medcication_Allergies, PatientVitals, Profile, ScheduleAppointment, BillingDetails, Wallet }  from '../Views/Patient/';
+import { Billing, AdminDashboard, ManagePatientRecords, ManagePhysicianRecords, ManageUsers, PatientVisitHistory } from '../Views/Admin';
+import { PatientDetails, PhysicianDashboard, PhysicianProfile, PhysicianAppointmentHistory } from '../Views/Physician';
 
 class Routes extends React.Component {
     render() {
@@ -23,16 +23,19 @@ class Routes extends React.Component {
                     <Route path="/patient/profile" render={() => <Profile />} />
                     <Route path="/patient/scheduleAppointment" render={() => <ScheduleAppointment/>} />
                     <Route path="/patient/billingDetails" render={() => <BillingDetails />} />
+                    <Route path="/patient/wallet" render={() => <Wallet />} />
                     {/* Admin Routes */}
                     <Route path="/admin/dashboard" render={() => <AdminDashboard />} />
                     <Route path="/admin/patientRecords" render={() => <ManagePatientRecords />} />
                     <Route path="/admin/physicianRecords" render={()=> <ManagePhysicianRecords />} />
                     <Route path="/admin/manageUsers" render={() => <ManageUsers />} />
                     <Route path="/admin/billingData" render={() => <Billing />} />
+                    <Route path="/admin/patientVisitHistory" render={() => <PatientVisitHistory />} />
                     {/* Physician Routes */}
                     <Route path="/physician/patientDetails" render={() => <PatientDetails />} />
                     <Route path="/physician/physicianDashboard" render={() => <PhysicianDashboard />} />
                     <Route path="/physician/physicianProfile" render={() => <PhysicianProfile />} />
+                    <Route path="/physician/physicianAppointmentHistory" render={() => <PhysicianAppointmentHistory />} />
                     {/* Other Routes */}
                     <Route path="/UnauthorizedAccess" render={() => <ErrorPage/>} />
                     <Route path="/page_expired" render={() => <ErrorPage/>} />
