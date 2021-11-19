@@ -11,24 +11,23 @@ function App() {
     location.pathname.includes("patient") ||
     location.pathname.includes("admin") ||
     location.pathname.includes("physician");
+
+    localStorage.setItem('authToken', '12345')
   return (
     <div className="Ap">
       {showHeader && (
-        <>
-          <Header />
-        </>
+      <>
+        <Header />
+        <LeftNav />
+      </>
       )}
-      <div className="d-flex">
-        {showHeader && (
-          <>
-            <LeftNav />
-          </>
-        )}
-        <div style={{ width: "100%" }}>
+      <div style={{float:"left"}}>
           <Routes />
-        </div>
-        {/* <Footer/> */}
       </div>
+        {showHeader && (
+          <Footer/>
+        )}
+      {/* </div> */}
     </div>
   );
 }

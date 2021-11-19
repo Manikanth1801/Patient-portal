@@ -12,7 +12,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <footer>
+            <footer style={{clear:"both"}}>
                 <Card>
                     <CardBody className="text-center">
                         <CardTitle tag="h5">
