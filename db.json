@@ -164,5 +164,49 @@
       "gender": "male",
       "mobile": 7845122356
     }
+  ],
+  "lookups": [
+    {
+      "specialization": [
+        {"name":"Anatomical Pathology"},
+        {"name":"Anesthesiology"},
+        {"name": "Cardiology"},
+        {"name": "Cardiovascular/Thoracic Surgery"},
+        {"name": "Clinical Immunology/Allergy"},
+        {"name": "Critical Care Medicine"},
+        {"name": "Dermatology"},
+        {"name": "Diagnostic Radiology"},
+        {"name": "Emergency Medicine"},
+        {"name": "Endocrinology and Metabolism"},
+        {"name": "Gastroenterology"},
+        {"name": "General Internal Medicine"},
+        {"name": "General/Clinical Pathology"},
+        {"name": "General Surgery"},
+        {"name": "Geriatric Medicine"},
+        {"name": "Hematology"},
+        {"name": "Medical Biochemistry"},
+        {"name": "Medical Genetics"},
+        {"name": "Medical Microbiology and Infectious Diseases"},
+        {"name": "Medical Oncology"},
+        {"name": "Nephrology"},
+        {"name": "Neurology"},
+        {"name": "Neurosurgery"},
+        {"name": "Nuclear Medicine"},
+        {"name": "Obstetrics/Gynecology"},
+        {"name": "Occupational Medicine"},
+        {"name": "Ophthalmology"},
+        {"name": "Orthopedic Surgery"},
+        {"name": "Otolaryngology"},
+        {"name": "Pediatrics"},
+        {"name": "Physical Medicine and Rehabilitation (PM & R)"},
+        {"name": "Plastic Surgery"},
+        {"name": "Psychiatry"},
+        {"name": "Rheumatology"},
+        {"name": "Respirology"},
+        {"name": "Radiation Oncology"},
+        {"name": "Public Health and Preventive Medicine (PhPm)"},
+        {"name": "Others"}
+      ]
+    }
   ]
 }
