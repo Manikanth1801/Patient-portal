@@ -18,18 +18,6 @@
       "isLogged": false,
       "registrationDate": "currentDate",
       "isApproved": "Need to approve or Phy and Admin, Patient Not required"
-    },
-    {
-      "email": "pankajgotefode123@gmail.com",
-      "password": "$2a$10$/wpczA8oOvjNL1crdOOlKeQ8K4tag1J8uot1kr5OS/zTf74RV8Qs.",
-      "firstname": "pankaj",
-      "lastname": "gotefode",
-      "retypePassword": "1234",
-      "dob": "",
-      "role": "Admin",
-      "isRegistered": false,
-      "mobile": "1234567890",
-      "id": 2
     }
   ],
   "patientProfile": [

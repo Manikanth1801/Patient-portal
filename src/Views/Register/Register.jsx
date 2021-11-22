@@ -16,10 +16,12 @@ class Register extends React.Component {
             retypePassword: '',
             dob: '',
             role: '',
-            specilization: '',
-            experience: '',
+            isRegistered: false,
             mobile: '',
-            isDone: false
+            specilization: null,
+            experience: null,
+            isDone: false,
+            uuid: ''
         }
     }
     handleChange = (e) => {
@@ -30,6 +32,7 @@ class Register extends React.Component {
     handleSubmit = (e) => {
         e.preventDefault()
         let data = {
+            uuid: this.state.uuid,
             firstname: this.state.firstname,
             lastname: this.state.lastname,
             gender: this.state.gender,
@@ -39,7 +42,12 @@ class Register extends React.Component {
             dob: this.state.dob,
             role: this.state.role,
             isRegistered: false,
-            mobile: this.state.mobile
+            mobile: this.state.mobile,
+            specialization: this.state.specilization,
+            experience: this.state.experience,
+            isLogged: false,
+            registrationDate: new Date(),
+            isApproved: false
         }
         axios.post("http://localhost:8000/users", data)
             .then(res => {

@@ -1,5 +1,5 @@
 import React from 'react';
-// import axios from 'axios';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 import logo from '../../Assets/Images/logo.png';
@@ -13,7 +13,15 @@ class Login extends React.Component {
             password: ''
         }
     }
-
+    componentDidMount(){
+        axios.get("http://localhost:8000/users")
+        .then(res => {
+            console.log("Test data checked is",res)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value

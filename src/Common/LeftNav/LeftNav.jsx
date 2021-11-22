@@ -34,7 +34,7 @@ class LeftNav extends Component {
       { name: "Billing Data", link: "/admin/billingData" },
     ];
     this.physicianMenu = [
-        { name: "Physician Dashboard", link: "/physician/physicianDashboard" },
+        { name: "Physician Dashboard", link: "/physician/dashboard" },
         { name: "Patient Details", link: "/physician/patientDetails" },
         { name: "Physician Profile", link: "/physician/physicianProfile" },
         
