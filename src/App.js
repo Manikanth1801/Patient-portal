@@ -18,7 +18,13 @@ function App() {
       {showHeader && (
       <>
         <Header />
-        <LeftNav />
+        <LeftNav 
+          open={open}
+        drawerWidth={drawerWidth}
+        handleDrawerClose={handleDrawerClose}
+        theme={theme}
+        
+        />
       </>
       )}
       <div style={{float:"left"}}>
