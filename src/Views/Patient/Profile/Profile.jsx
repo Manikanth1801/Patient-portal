@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 import axios from 'axios';
 import './Profile.css'
+import pencil from '../../../Assets/Images/pencil.svg'
 class Profile extends Component {
     constructor(props) {
         super(props);
@@ -13,103 +14,103 @@ class Profile extends Component {
             employment: '',
             address: '',
             avatar: '',
-            firstname:'',
-            lastname:'',
-            dob:'',
-            mobile:'',
-            id:'',
+            firstname: '',
+            lastname: '',
+            dob: '',
+            mobile: '',
+            id: '',
             disabled: false,
-            edit:false
+            edit: false
 
         }
     }
     handleChange = (e) => {
-        console.log('eee',e.target.value);
+        console.log('eee', e.target.value);
         this.setState({
             [e.target.name]: e.target.value
         })
     };
 
     componentDidMount() {
-        console.log('edit',this.state.edit)
+        // console.log('edit', this.state.edit)
         axios.get("http://localhost:8000/users").then(resp => {
             if (resp.data) {
-                   resp.data.forEach((val)=>{
-                       if(val.email =='chaitanya@gmail.com'){
+                resp.data.forEach((val) => {
+                    if (val.email == 'chaitanya@gmail.com') {
                         this.setState({
-                                          firstname: val.firstname,
-                                           lastname: val.lastname,
-                                           dob: val.dob,
-                                           mobile: val.mobile,
-                                           id:val.id
-                                           })
-                         
+                            firstname: val.firstname,
+                            lastname: val.lastname,
+                            dob: val.dob,
+                            mobile: val.mobile,
+                            id: val.id
+                        })
 
-                       }
 
-                   })
-                
-              
+                    }
+
+                })
+
+
             }
         })
     }
 
-    handleSubmit = (e,error,values) => {
-        console.log('userFirst',this.state)
-        if(error == ''){
-           
-     
-      
-        let profileData = {
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            gender: this.state.gender,
-            ethnicity: this.state.ethnicity,
-            education: this.state.education,
-            employment: this.state.employment,
-            dob: this.state.dob,
-            address: this.state.address,
-            mobile: this.state.mobile,
+    handleSubmit = (e, error, values) => {
+        console.log('userFirst', this.state)
+        if (error == '') {
 
 
+
+            let profileData = {
+                firstname: this.state.firstname,
+                lastname: this.state.lastname,
+                gender: this.state.gender,
+                ethnicity: this.state.ethnicity,
+                education: this.state.education,
+                employment: this.state.employment,
+                dob: this.state.dob,
+                address: this.state.address,
+                mobile: this.state.mobile,
+
+
+            }
+
+
+            console.log('profileData', profileData);
+
+            axios.post("http://localhost:8000/patientProfile", profileData)
+                .then(res => {
+                    console.log('res', res)
+                    if (res.data) {
+                        alert("Profile update is Success.")
+                    }
+                })
+                .catch(err => {
+                    if (err) {
+                        alert("something went wrong.Please try after some time")
+                        console.log(err)
+                    }
+                })
+            //    this.reset();
+
+            if (this.state.edit) {
+                console.log(this.state.userID);
+                axios.put('http://localhost:8000/users/this.state.id', {
+                    firstname: profileData.firstname,
+                    lastname: profileData.lastname,
+                    mobile: profileData.mobile
+                })
+
+
+            }
         }
-
-
-        console.log('profileData', profileData);
-
-        axios.post("http://localhost:8000/patientProfile", profileData)
-            .then(res => {
-                console.log('res', res)
-                if (res.data) {
-                    alert("Profile update is Success.")
-                }
-            })
-            .catch(err => {
-                if (err) {
-                    alert("something went wrong.Please try after some time")
-                    console.log(err)
-                }
-            })
-        //    this.reset();
-      
-        if(this.state.edit){
-          console.log(this.state.userID);
-            axios.put('http://localhost:8000/users/this.state.id',{
-                firstname:profileData.firstname,
-                lastname:profileData.lastname,
-                mobile:profileData.mobile
-            })
-
-       
-        }
-    }
     }
 
     handleEditClik = (e) => {
-        this.setState({ edit : !this.state.edit})
-        console.log('disabled', this.state.edit)
+        this.setState({ edit: !this.state.edit })
+        console.log('disabled', this.state.edit, 'pencilIcon')
         this.setState({ disabled: !this.state.disabled })
-        
+
     }
 
     // reset = () => {
@@ -121,18 +122,25 @@ class Profile extends Component {
 
     render() {
         return (
-            <div className="border">
+            <div className="wrapper">
+                <div className='heading-title mb-4'>
+                    <span className="text-primary">Edit Profile</span>
+                    <img className='ml-2' src={pencil} onClick={this.handleEditClik} />
+                </div>
                 {/* <h4 className="col-12 bg-primary text-light border border-dark py-2">Patient Portal</h4> */}
                 {/* <span className="text-primary pl-4">Profile</span> */}
-                <div className="row pl-3 my-2 ml-2">
+                <div className="row mx-0">
+                    {/* <img  src={pencil} onClick={this.handleEditClik}/> */}
                     <AvForm onSubmit={this.handleSubmit} ref={c => (this.myFormRef = c)}>
+
                         <div className="row">
+
                             <div className="col-4">
                                 <label className="h6">First Name</label>
                             </div>
 
                             <div className="form-group col-8">
-                                <AvField type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} className="form-control" disabled={(this.state.disabled) ? "" : "disabled"}
+                                <AvField type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} className="form-control" disabled={(this.state.disabled) ? false : true}
                                     validate={{
                                         required: { value: true, errorMessage: "First Name is required" },
                                         pattern: { value: /^[A-Za-z\/\s\.'-]+$/, errorMessage: 'First Name is Invalid' }
@@ -144,7 +152,7 @@ class Profile extends Component {
                                 <label className="h6">Last Name</label>
                             </div>
                             <div className="form-group col-8">
-                                <AvField type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} className="form-control" disabled={(this.state.disabled) ? "" : "disabled"}
+                                <AvField type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} className="form-control" disabled={(this.state.disabled) ? false : true}
                                     validate={{
                                         required: { value: true, errorMessage: "Last Name is required" },
                                         pattern: { value: /^[A-Za-z\/\s\.'-]+$/, errorMessage: 'Last Name is Invalid' }
@@ -209,7 +217,7 @@ class Profile extends Component {
                                 <label className="h6">D.O.B</label>
                             </div>
                             <div className="form-group col-8">
-                                <AvField type="date" name="dob" value={this.state.dob} className="form-control" onChange={this.handleChange} disabled={(this.state.disabled) ? "" : "disabled"} required />
+                                <AvField type="date" name="dob" value={this.state.dob} className="form-control" onChange={this.handleChange} disabled={(this.state.disabled) ? false : true } required />
                             </div>
                         </div>
                         <div className="row">
@@ -230,10 +238,10 @@ class Profile extends Component {
                                 <label className="h6">Mobile</label>
                             </div>
                             <div className="form-group col-8">
-                                <AvField type="text" name="mobile" value={this.state.mobile} onChange={this.handleChange} className="form-control" disabled={(this.state.disabled) ? "" : "disabled"}
-                                 minLength={10} maxLength={10} validate={{
-                                    required: { value: true, errorMessage: 'Mobile Number is required' }
-                                }} />
+                                <AvField type="text" name="mobile" value={this.state.mobile} onChange={this.handleChange} className="form-control" disabled={(this.state.disabled) ? false : true }
+                                    minLength={10} maxLength={10} validate={{
+                                        required: { value: true, errorMessage: 'Mobile Number is required' }
+                                    }} />
                             </div>
                         </div>
 
@@ -241,19 +249,20 @@ class Profile extends Component {
                             <button className="btn btn-outline-primary">Update</button>
                         </div>
                         <div>
-                        <button  onClick={this.handleEditClik} >Edit</button>
-                    </div>
-                      
+
+                        </div>
+
 
                     </AvForm>
-                
-                    
+                    {/* <button  onClick={this.handleEditClik} >Edit</button> */}
 
-                    
+
+
+
 
                 </div>
-               
-              
+
+
             </div>
         )
     }

@@ -42,7 +42,7 @@ class Demographics extends Component {
                 .catch(err => {
                     if (err) {
                         alert("something went wrong.Please try after some time")
-                        console.log(err)
+                        console.log(err);
                     }
                 })
         }
@@ -101,7 +101,7 @@ class Demographics extends Component {
                     </div>
                     <br />
                     <div className="row">
-                        <div className="col-6">
+                        <div className="col-6" id='submit'>
                             <button className="btn btn-outline-primary">Submit</button>
                         </div>
                     </div>
