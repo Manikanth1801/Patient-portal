@@ -12,8 +12,13 @@ class ManageUsers extends Component {
     }
 
     componentDidMount(){
-        var data = axios.get('http://localhost:8000/user');
-        console.log("data ==== ", data);
+        axios.get("http://localhost:8000/users")
+        .then(res => {
+        console.log("Test data checked is",res)
+        })
+        .catch(err => {
+        console.log(err)
+        })
     }
 
     render() {

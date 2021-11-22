@@ -32,8 +32,8 @@ class Footer extends Component {
                             tag="h6"
                         >
                             <i className="fab fa-facebook-square"></i>
-                            <i class="fab fa-instagram-square"></i>
-                            <i class="fab fa-youtube-square"></i>
+                            <i className="fab fa-instagram-square"></i>
+                            <i className="fab fa-youtube-square"></i>
                         </CardText>
                         <CardText className="mb-2 text-left footer-text3">
                             © 2021 CitiusTech. All rights reserved.

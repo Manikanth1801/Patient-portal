@@ -21,7 +21,7 @@ function App() {
         <LeftNav />
       </>
       )}
-      <div style={{float:"left"}}>
+      <div className="rightContainer" style={showHeader ? {float:"left"} : {}}>
           <Routes />
       </div>
         {showHeader && (
