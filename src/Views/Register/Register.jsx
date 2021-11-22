@@ -3,6 +3,7 @@ import { AvForm, AvField } from 'availity-reactstrap-validation';
 import axios from 'axios';
 import logo from '../../Assets/Images/logo.png';
 import './Register.css';
+import { Link } from 'react-router-dom';
 
 class Register extends React.Component {
     constructor(props) {
@@ -54,28 +55,23 @@ class Register extends React.Component {
                 if (res.data) {
                     this.setState({ isDone: true })
                     alert("Your Registration is Success.")
+                    this.myFormRef && this.myFormRef.reset();
                 }
             })
             .catch(err => {
                 if (err) {
                     alert("something went wrong.Please try after some time")
                     console.log(err)
+                    this.myFormRef && this.myFormRef.reset();
                 }
             })
-        this.reset();
     };
-    reset = () => {
-        this.myFormRef && this.myFormRef.reset();
-        this.setState({
-            dob: ''
-        })
-    }
 
     render() {
         const { role } = this.state
         return (
             <div style={{ backgroundColor: "#f3f2f1" }}>
-                <div className="py-3 d-flex justify-content-start bg-color">
+                <div className="py-3 d-flex justify-content-center bg-color">
                     <img src={logo} alt="Logo" className="img-fluid ml-5 my-3" />
                 </div>
                 <div className="border border-dark container px-0" style={{ marginTop: "1%",backgroundColor: "#ffffff" }}>
@@ -83,13 +79,13 @@ class Register extends React.Component {
                         <h2 className="col-12 text-light py-2" style={{ backgroundColor: "#000000" }} >REGISTRATION FORM</h2>
                     </div>
                     
-                    <div className="row pl-3 my-2 ml-2 ">
+                    <div className="row pl-3 my-2 ml-2">
                         <AvForm onSubmit={this.handleSubmit} ref={c => (this.myFormRef = c)} className="col-12 col-md-12 col-lg-10 col-xl-12">
                             <div className="row ">
-                                <div className="col-4">
+                                <div className="col-5 col-lg-4">
                                     <label className="h6">First Name<span className="text-danger pl-1">*</span></label>
                                 </div>
-                                <div className="form-group col-4">
+                                <div className="form-group col-5 col-lg-4">
                                     <AvField type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} className="form-control" validate={{
                                         required: { value: true, errorMessage: "First Name is required" },
                                         pattern: { value: /^[A-Za-z\/\s\.'-]+$/, errorMessage: 'First Name is Invalid' }
@@ -97,10 +93,10 @@ class Register extends React.Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-5 col-lg-4">
                                     <label className="h6">Last Name<span className="text-danger pl-1">*</span></label>
                                 </div>
-                                <div className="form-group col-4">
+                                <div className="form-group col-5 col-lg-4">
                                     <AvField type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} className="form-control" validate={{
                                         required: { value: true, errorMessage: "Last Name is required" },
                                         pattern: { value: /^[A-Za-z\/\s\.'-]+$/, errorMessage: 'Last Name is Invalid' }
@@ -109,10 +105,10 @@ class Register extends React.Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-5 col-lg-4">
                                     <label className="h6">Gender<span className="text-danger pl-1">*</span></label>
                                 </div>
-                                <div className="form-group col-4">
+                                <div className="form-group col-5 col-lg-4">
                                     <AvField type="select" name="gender" value={this.state.gender} onChange={this.handleChange} className="form-control">
                                         <option value="">-- select --</option>
                                         <option value="Male">Male</option>
@@ -122,10 +118,10 @@ class Register extends React.Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-5">
                                     <label className="h6">Email Id<span className="text-danger pl-1">*</span></label>
                                 </div>
-                                <div className="form-group col-4">
+                                <div className="form-group col-5 col-lg-4">
                                     <AvField type="email" name="email" value={this.state.email} onChange={this.handleChange} className="form-control" validate={{
                                         required: { value: true, errorMessage: 'Email id is required' },
                                         pattern: { value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, errorMessage: 'Email id is Invalid' }
@@ -133,38 +129,38 @@ class Register extends React.Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-5 col-lg-4">
                                     <label className="h6">Password<span className="text-danger pl-1">*</span></label>
                                 </div>
-                                <div className="form-group col-4">
+                                <div className="form-group col-5 col-lg-4">
                                     <AvField type="password" name="password" value={this.state.password} onChange={this.handleChange} className="form-control" validate={{
                                         required: { value: true, errorMessage: 'Password is required' }
                                     }} />
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-5 col-lg-4">
                                     <label className="h6">Retype Password<span className="text-danger pl-1">*</span></label>
                                 </div>
-                                <div className="form-group col-4">
+                                <div className="form-group col-5 col-lg-4">
                                     <AvField type="password" name="retypePassword" value={this.state.retypePassword} onChange={this.handleChange} className="form-control" validate={{
                                         required: { value: true, errorMessage: 'Password is required' }
                                     }} />
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-5 col-lg-4">
                                     <label className="h6">D.O.B(DD/MM/YYYY)<span className="text-danger pl-1">*</span></label>
                                 </div>
-                                <div className="form-group col-4">
+                                <div className="form-group col-5 col-lg-4">
                                     <input type="date" name="dob" value={this.state.dob} onChange={this.handleChange} className="form-control" required />
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-5 col-lg-4">
                                     <label className="h6">Role<span className="text-danger pl-1">*</span></label>
                                 </div>
-                                <div className="form-group col-4">
+                                <div className="form-group col-5 col-lg-4">
                                     <AvField type="select" name="role" value={this.state.role} onChange={this.handleChange} className="form-control">
                                         <option value="">-- select --</option>
                                         <option value="Patient">Patient</option>
@@ -176,10 +172,10 @@ class Register extends React.Component {
                             {
                                 role === "Physician" &&
                                 <div className="row">
-                                    <div className="col-4">
+                                    <div className="col-5 col-lg-4">
                                         <label className="h6">Specilization<span className="text-danger pl-1">*</span></label>
                                     </div>
-                                    <div className="form-group col-4">
+                                    <div className="form-group col-5 col-lg-4">
                                         <AvField type="select" name="specilization" value={this.state.specilization} onChange={this.handleChange} className="form-control">
                                             <option value="">-- select --</option>
                                             <option value="Cardiology">Cardiology</option>
@@ -192,10 +188,10 @@ class Register extends React.Component {
                             {
                                 role === "Physician" &&
                                 <div className="row">
-                                    <div className="col-4">
+                                    <div className="col-5 col-lg-4">
                                         <label className="h6">Experience<span className="text-danger pl-1">*</span></label>
                                     </div>
-                                    <div className="form-group col-4">
+                                    <div className="form-group col-5 col-lg-4">
                                         <AvField type="number" name="experience" value={this.state.experience} onChange={this.handleChange} className="form-control" min={1} max={30} validate={{
                                             required: { value: true, errorMessage: 'Experience in Years is required' }
                                         }} />
@@ -203,10 +199,10 @@ class Register extends React.Component {
                                 </div>
                             }
                             <div className="row">
-                                <div className="col-4">
+                                <div className="col-5 col-lg-4">
                                     <label className="h6">Mobile<span className="text-danger pl-1">*</span></label>
                                 </div>
-                                <div className="form-group col-4">
+                                <div className="form-group col-5 col-lg-4">
                                     <AvField type="text" name="mobile" value={this.state.mobile} onChange={this.handleChange} className="form-control" minLength={10} maxLength={10} validate={{
                                         required: { value: true, errorMessage: 'Mobile Number is required' }
                                     }} />
@@ -215,6 +211,9 @@ class Register extends React.Component {
                             <div className="col-12 mb-2 d-flex justify-content-center">
                                 <button className="btn btn-primary px-5 rounded-0">Register</button>
                             </div>
+                            <div className="col-12 mb-2 d-flex justify-content-center">
+                                <span>Already have an Account? <Link to="/">Login</Link></span>
+                            </div>
                         </AvForm>
                     </div>
                 </div>
@@ -222,4 +221,4 @@ class Register extends React.Component {
         )
     }
 }
-export default Register
+export default Register;

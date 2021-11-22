@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 import logo from '../../Assets/Images/logo.png';
 import './Login.css';
@@ -14,13 +14,14 @@ class Login extends React.Component {
         }
     }
     componentDidMount(){
-        axios.get("http://localhost:8000/users")
-        .then(res => {
-            console.log("Test data checked is",res)
-        })
-        .catch(err => {
-            console.log(err)
-        })
+        // axios.get("http://localhost:8000/users")
+        // .then(res => {
+        //     console.log("Test data checked is",res)
+        // })
+        // .catch(err => {
+        //     console.log(err)
+        // })
+        console.log("props are",this.props)
     }
     handleChange = (e) => {
         this.setState({
@@ -30,6 +31,33 @@ class Login extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        let data = {
+            email: this.state.username,
+            password: this.state.password
+        }
+        axios.post("http://localhost:8000/login",data)
+        .then(res => {
+            if(res.data){
+                console.log("login details are",res.data)
+                let token = res.data.accessToken;
+                let role = res.data.user.role;
+                this.myFormRef && this.myFormRef.reset();
+                if(token !== "" && token !== undefined && token !== null){
+                    localStorage.setItem("accessToken",token)
+                    if(role === "Patient"){
+                        this.props.history.push("/patient/dashboard/");
+                    }else if(role === "Physician"){
+                        this.props.history.push("/physician/dashboard")
+                    }else{
+                        this.props.history.push("/admin/dashboard")
+                    }
+                }
+            }
+        })
+        .catch(err => {
+            this.myFormRef && this.myFormRef.reset();
+            console.log("Error Found is",err)
+        })
     };
 
     render() {
@@ -44,7 +72,7 @@ class Login extends React.Component {
                             <div className="col py-2 text-light rounded" style={{ backgroundColor: "#000000" }}>
                                 <span className="h2">ENTER YOUR LOGIN</span>
                             </div>
-                            <AvForm className="text-left login-font mt-4 px-3">
+                            <AvForm className="text-left login-font mt-4 px-3" onSubmit={this.handleSubmit} ref={c => (this.myFormRef = c)}>
                                 <div className="form-group">
                                     <label>Username</label>
                                     <div className="form-group">
@@ -78,4 +106,4 @@ class Login extends React.Component {
         )
     }
 }
-export default Login
+export default Login;
