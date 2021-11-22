@@ -1,9 +1,9 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Login, Register, ErrorPage, ForgotPassword } from '../Views';
-import { AppointmentHistory, PatientDashboard, Demographics, Immunization, Medcication_Allergies, PatientVitals, Profile, ScheduleAppointment, BillingDetails}  from '../Views/Patient/';
-import { Billing, AdminDashboard, ManagePatientRecords, ManagePhysicianRecords, ManageUsers } from '../Views/Admin';
-import { PatientDetails, PhysicianDashboard, PhysicianProfile } from '../Views/Physician';
+import { Login, Register, ErrorPage, ForgotPassword, UserVerification } from '../Views';
+import { AppointmentHistory, PatientDashboard, Demographics, Immunization, Medcication_Allergies, PatientVitals, Profile, ScheduleAppointment, BillingDetails, Wallet}  from '../Views/Patient/';
+import { Billing, AdminDashboard, ManagePatientRecords, ManagePhysicianRecords, ManageUsers, PatientVisitHistory } from '../Views/Admin';
+import { PatientDetails, PhysicianDashboard, PhysicianProfile, PhysicianAppointmentHistory } from '../Views/Physician';
 import { PatientInfo } from '../Views/Patient/PatientInfo';
 
 class Routes extends React.Component {
