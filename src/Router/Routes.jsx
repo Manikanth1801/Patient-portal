@@ -9,11 +9,13 @@ import { PatientInfo } from '../Views/Patient/PatientInfo';
 class Routes extends React.Component {
     render() {
         return (
-            <div className="container">
+            <div>
                 <Switch>
-                    {/* patient Routes */}
+                    {/* General Routes */}
                     <Route path="/" exact render={() => <Login />} />
                     <Route path="/registration" render={() => <Register />} />
+                    <Route path="/userVerification" render={() => <UserVerification />} />
+                    {/* patient Routes */}
                     <Route path="/changePassword" render={() => <ForgotPassword />} />
                     <Route path="/patient/dashboard" render={() => <PatientDashboard />} />
                     <Route path="/patient/appointment_history" render={() => <AppointmentHistory />} />
@@ -28,16 +30,19 @@ class Routes extends React.Component {
                     <Route path="/patient/patientInfo" render={() => <PatientInfo/>} />
 
 
+                    <Route path="/patient/wallet" render={() => <Wallet />} />
                     {/* Admin Routes */}
                     <Route path="/admin/dashboard" render={() => <AdminDashboard />} />
                     <Route path="/admin/patientRecords" render={() => <ManagePatientRecords />} />
                     <Route path="/admin/physicianRecords" render={()=> <ManagePhysicianRecords />} />
                     <Route path="/admin/manageUsers" render={() => <ManageUsers />} />
                     <Route path="/admin/billingData" render={() => <Billing />} />
+                    <Route path="/admin/patientVisitHistory" render={() => <PatientVisitHistory />} />
                     {/* Physician Routes */}
                     <Route path="/physician/patientDetails" render={() => <PatientDetails />} />
-                    <Route path="/physician/physicianDashboard" render={() => <PhysicianDashboard />} />
+                    <Route path="/physician/dashboard" render={() => <PhysicianDashboard />} />
                     <Route path="/physician/physicianProfile" render={() => <PhysicianProfile />} />
+                    <Route path="/physician/physicianAppointmentHistory" render={() => <PhysicianAppointmentHistory />} />
                     {/* Other Routes */}
                     <Route path="/UnauthorizedAccess" render={() => <ErrorPage/>} />
                     <Route path="/page_expired" render={() => <ErrorPage/>} />

@@ -1,0 +1,36 @@
+.header{
+  background: #008688;
+  height: 60px;
+}
+.userMenu {
+  background: #008688;
+  border: 0px;
+  color: white;
+  font-size: 24px;
+  outline: 0px;
+  box-shadow: none;
+  margin: auto;
+}
+.userMenu:hover,
+.userMenu:active,
+.userMenu:focus {
+  background: #008688 !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+.userBell {
+  background: #008688;
+  border: 0px;
+  color: white;
+  font-size: 24px;
+  outline: 0px;
+  box-shadow: none;
+  margin: auto;
+  padding-right: 16px;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .userBell {
+    margin: unset;
+  }
+}
