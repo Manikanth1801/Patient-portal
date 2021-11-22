@@ -20,15 +20,41 @@ class Register extends React.Component {
             isRegistered: false,
             mobile: '',
             specilization: null,
+            otherSpecilization: null,
             experience: null,
             isDone: false,
-            uuid: ''
+            uuid: '', 
+            lookupData: [],
+            isOthersSelected: false
         }
+    }
+    componentDidMount(){
+        axios.get("http://localhost:8000/lookups")
+        .then(res => {
+            let lookupData = res.data[0].specialization
+            this.setState({
+                lookupData
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
+        if(e.target.name === "specilization"){
+            if(e.target.value === "Others"){
+                this.setState({
+                    isOthersSelected: true,
+                })
+            }else{
+                this.setState({
+                    isOthersSelected: false
+                }) 
+            }
+        }
     };
     handleSubmit = (e) => {
         e.preventDefault()
@@ -57,6 +83,10 @@ class Register extends React.Component {
                     alert("Your Registration is Success.")
                     this.myFormRef && this.myFormRef.reset();
                 }
+                this.setState({
+                    isOthersSelected: false,
+                    role: ""
+                })
             })
             .catch(err => {
                 if (err) {
@@ -64,11 +94,15 @@ class Register extends React.Component {
                     console.log(err)
                     this.myFormRef && this.myFormRef.reset();
                 }
+                this.setState({
+                    isOthersSelected: false,
+                    role: ""
+                })
             })
     };
 
     render() {
-        const { role } = this.state
+        const { role, lookupData } = this.state
         return (
             <div style={{ backgroundColor: "#f3f2f1" }}>
                 <div className="py-3 d-flex justify-content-center bg-color">
@@ -118,7 +152,7 @@ class Register extends React.Component {
                                 </div>
                             </div>
                             <div className="row">
-                                <div className="col-5">
+                                <div className="col-5 col-lg-4">
                                     <label className="h6">Email Id<span className="text-danger pl-1">*</span></label>
                                 </div>
                                 <div className="form-group col-5 col-lg-4">
@@ -177,13 +211,27 @@ class Register extends React.Component {
                                     </div>
                                     <div className="form-group col-5 col-lg-4">
                                         <AvField type="select" name="specilization" value={this.state.specilization} onChange={this.handleChange} className="form-control">
-                                            <option value="">-- select --</option>
-                                            <option value="Cardiology">Cardiology</option>
-                                            <option value="Endocrinology">Endocrinology</option>
-                                            <option value="General Physician">General Physician</option>
+                                            <option value=""> -- select --</option>
+                                            {lookupData ? lookupData.map((ele) => (
+                                                <option value={ele.name} key={ele.name}>{ele.name}</option>
+                                            )) : ''}
                                         </AvField>
                                     </div>
                                 </div>
+                            }
+                            {
+                                (role === "Physician" && this.state.isOthersSelected) ? 
+                                <div className="row">
+                                    <div className="col-5 col-lg-4">
+                                        <label className="h6"></label>
+                                    </div>
+                                    <div className="form-group col-5 col-lg-4">
+                                    <AvField type="text" name="otherSpecilization" value={this.state.otherSpecilization} onChange={this.handleChange} className="form-control" validate={{
+                                        required: { value: true, errorMessage: 'specilization is required' }
+                                    }} />
+                                    </div>
+                                </div>
+                                : ""
                             }
                             {
                                 role === "Physician" &&
