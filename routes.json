@@ -1,4 +1,12 @@
 {
-    "/users*": "/620/users$1",
-    "/patientProfile*": "/600/patientProfile$1"
+  "/users*": "/644/users$1",
+  "/patientProfile*": "/644/patientProfile$1",
+  "/patientDemographics*": "/644/patientDemographics$1",
+  "/patientAppointments*": "/644/patientAppointments$1",
+  "/medicationAndAllergies*": "/644/medicationAndAllergies$1",
+  "/patientImmunization*": "/644/patientImmunization$1",
+  "/patientVitals*": "/644/patientVitals$1",
+  "/patientBilling*": "/644/patientBilling$1",
+  "/physicianProfile*": "/644/physicianProfile$1",
+  "/adminProfile*": "/644/adminProfile$1"
 }

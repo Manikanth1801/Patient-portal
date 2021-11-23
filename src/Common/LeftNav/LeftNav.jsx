@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import "./LeftNav.css";
 import { withRouter } from "react-router-dom";
 import classNames from "classnames";
@@ -22,7 +21,7 @@ class LeftNav extends Component {
       { name: "Demographics", link: "/patient/demographics" },
       { name: "PatientVitals", link: "/patient/patientVitals" },
       { name: "Immunization", link: "/patient/immunization" },
-      { name: "Medcication Allergies", link: "/patient/medcication_Allergies" },
+      { name: "Medication Allergies", link: "/patient/medcication_Allergies" },
       { name: "Billing Details", link: "/patient/billingDetails" },
       { name: "Wallet", link: "/patient/wallet" },
     ];
@@ -34,7 +33,7 @@ class LeftNav extends Component {
       { name: "Billing Data", link: "/admin/billingData" },
     ];
     this.physicianMenu = [
-        { name: "Physician Dashboard", link: "/physician/physicianDashboard" },
+        { name: "Physician Dashboard", link: "/physician/dashboard" },
         { name: "Patient Details", link: "/physician/patientDetails" },
         { name: "Physician Profile", link: "/physician/physicianProfile" },
         
@@ -51,7 +50,7 @@ class LeftNav extends Component {
 
   render() {
     return (
-      <div className="sidebar">
+      <div className="sidebar" style={{float:'left'}}>
         <div className="sidebar_menu">
           <ul>
             {this.menu.map((menuItem) => {

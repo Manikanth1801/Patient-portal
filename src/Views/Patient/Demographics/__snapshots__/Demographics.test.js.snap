@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test Cases for Demographics component should render properly 1`] = `
+Array [
+  <div>
+    <AvForm
+      method="get"
+      model={Object {}}
+      onInvalidSubmit={[Function]}
+      onKeyDown={[Function]}
+      onSubmit={[Function]}
+      onValidSubmit={[Function]}
+      tag={[Function]}
+      validationEvent={
+        Array [
+          "onChange",
+          "onInput",
+        ]
+      }
+    >
+      <div
+        className="row"
+      >
+        <div
+          className="col-6"
+        >
+          <label
+            className="h6"
+          >
+            Medical History
+          </label>
+        </div>
+        <div
+          className="form-group col-8"
+        >
+          <AvField
+            id="medicalHistory"
+            name="medicalHistory"
+            onChange={[Function]}
+            type="textarea"
+            validate={
+              Object {
+                "required": Object {
+                  "errorMessage": "Medical History is required",
+                  "value": true,
+                },
+              }
+            }
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="col-6"
+        >
+          <label
+            className="h6"
+          >
+            Family Medical History
+          </label>
+        </div>
+        <div
+          className="form-group col-8"
+        >
+          <AvField
+            id="familyMedicalHistory"
+            name="familyMedicalHistory"
+            onChange={[Function]}
+            type="textarea"
+            validate={
+              Object {
+                "required": Object {
+                  "errorMessage": "Family Medical History is required",
+                  "value": true,
+                },
+              }
+            }
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="col-6"
+        >
+          <label
+            className="h6"
+          >
+            Surgeries
+          </label>
+        </div>
+        <div
+          className="form-group col-8"
+        >
+          <AvField
+            id="surgeries"
+            name="surgeries"
+            onChange={[Function]}
+            type="textarea"
+            validate={
+              Object {
+                "required": Object {
+                  "errorMessage": "Surgeries is required",
+                  "value": true,
+                },
+              }
+            }
+            value=""
+          />
+        </div>
+      </div>
+      <div
+        className="row"
+      >
+        <div
+          className="col-6"
+        >
+          <label
+            className="h6"
+          >
+            Insurance Provider
+          </label>
+        </div>
+        <div
+          className="form-group col-8"
+        >
+          <AvField
+            id="insuranceProvider"
+            name="insuranceProvider"
+            onChange={[Function]}
+            type="textarea"
+            validate={
+              Object {
+                "required": Object {
+                  "errorMessage": "Insurance Provider is required",
+                  "value": true,
+                },
+              }
+            }
+            value=""
+          />
+        </div>
+      </div>
+      <br />
+      <div
+        className="row"
+      >
+        <div
+          className="col-6"
+          id="submit"
+        >
+          <button
+            className="btn btn-outline-primary"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </AvForm>
+  </div>,
+]
+`;

@@ -1,1 +1,1 @@
-export { default as PhysicianProfile } from './PhysicianProfile';
+export { default as PhysicianProfile} from './PhysicianProfile'
