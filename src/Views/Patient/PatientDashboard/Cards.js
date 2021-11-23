@@ -15,34 +15,34 @@ export default class Cards extends React.Component{
                 <Row style={{padding:'10px', textAlign:"center",position:"relative"}}>
                     <Col >
                         <Card body style={{padding:'2px', minWidth:"150px"}}>
-                            <CardTitle tag="h4">
+                            <CardTitle tag="h5">
                             Appointments
                             </CardTitle>
-                            <CountUp style={{fontSize:"35px", color:"#008688", fontWeight:'bold'}} end ={18} duration={1.5}/>
+                            <CountUp style={{fontSize:"30px", color:"#008688", fontWeight:'bold'}} end ={18} duration={1.5}/>
                         </Card>
                         </Col>
                         <Col >
                         <Card body style={{padding:'2px', minWidth:"150px"}}>
-                            <CardTitle tag="h4">
+                            <CardTitle tag="h5">
                             Attended
                             </CardTitle>
-                            <CountUp style={{fontSize:"35px",color:"#008688", fontWeight:'bold'}} end ={11} duration={1.5}/>
+                            <CountUp style={{fontSize:"30px",color:"#008688", fontWeight:'bold'}} end ={11} duration={1.5}/>
                         </Card>
                         </Col>
                         <Col >
                         <Card body style={{padding:'2px', minWidth:"150px"}}>
-                            <CardTitle tag="h4">
+                            <CardTitle tag="h5">
                             Pending
                             </CardTitle >
-                            <CountUp style={{fontSize:"35px",color:"#008688", fontWeight:'bold'}} end ={5} duration={1.5}/>
+                            <CountUp style={{fontSize:"30px",color:"#008688", fontWeight:'bold'}} end ={5} duration={1.5}/>
                         </Card>
                         </Col>
                         <Col >
                         <Card body style={{padding:'2px', minWidth:"150px"}}>
-                            <CardTitle tag="h4">
+                            <CardTitle tag="h5">
                             Cancelled
                             </CardTitle>
-                            <CountUp style={{fontSize:"35px",color:"#008688", fontWeight:'bold'}} end ={2} duration={1.5}/>
+                            <CountUp style={{fontSize:"30px",color:"#008688", fontWeight:'bold'}} end ={2} duration={1.5}/>
                         </Card>
                     </Col>
                 </Row>

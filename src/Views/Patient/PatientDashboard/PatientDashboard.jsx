@@ -122,17 +122,15 @@ export default class PatientDashboard extends React.Component {
 		return (
 			<div>
 		<div >
-			<Cards/>
+			
 			<Card
-			 body
-			 inverse
 			 style={{
 				 backgroundColor: '#eef1f1',
 				 borderColor: '#333',
 				
-				//  margin:"auto",
+				// margin:"auto",
 			   }}>
-		
+		<Cards/>
 			<Card
 			body
 			inverse
