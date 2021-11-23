@@ -14,12 +14,13 @@ class Footer extends Component {
 
   render() {
     return (
-      <footer className="bg-secondary fixed-bottom">
+      <footer className="sticky-bottom">
         <div className="row container offset-md-1 ">
           <div className="col-sm-12 col-md-5 my-3 mx-2">
             <div className="img">
               <img
                 alt="Ct-Logo"
+                style={{width:'200px'}}
                 src="https://www.citiustech.com/hubfs/assets/Logos/CT%20logo_whiteFinal.svg"
                 className="img-responsive"
               />
