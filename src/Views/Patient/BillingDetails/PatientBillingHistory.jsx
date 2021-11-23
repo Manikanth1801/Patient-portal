@@ -42,7 +42,7 @@ export default class PatientBillingHistory extends React.Component {
     const grid =<Grid
     style={{
         // width:"65%",
-    maxHeight:"500px",
+    height:"500px",
     //   position: "relative",
     margin:"auto",
         fontSize:"16px"

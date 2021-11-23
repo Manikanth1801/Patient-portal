@@ -145,7 +145,7 @@ Download as PDF
 			backgroundColor: '#04c0c1',
       borderColor: '#333',
       margin:"auto",
-      padding:"10px",
+      padding:"20px",
       textAlign: 'center'  ,
       width:"auto",      
 			}}
