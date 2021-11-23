@@ -1,0 +1,408 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test cases for Profile component should render properly 1`] = `
+Array [
+  <div
+    className="wrapper"
+  >
+    <div
+      className="heading-title mb-4"
+    >
+      <span
+        className="text-primary"
+      >
+        Edit Profile
+      </span>
+      <img
+        className="ml-2"
+        onClick={[Function]}
+        src="pencil.svg"
+      />
+    </div>
+    <div
+      className="row mx-0"
+    >
+      <AvForm
+        method="get"
+        model={Object {}}
+        onInvalidSubmit={[Function]}
+        onKeyDown={[Function]}
+        onSubmit={[Function]}
+        onValidSubmit={[Function]}
+        tag={[Function]}
+        validationEvent={
+          Array [
+            "onChange",
+            "onInput",
+          ]
+        }
+      >
+        <div
+          className="row"
+        >
+          <div
+            className="col-4"
+          >
+            <label
+              className="h6"
+            >
+              First Name
+            </label>
+          </div>
+          <div
+            className="form-group col-8"
+          >
+            <AvField
+              className="form-control"
+              disabled={true}
+              name="firstname"
+              onChange={[Function]}
+              type="text"
+              validate={
+                Object {
+                  "pattern": Object {
+                    "errorMessage": "First Name is Invalid",
+                    "value": /\\^\\[A-Za-z\\\\/\\\\s\\\\\\.'-\\]\\+\\$/,
+                  },
+                  "required": Object {
+                    "errorMessage": "First Name is required",
+                    "value": true,
+                  },
+                }
+              }
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-4"
+          >
+            <label
+              className="h6"
+            >
+              Last Name
+            </label>
+          </div>
+          <div
+            className="form-group col-8"
+          >
+            <AvField
+              className="form-control"
+              disabled={true}
+              name="lastname"
+              onChange={[Function]}
+              type="text"
+              validate={
+                Object {
+                  "pattern": Object {
+                    "errorMessage": "Last Name is Invalid",
+                    "value": /\\^\\[A-Za-z\\\\/\\\\s\\\\\\.'-\\]\\+\\$/,
+                  },
+                  "required": Object {
+                    "errorMessage": "Last Name is required",
+                    "value": true,
+                  },
+                }
+              }
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-4"
+          >
+            <label
+              className="h6"
+            >
+              Education
+            </label>
+          </div>
+          <div
+            className="form-group col-8"
+          >
+            <AvField
+              className="form-control"
+              name="education"
+              onChange={[Function]}
+              required={true}
+              type="select"
+            >
+              <option
+                value=""
+              >
+                -- select --
+              </option>
+              <option
+                value="Graduate"
+              >
+                Graduate
+              </option>
+              <option
+                value="Graduate"
+              >
+                Post Graduate
+              </option>
+              <option
+                value="Others"
+              >
+                Others
+              </option>
+            </AvField>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-4"
+          >
+            <label
+              className="h6"
+            >
+              Gender
+            </label>
+          </div>
+          <div
+            className="form-group col-8"
+          >
+            <AvField
+              className="form-control"
+              name="gender"
+              onChange={[Function]}
+              required={true}
+              type="select"
+              value=""
+            >
+              <option
+                value=""
+              >
+                -- select --
+              </option>
+              <option
+                value="Male"
+              >
+                Male
+              </option>
+              <option
+                value="Female"
+              >
+                Female
+              </option>
+              <option
+                value="Others"
+              >
+                Others
+              </option>
+            </AvField>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-4"
+          >
+            <label
+              className="h6"
+            >
+              Ethnicity
+            </label>
+          </div>
+          <div
+            className="form-group col-8"
+          >
+            <AvField
+              className="form-control"
+              name="ethnicity"
+              onChange={[Function]}
+              required={true}
+              type="select"
+              value=""
+            >
+              <option
+                value=""
+              >
+                -- select --
+              </option>
+              <option
+                value="Indian"
+              >
+                Indian
+              </option>
+              <option
+                value="American"
+              >
+                American
+              </option>
+              <option
+                value="Others"
+              >
+                Others
+              </option>
+            </AvField>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-4"
+          >
+            <label
+              className="h6"
+            >
+              Employment
+            </label>
+          </div>
+          <div
+            className="form-group col-8"
+          >
+            <AvField
+              className="form-control"
+              name="employment"
+              onChange={[Function]}
+              required={true}
+              type="select"
+              value=""
+            >
+              <option
+                value=""
+              >
+                -- select --
+              </option>
+              <option
+                value="Employee"
+              >
+                Employee
+              </option>
+              <option
+                value="Worker"
+              >
+                Worker
+              </option>
+              <option
+                value="Self-Employed"
+              >
+                Self-Employed
+              </option>
+            </AvField>
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-4"
+          >
+            <label
+              className="h6"
+            >
+              D.O.B
+            </label>
+          </div>
+          <div
+            className="form-group col-8"
+          >
+            <AvField
+              className="form-control"
+              disabled={true}
+              name="dob"
+              onChange={[Function]}
+              required={true}
+              type="date"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-4"
+          >
+            <label
+              className="h6"
+            >
+              Address
+            </label>
+          </div>
+          <div
+            className="form-group col-8"
+          >
+            <AvField
+              className="form-control"
+              name="address"
+              onChange={[Function]}
+              type="textarea"
+              validate={
+                Object {
+                  "pattern": Object {
+                    "errorMessage": "address is Invalid",
+                    "value": /\\^\\[A-Za-z\\\\/\\\\s\\\\\\.'-\\]\\+\\$/,
+                  },
+                  "required": Object {
+                    "errorMessage": "address is required",
+                    "value": true,
+                  },
+                }
+              }
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="row"
+        >
+          <div
+            className="col-4"
+          >
+            <label
+              className="h6"
+            >
+              Mobile
+            </label>
+          </div>
+          <div
+            className="form-group col-8"
+          >
+            <AvField
+              className="form-control"
+              disabled={true}
+              maxLength={10}
+              minLength={10}
+              name="mobile"
+              onChange={[Function]}
+              type="text"
+              validate={
+                Object {
+                  "required": Object {
+                    "errorMessage": "Mobile Number is required",
+                    "value": true,
+                  },
+                }
+              }
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          col-4={true}
+        >
+          <button
+            className="btn btn-outline-primary"
+          >
+            Update
+          </button>
+        </div>
+        <div />
+      </AvForm>
+    </div>
+  </div>,
+]
+`;
