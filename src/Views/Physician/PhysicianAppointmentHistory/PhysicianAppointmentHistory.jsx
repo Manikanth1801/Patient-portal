@@ -38,15 +38,16 @@ export default class PhysicianAppointmentHistory extends React.Component {
   };
 
   render() {
+    
    
     const grid =<Grid
     style={{
         maxWidth:"1100px",
-        height:"500px",
+        height:"530px",
     //   position: "relative",
-	// margin:"0 auto",
-	margin:"auto",
-        fontSize:"16px"
+        margin:"auto",
+        fontSize:"16px",
+        maxHeight:"inherit",
     }}
 
     data={filterBy(AppointmentData, this.state.filter)}
@@ -69,13 +70,13 @@ Download as PDF
 
     <Column
       field="status"
-    width="120px"
+    width="140px"
       title="Status"
       headerCell={ProductNameHeader}
     />
     <Column
       field="dateOfAppointment"
-    width="130px"
+    width="150px"
     //   filter="date"
       title="Date"
       headerCell={ProductNameHeader}
@@ -83,7 +84,7 @@ Download as PDF
 
     <Column
       field="time"
-    width="110px"
+    width="130px"
       title="Time"
       headerCell={ProductNameHeader}
     />
@@ -110,51 +111,41 @@ Download as PDF
       headerCell={ProductNameHeader}
     />
     
-    {/* <Column
-      field="UnitPrice"
-    width="180px"
-      filter="numeric"
-      format="{0:c}"
-    />
-    <Column field="Discontinued" 
-    width="190px" 
-    filter="boolean" /> */}
 
   </Grid>
     
     return (<div>
-			<Card
-			 body
-			 inverse
-			 style={{
-				 backgroundColor: '#eef1f1',
-				 borderColor: '#333',
-				//  width:"80%",
-				 margin:"auto",
-			   }}>
+
 			<Card
 			body
 			inverse
 			style={{
 			backgroundColor: '#04c0c1',
-			borderColor: '#333',
-			padding:"5px",
-			textAlign: 'center'        
+      borderColor: '#333',
+      margin:"auto",
+      padding:"5px",
+      textAlign: 'center'  ,
+      width:"100%",
+        
 			}}
 			>
-			<CardTitle tag="h2" style={{ textAlign: 'center',}}>
+			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
 			My Appointment List
 			</CardTitle>
 			</Card>
 			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
-            {grid}
+        <div>
+        {grid}
             <GridPDFExport ref={gridPDFExport}>
               {grid}
             </GridPDFExport>
+        </div>
+
 			</Card>
-			</Card>
+			{/* </Card> */}
 
           </div>)
+  
   }
 
   pageChange = event => {

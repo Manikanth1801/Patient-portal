@@ -1,145 +1,180 @@
-import React, { Component } from "react";
-import {CanvasJSChart} from 'canvasjs-react-charts'
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-grid';
+import { GridPDFExport } from '@progress/kendo-react-pdf';
+import { AppointmentData } from './PatientAppointmentData';
+import { filterBy,orderBy } from '@progress/kendo-data-query';
+// import './AppointmentHistory.css'
+
 import {Card,CardTitle,CardText,CardColumns} from 'reactstrap'
-//INSTALL - npm install canvasjs
-// const dataPoints =[];
-
-const dataPoints =[{ x: 2015, y: 156 },
-	{ x: 2016, y: 150 },
-	{ x: 2017, y: 190 },
-	{ x: 2018, y: 110 },
-	{ x: 2019, y: 119 },
-	{ x: 2020, y: 154 },
-	{ x: 2021, y: 132 }]
+const gridPDFExport = React.createRef();
 
 
+class ProductNameHeader extends React.Component {
+    render() {
+      return (
+          <span
+            style={{
+              fontWeight:"bold",
+              fontSize:"16px",
+            }}
+          >
+            {this.props.title}
+          </span>
+      );
+    }
+  }
 
-export default class PatientVisitHistory extends React.Component {
-	constructor() {
-		super();
-		this.toggleDataSeries = this.toggleDataSeries.bind(this);
-	}
-	toggleDataSeries(e) {
-		if(typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-			e.dataSeries.visible = false;
-		}
-		else {
-			e.dataSeries.visible = true;
-		}
-		this.chart.render();
-	}
+export default class AdminPatientAppointmentHistory extends React.Component {
 
-    render() {	
-		const options = {
-            exportEnabled: true,
-			animationEnabled: true,
-			animationDuration:3000,
-			colorSet:"colorSet2",
-			theme: "light1",
-			height:550,
-			zoomEnabled: true,
-			dataPointMaxWidth: 70,
-			title: {
-
-			},
-			axisY: {
-				// prefix: "",
-				labelFontSize: 18,
-				labelTextAlign: "right",
-				title: "Patient Count",
-			},
-			axisX: {
-				labelFontSize: 18,
-				showInLegend: "true",
-				valueFormatString: "####",
-				title: "Year",
-			},
-			toolTip: {
-				shared: true
-			},
-			legend:{
-				cursor: "pointer",
-				itemclick: this.toggleDataSeries
-			},
-			data: [
-				{
-				type: "column",
-				color:"#6f42f5",
-				name: "Bar View",
-				showInLegend: "true",
-				xValueFormatString: "####",
-				// yValueFormatString: "####",
-				dataPoints: dataPoints,
-				xValueSize:30,
-			},
-			{
-			type: "line",
-			color:"#f54248",
-			name: "Line View",
-			showInLegend: "true",
-			xValueFormatString: "####",
-			// yValueFormatString: "####",
-			dataPoints: dataPoints,
-			xValueSize:30,
-		  }
-		]
-		}
-		return (
-		<div>
-			<CardColumns
-			 body
-			 inverse
-			 style={{
-				 backgroundColor: '#eef1f1',
-				 borderColor: '#333',
-				//  width:"80%",
-				 margin:"auto",
-			   }}>
-			<Card
-			body
-			inverse
-			style={{
-			backgroundColor: '#04c0c1',
-			borderColor: '#333',
-			textAlign: 'center'        
-			}}
-			>
-			<CardTitle tag="h1" style={{ textAlign: 'center'}}>
-			Patient Visit History
-			</CardTitle>
-			</Card>
-			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333',margin:"auto"}}>
-			<CanvasJSChart options = {options} 
-				 onRef={ref => this.chart = ref}
-			/>
-			</Card>
-			</CardColumns>
-			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
-		</div>
-		);
-	}
 	
-	componentDidMount(){
-		// const chart = this.chart;
-		// fetch('https://canvasjs.com/data/gallery/react/nifty-stock-price.json')
-		// //fetch('https://www.npoint.io/docs/cf515d172fe3acc6bafb')
-		// //fetch('https://www.npoint.io/docs/cf515d172fe3acc6bafb')
-		// .then(function(response) {
-		// 	return response.json();
-		// })
-		// .then(function(data) {
-		// 	for (var i = 0; i < data.length; i++) {
-		// 		dataPoints.push({
-		// 			x: new Date(data[i].x),
-		// 			y: data[i].y%100
-		// 		});
-		// 	}
-		// console.log(data)
-		// console.log(data.x)
-		// chart.render();
-		// });
 
+      
+	total = AppointmentData.length;
+	pageSize = AppointmentData.length;
+  //   pageSize = 5;
+	state = {
+	  data: AppointmentData.slice(0, this.pageSize),
+	  skip: 0,
+	  exporting: false
+	};
+  
+	render() {
+	  
+	 
+	  const grid =<Grid
+	  style={{
+		  maxWidth:"1100px",
+		  height:"530px",
+	  //   position: "relative",
+		  margin:"auto",
+		  fontSize:"16px",
+		  maxHeight:"inherit",
+	  }}
+  
+	  data={filterBy(AppointmentData, this.state.filter)}
+	  filterable={true}
+	  filter={this.state.filter}
+	  onFilterChange={(e) => {
+		this.setState({
+		  filter: e.filter,
+		});
+	  }}
+  
+	>
+  <GridToolbar>
+  <Card style={{position: "absolute", padding:"10px", fontSize:"15px",right:"10px"}} title="Export PDF" className="k-button k-primary" onClick={this.exportPDF} disabled={this.state.exporting}>
+  Download as PDF
+  </Card>
+  </GridToolbar>
+  
+	  {/* <Column field="ProductID" title="No" filterable={false} width="60px" headerCell={ProductNameHeader}/> */}
+  
+	  <Column field="patientId" 
+	  title="Patient Id" 
+	  width="160px"
+	  headerCell={ProductNameHeader}
+	  />
+	  <Column field="patientName" 
+	  title="Patient Name" 
+	  width="150px"
+	  headerCell={ProductNameHeader}
+	  />
 
+	<Column
+		field="specilization"
+	  width="150px"
+		title="Department"
+		headerCell={ProductNameHeader}
+	  />
+
+	  <Column
+		field="dateOfAppointment"
+	  width="150px"
+	  //   filter="date"
+		title="Date"
+		headerCell={ProductNameHeader}
+	  />
+  
+
+	  <Column
+		field="time"
+	  width="130px"
+		title="Time"
+		headerCell={ProductNameHeader}
+	  />
+	  <Column
+		field="status"
+	  width="140px"
+		title="Status"
+		headerCell={ProductNameHeader}
+	  />
+
+	  {/* <Column
+		field="notes"
+	  width="200px"
+		title="Prescriptions"
+		headerCell={ProductNameHeader}
+	  /> */}
+	  
+  
+	</Grid>
+	  
+	  return (<div>
+  
+			  <Card
+			  body
+			  inverse
+			  style={{
+			  backgroundColor: '#04c0c1',
+		borderColor: '#333',
+		margin:"auto",
+		padding:"5px",
+		textAlign: 'center'  ,
+		width:"auto",  
+	   
+			  }}
+			  >
+			  <CardTitle tag="h2" style={{ textAlign: 'center'}}>
+			  Patient Appointment List
+			  </CardTitle>
+			  </Card>
+			  <Card style={{height:"100%", backgroundColor: 'white',borderColor: '#333'}}>
+		  <div style={{	}}>
+		  {grid}
+			  <GridPDFExport ref={gridPDFExport}>
+				{grid}
+			  </GridPDFExport>
+		  </div>
+  
+			  </Card>
+			  {/* </Card> */}
+  
+			</div>)
+	
 	}
-
+  
+	pageChange = event => {
+	  this.setState(this.createState(event.page.skip, event.page.take));
+	};
+  
+	createState(skip, take) {
+	  return {
+		data: AppointmentData.slice(skip, skip + take),
+		skip: skip
+	  };
+	}
+  
+	exportPDF = () => {
+	  gridPDFExport.current.save(this.state.data, this.pdfExportDone);
+	  this.setState({
+		exporting: true
+	  });
+	};
+	pdfExportDone = () => {
+	  this.setState({
+		exporting: false
+	  });
+	};
+  
 }

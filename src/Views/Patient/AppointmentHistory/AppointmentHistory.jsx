@@ -118,26 +118,7 @@ Download as PDF
   </Grid>
     
     return (<div>
-			{/* <Card
-			 body
-			 inverse
-			 style={{
-				 backgroundColor: '#eef1f1',
-				 borderColor: '#333',
-				// width:"auto"
-        //  margin:"auto",
-        maxHeight: "inherit",
-        maxWidth: "inherit",
-			   }}> */}
-         		{/* <Card
-			 body
-			 inverse
-			 style={{
-				 backgroundColor: '#eef1f1',
-				 borderColor: '#333',
-				
-				//  margin:"auto",
-			   }}> */}
+
 			<Card
 			body
 			inverse
