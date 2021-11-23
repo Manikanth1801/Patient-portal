@@ -17,7 +17,7 @@
       "experience": "only for physician",
       "isLogged": false,
       "registrationDate": "currentDate",
-      "isApproved": "Need to approve or Phy and Admin, Patient Not required"
+      "isApproved": false
     },
     {
       "email": "aditya@gmail.com",

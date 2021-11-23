@@ -41,21 +41,21 @@ class ManageUsers extends Component {
                             <td>Software Engineer</td>
                             <td>@mdo</td>
                             <td>11/11/2021</td>
-                            <td>Y</td>
+                            <td>Activate</td>
                         </tr>
                         <tr>
                             <td>Mark</td>
                             <td>Software Engineer</td>
                             <td>@mdo</td>
                             <td>11/11/2021</td>
-                            <td>Y</td>
+                            <td>Activate</td>
                         </tr>
                         <tr>
                             <td>Mark</td>
                             <td>Software Engineer</td>
                             <td>@mdo</td>
                             <td>11/11/2021</td>
-                            <td>Y</td>
+                            <td>Activate</td>
                         </tr>
                     </tbody>
                 </Table>
