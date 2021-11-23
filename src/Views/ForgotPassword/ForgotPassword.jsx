@@ -1,21 +1,69 @@
-import React, { Component } from 'react';
+import React from 'react';
+import axios from 'axios';
+import { Link, Redirect } from 'react-router-dom';
+import { AvForm, AvField } from 'availity-reactstrap-validation';
+import logo from '../../Assets/Images/logo.png';
 
-class ForgotPassword extends Component {
+class ForgotPassword extends React.Component {
     constructor(props) {
-        super(props)
-
+        super(props);
         this.state = {
-            
+            password: '',
+            retypePassword: ''
         }
     }
+    
+    handleChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    };
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+    };
 
     render() {
         return (
-            <div>
-                <h1>This is patient Dashboard</h1>
+            <div style={{ backgroundColor: "#f3f2f1" }}>
+                <div className="py-3 d-flex justify-content-center bg-color">
+                    <img src={logo} alt="Logo" className="img-fluid my-3" />
+                </div>
+                <div className="container">
+                    <div className="text-center align-items-center login-box">
+                        <div className="col-12 col-md-8 col-lg-5 pt-0 px-0 offset-lg-4 border rounded" style={{ backgroundColor: "#ffffff" }}>
+                            <div className="col py-2 text-light rounded" style={{ backgroundColor: "#000000" }}>
+                                <span className="h2">RESET YOUR PASSWORD</span>
+                            </div>
+                            <AvForm className="text-left login-font mt-4 px-3" onSubmit={this.handleSubmit} ref={c => (this.myFormRef = c)}>
+                                <div>
+                                    <label>Create New Password</label>
+                                    <div className="form-group">
+                                        <AvField type="password" name="password" value={this.state.password} placeholder="password" onChange={this.handleChange} className="form-control" 
+                                            validate={{
+                                            required: { value: true, errorMessage: 'Password is required' }
+                                        }} />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Confirm Password</label>
+                                    <div className="form-group">
+                                        <AvField type="password" name="retypePassword" value={this.state.retypePassword} placeholder="Re Enter the password" onChange={this.handleChange} className="form-control" 
+                                            validate={{
+                                            required: { value: true, errorMessage: 'Password is required' }
+                                        }} />
+                                    </div>
+                                </div>
+                                <div className="text-center my-5">
+                                    <button className="btn btn-primary px-5 rounded-0">SAVE</button>
+                                </div>
+                            </AvForm>
+                        </div>
+                    </div>
+                </div>
+                <div className="py-5 d-flex justify-content-center bg-color" style={{ marginTop: "17%" }}></div>
             </div>
         )
     }
 }
-
-export default ForgotPassword
+export default ForgotPassword;
