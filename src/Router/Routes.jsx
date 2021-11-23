@@ -46,7 +46,6 @@ class Routes extends React.Component {
                     {/* Physician Routes */}
                     <Route path="/physician/patientDetails" render={() => <PatientDetails />} />
                     <Route path="/physician/dashboard" render={() => <PhysicianDashboard />} />
-                    <Route path="/physician/physicianProfile" render={() => <PhysicianProfile />} />
                     <Route path="/physician/physicianAppointmentHistory" render={() => <PhysicianAppointmentHistory />} />
                     <Route path="/physician/physicianProfile" render={() => <PhysicianProfile />} />
 
