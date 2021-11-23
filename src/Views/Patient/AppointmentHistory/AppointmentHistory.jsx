@@ -41,11 +41,12 @@ export default class AppointmentHistory extends React.Component {
    
     const grid =<Grid
     style={{
-        width:"90%",
+        // width:"1000px",
         height:"500px",
     //   position: "relative",
-    // margin:"0 auto",
-        fontSize:"16px"
+        margin:"10px",
+        fontSize:"16px",
+        maxHeight:"inherit",
     }}
 
     data={filterBy(AppointmentData, this.state.filter)}
@@ -68,13 +69,13 @@ Download as PDF
 
     <Column
       field="status"
-    width="150px"
+    width="130px"
       title="Status"
       headerCell={ProductNameHeader}
     />
     <Column
       field="dateOfAppointment"
-    width="180px"
+    width="160px"
     //   filter="date"
       title="Date"
       headerCell={ProductNameHeader}
@@ -82,18 +83,18 @@ Download as PDF
 
     <Column
       field="time"
-    width="130px"
+    width="110px"
       title="Time"
       headerCell={ProductNameHeader}
     />
     <Column field="physicianName" 
     title="Physician Name" 
-    width="200px"
+    width="180px"
     headerCell={ProductNameHeader}
     />
         <Column
       field="specilization"
-    width="200px"
+    width="180px"
       title="Specialization"
       headerCell={ProductNameHeader}
     />
@@ -117,22 +118,36 @@ Download as PDF
   </Grid>
     
     return (<div>
-			<CardColumns
+			{/* <Card
 			 body
 			 inverse
 			 style={{
 				 backgroundColor: '#eef1f1',
 				 borderColor: '#333',
-				//  width:"80%",
-				 margin:"auto",
-			   }}>
+				// width:"auto"
+        //  margin:"auto",
+        maxHeight: "inherit",
+        maxWidth: "inherit",
+			   }}> */}
+         		{/* <Card
+			 body
+			 inverse
+			 style={{
+				 backgroundColor: '#eef1f1',
+				 borderColor: '#333',
+				
+				//  margin:"auto",
+			   }}> */}
 			<Card
 			body
 			inverse
 			style={{
 			backgroundColor: '#04c0c1',
-			borderColor: '#333',
-			textAlign: 'center'        
+      borderColor: '#333',
+      margin:"auto",
+      padding:"10px",
+      textAlign: 'center'  ,
+      width:"auto",      
 			}}
 			>
 			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
@@ -145,7 +160,7 @@ Download as PDF
               {grid}
             </GridPDFExport>
 			</Card>
-			</CardColumns>
+			{/* </Card> */}
 
           </div>)
   }

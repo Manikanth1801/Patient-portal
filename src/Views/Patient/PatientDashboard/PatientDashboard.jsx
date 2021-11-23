@@ -119,37 +119,43 @@ export default class PatientDashboard extends React.Component {
         ]
 		}
 		return (
-		<div>
-			<CardColumns
+			<div>
+		<div style={{ width:"inherit",verticalAlign: "top"}}>
+			<Cards/>
+			<Card
 			 body
 			 inverse
 			 style={{
 				 backgroundColor: '#eef1f1',
 				 borderColor: '#333',
-				//  width:"80%",
-				 margin:"auto",
+				
+				//  margin:"auto",
 			   }}>
-		<Cards/>
+		
 			<Card
 			body
 			inverse
 			style={{
 			backgroundColor: '#04c0c1',
 			borderColor: '#333',
-			textAlign: 'center'        
+			textAlign: 'center' ,
+			padding:"10px",       
 			}}
 			>
 			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
 			My Appointment History
 			</CardTitle>
 			</Card>
-			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333',margin:"auto"}}>
+			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333',
+			
+			}}>
 			<CanvasJSChart options = {options} 
 				 onRef={ref => this.chart = ref}
 			/>
 			</Card>
-			</CardColumns>
+			</Card>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+		</div>
 		</div>
 		);
 	}
