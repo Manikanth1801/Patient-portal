@@ -4,6 +4,7 @@ import axios from 'axios';
 import logo from '../../Assets/Images/logo.png';
 import './Register.css';
 import { Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Register extends React.Component {
     constructor(props) {

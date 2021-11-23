@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import firebase from '../../Firebase/firebase';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { getAuth, RecaptchaVerifier } from "firebase/auth";
 import logo from '../../Assets/Images/logo.png';
 import otpImage from "../../Assets/Images/otp.jpg"
