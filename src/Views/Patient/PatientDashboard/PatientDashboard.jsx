@@ -37,9 +37,10 @@ export default class PatientDashboard extends React.Component {
 			animationDuration:3000,
 			colorSet:"colorSet2",
 			theme: "light1",
-			height:600,
+			// height:600,
+			// width:1800,
 			zoomEnabled: true,
-			dataPointMaxWidth: 70,
+			dataPointMaxWidth: 80,
 			title:{
 				//text: "Patient Appoinment History",
 				fontSize: 18,
@@ -120,7 +121,7 @@ export default class PatientDashboard extends React.Component {
 		}
 		return (
 			<div>
-		<div style={{ width:"inherit",verticalAlign: "top"}}>
+		<div >
 			<Cards/>
 			<Card
 			 body

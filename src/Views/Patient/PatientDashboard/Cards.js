@@ -12,9 +12,9 @@ export default class Cards extends React.Component{
 
         return(
                 <div>
-                <Row style={{padding:'15px', textAlign:"center",position:"relative"}}>
+                <Row style={{padding:'10px', textAlign:"center",position:"relative"}}>
                     <Col >
-                        <Card body style={{padding:'5px', minWidth:"150px"}}>
+                        <Card body style={{padding:'2px', minWidth:"150px"}}>
                             <CardTitle tag="h4">
                             Appointments
                             </CardTitle>
@@ -22,7 +22,7 @@ export default class Cards extends React.Component{
                         </Card>
                         </Col>
                         <Col >
-                        <Card body style={{padding:'5px', minWidth:"150px"}}>
+                        <Card body style={{padding:'2px', minWidth:"150px"}}>
                             <CardTitle tag="h4">
                             Attended
                             </CardTitle>
@@ -30,7 +30,7 @@ export default class Cards extends React.Component{
                         </Card>
                         </Col>
                         <Col >
-                        <Card body style={{padding:'5px', minWidth:"150px"}}>
+                        <Card body style={{padding:'2px', minWidth:"150px"}}>
                             <CardTitle tag="h4">
                             Pending
                             </CardTitle >
@@ -38,7 +38,7 @@ export default class Cards extends React.Component{
                         </Card>
                         </Col>
                         <Col >
-                        <Card body style={{padding:'5px', minWidth:"150px"}}>
+                        <Card body style={{padding:'2px', minWidth:"150px"}}>
                             <CardTitle tag="h4">
                             Cancelled
                             </CardTitle>
