@@ -33,7 +33,7 @@
 }
 
 .sidebar_menu a:hover{
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 .leftNavIcon{

@@ -17,6 +17,7 @@ import {
   Dropdown,
 } from "reactstrap";
 import { withRouter } from "react-router";
+import CtLogo from "../../Assets/Images/CtLogo";
 
 class Header extends React.Component {
   constructor(props) {
@@ -69,16 +70,17 @@ class Header extends React.Component {
             <div className="d-flex">
              <div className="header-drawer">
               <FontAwesomeIcon icon={faBars} onClick={(ev)=>this.expandSideBar(ev)} />
+              <CtLogo />
               </div>
-              <img src="/CTLogo.jpg" height="34px"></img>
-              <h2 className="pl-2" style={{color:"white"}}>
+              {/* <img src="/CTLogo.jpg" height="34px"></img> */}
+              {/* <h2 className="pl-2" style={{color:"white"}}>
                 WelCome to <span style={{textTransform:'capitalize'}}>{this.module}</span>
-              </h2>
+              </h2> */}
             </div>
           </NavbarBrand>
 
           <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
+          <Collapse  isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem className="userBell">
                 <FontAwesomeIcon icon={faBell}></FontAwesomeIcon>

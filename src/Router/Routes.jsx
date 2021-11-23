@@ -7,6 +7,9 @@ import { PatientDetails, PhysicianDashboard, PhysicianProfile, PhysicianAppointm
 import Header from '../Common/Header/Header';
 import LeftNav from '../Common/LeftNav/LeftNav';
 import Footer from '../Common/Footer/Footer';
+import MasterData from '../Views/Admin/MasterData/MasterData';
+import JoinAppointment from '../Views/Physician/JoinAppointment/JoinAppointment';
+import Prescription from '../Views/Physician/Prescription/Prescription';
 
 class Routes extends React.Component {    
     render() {   
@@ -32,7 +35,7 @@ class Routes extends React.Component {
                     <Route path="/patient/billingDetails" render={() => <BillingDetails />} />
                     {/* <Route path="/patient/billingDetails" render={() => <BillingDetails />} /> */}
                     <Route path="/patient/patientInfo" render={() => <PatientInfo/>} />
-                    <Route path="/patient/wallet" render={() => <Wallet />} />
+                    
                     {/* Admin Routes */}
                     <Route path="/admin/dashboard" render={() => <AdminDashboard />} />
                     <Route path="/admin/patientRecords" render={() => <ManagePatientRecords />} />
@@ -40,12 +43,16 @@ class Routes extends React.Component {
                     <Route path="/admin/manageUsers" render={() => <ManageUsers />} />
                     <Route path="/admin/billingData" render={() => <Billing />} />
                     <Route path="/admin/patientVisitHistory" render={() => <PatientVisitHistory />} />
+                    <Route path="/admin/masterData" render={() => <MasterData/>} />
                     <Route path="/admin/adminProfile" render={() => <AdminProfile />} />
 
                     {/* Physician Routes */}
+                    <Route path="/physician/profile" render={() => <PhysicianProfile />} />
                     <Route path="/physician/patientDetails" render={() => <PatientDetails />} />
                     <Route path="/physician/dashboard" render={() => <PhysicianDashboard />} />
-                    <Route path="/physician/physicianAppointmentHistory" render={() => <PhysicianAppointmentHistory />} />
+                    <Route path="/physician/joinAppointment" render={() => <JoinAppointment />} />
+                    <Route path="/physician/appointmentHistory" render={() => <PhysicianAppointmentHistory />} />
+                    <Route path="/physician/Prescription" render={() => <Prescription />} />
                     
                     </>
                     } 
