@@ -103,7 +103,7 @@ const paymentRequest= {
      body
 
      style={{
-      backgroundColor: '#ffffff',
+        backgroundColor: '#eef1f1',
       borderColor: 'black',
       }}
        >   
@@ -136,7 +136,7 @@ const paymentRequest= {
     <div >
     <FormGroup style={{marginTop:"15px", textAlign:"center"}} >
 
-    <Label style={{fontSize:"22px"}}>Bill Type :</Label>
+    <Label style={{fontSize:"20px"}}>Bill Type :</Label>
     <DropDownList style={{fontSize:"18px", width:"100%"}} 
     data={options} defaultValue="Others" 
     value={type}
@@ -147,7 +147,7 @@ const paymentRequest= {
     <Col 
     style={{margin:"auto"}}
     >
-    <Label style={{fontSize:"22px",marginTop:"20px"}}>Bill Amount (in <b>&#8377;</b>):</Label>
+    <Label style={{fontSize:"20px",marginTop:"20px"}}>Bill Amount (in <b>&#8377;</b>):</Label>
     <Input
     id="walletAmount"
     name="amount"
