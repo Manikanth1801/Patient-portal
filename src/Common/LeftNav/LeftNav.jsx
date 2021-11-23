@@ -1,21 +1,11 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import "./LeftNav.css";
 import { withRouter } from "react-router-dom";
 import classNames from "classnames";
-//new
-import Drawer from "@mui/material/Drawer";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 class LeftNav extends Component {
   constructor(props) {
@@ -65,76 +55,31 @@ class LeftNav extends Component {
 
   render() {
     return (
-      // <div className="sidebar" style={{float:'left'}}>
-      //   <div className="sidebar_menu">
-      //     <ul>
-      //       {this.menu.map((menuItem) => {
-      //         return (
-      //           <li
-      //             className={classNames(
-      //               "menuItem",
-      //               this.props.location.pathname.includes(menuItem.link) &&
-      //                 "active"
-      //             )}
-      //             key={menuItem.link}
-      //           >
-      //             <Link to={menuItem.link}>{menuItem.name}</Link>
-      //           </li>
-      //         );
-      //       })}
-      //     </ul>
-      //   </div>
-      // </div>
-      <Drawer
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          "& .MuiDrawer-paper": {
-            width: drawerWidth,
-            boxSizing: "border-box",
-          },
-        }}
-        variant="persistent"
-        anchor="left"
-        open={open}
-      >
-        <DrawerHeader>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === "ltr" ? (
-              <ChevronLeftIcon />
-            ) : (
-              <ChevronRightIcon />
-            )}
-          </IconButton>
-        </DrawerHeader>
-        <List>
-          {this.menus.map(({ menu, link }, index) => (
-            <Link to={link} key={menu}>
-              <ListItem button>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={menu} />
-              </ListItem>
-            </Link>
-          ))}
-        </List>
-      </Drawer>
-    );
+      <div className="sidebar" style={{float:'left'}}>
+        <div className="sidebar_menu">
+          <ul>
+            {this.menu.map((menuItem) => {
+              return (
+                <li
+                  className={classNames(
+                    "menuItem",
+                    this.props.location.pathname.includes(menuItem.link) &&
+                      "active"
+                  )}
+                  key={menuItem.link}
+                >
+                  <Link to={menuItem.link}><span className="leftNavIcon"><FontAwesomeIcon title={menuItem.name} icon={faUser}/></span>{menuItem.name}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
+    )
   }
  
 }
 
 export default withRouter(LeftNav);
 
-import { styled } from "@mui/material/styles";
 
-
-export const DrawerHeader = styled("div")(({ theme }) => ({
-  display: "flex",
-  alignItems: "center",
-  padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
-  ...theme.mixins.toolbar,
-  justifyContent: "flex-end",
-}));
