@@ -54,7 +54,7 @@ const LayoutComponent = () => {
       </div>
       {showHeader && (
         <div id="footer">
-          <Footer />
+          <Footer/>
         </div>
       )}
     </div>

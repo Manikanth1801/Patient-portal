@@ -156,6 +156,7 @@ class LeftNav extends Component {
 
   render() {
     return (
+      <>
       <div className="sidebar" style={{ float: "left" }}>
         <div className="sidebar_menu">
           <ul>
@@ -179,6 +180,9 @@ class LeftNav extends Component {
           </ul>
         </div>
       </div>
+      
+      </>
+      
     );
   }
 }
