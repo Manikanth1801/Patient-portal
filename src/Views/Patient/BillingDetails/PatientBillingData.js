@@ -70,5 +70,27 @@ export const BillingData= [
     "billingAmount": "600",
     "bllingStatus": false,
     "transactionId": "Tid 03"
+  },
+  {
+    "id":1,
+    "userId": 3,
+    "uuid": "",
+    "userName":"Siddharth",
+    "billingType":"CT scan",
+    "billingDate":"17-08-2021",
+    "billingAmount": "600",
+    "bllingStatus": false,
+    "transactionId": "Tid 03"
+  },
+  {
+    "id":1,
+    "userId": 3,
+    "uuid": "",
+    "userName":"Siddharth",
+    "billingType":"CT scan",
+    "billingDate":"17-08-2021",
+    "billingAmount": "600",
+    "bllingStatus": false,
+    "transactionId": "Tid 03"
   }
 ]

@@ -1,7 +1,7 @@
 import React,{useState} from "react";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import GooglePayButton from "@google-pay/button-react";
-import ReactScrollbar from 'react-scrollbar-js';
+// import ReactScrollbar from 'react-scrollbar-js';
 import {Form,FormGroup,Label,Button,Input,FormText} from 'reactstrap';
 import {Modal,ModalHeader,ModalBody,ModalFooter} from 'reactstrap';
 import {Card,CardTitle,CardText,CardColumns} from 'reactstrap'
@@ -15,8 +15,10 @@ export default function Paybill (){
 
   const options = [
     "CT Scan",
-    "X-Ray",
+    "MRI Scan",
+    "Vital Check",
     "Vaccination",
+    "X-Ray",
     "Others",
   ];
 
@@ -71,8 +73,6 @@ const paymentRequest= {
 
     }
     return(
-
-        <ReactScrollbar style={myScrollbar}>
               <div>
        <Card
        body
@@ -112,98 +112,104 @@ const paymentRequest= {
  <Card style={{
       backgroundColor: '#ffffff',
       borderColor: 'black',
+      margin:"auto",
     //   minWidth:'45%',
       // padding:'5px'
-    
+      maxWidth:"650px",
+     color:"black",
       }}>
     <Card
     body
     inverse
     style={{
-        backgroundColor: '#04c0c1',
+        backgroundColor: '#0a5669',
         textAlign: 'center',
-        // width:'100%',
-        // margin:'-10px',    
+        
+        // margin:'-10px',
+        padding:"5px"    
       }}
   >
     <CardTitle tag="h4" style={{ textAlign: 'center'}}>
     Pay Here
     </CardTitle>
     </Card >
-        <FormGroup style={{marginTop:"30px"}} >
-          
-            <Label style={{fontSize:"22px"}}>Bill Type :</Label>
-            <DropDownList style={{fontSize:"18px", width:"100%"}} 
-            data={options} defaultValue="Others" 
-            value={type}
-            onChange={e=> setType(e.target.value)}
-            />
+    <div >
+    <FormGroup style={{marginTop:"15px", textAlign:"center"}} >
+
+    <Label style={{fontSize:"22px"}}>Bill Type :</Label>
+    <DropDownList style={{fontSize:"18px", width:"100%"}} 
+    data={options} defaultValue="Others" 
+    value={type}
+    onChange={e=> setType(e.target.value)}
+    />
+
+
+    <Col 
+    style={{margin:"auto"}}
+    >
+    <Label style={{fontSize:"22px",marginTop:"20px"}}>Bill Amount (in <b>&#8377;</b>):</Label>
+    <Input
+    id="walletAmount"
+    name="amount"
+    value={amount}
+    placeholder="Enter your Amount"
+    type="number"
+    min="1"
+    onChange={
+        e => setAmount(e.target.value)
+    }
+    style={{fontSize:"18px"}}
+
+    />
+    </Col>
+    </FormGroup>
+ 
+    <FormGroup style={{color:"black", textAlign: 'center',}}>
+    <h6 >Please Click below button to pay</h6>
+
+    <Col
+    sm={{
+    offset: 0
+    }}
+    >
+        <GooglePayButton
+        environment="TEST"
+        buttonSizeMode="fill"
+        paymentRequest ={paymentRequest}
+        buttonType="pay"
+        // style={{width: "10%", height: 40}}
+
+        onLoadPaymentData={paymentData =>{
+
+        }}
+        onPaymentAuthorized={
+            
+        paymentData => {
+            console.log("Transaction Successful")
+            console.log(`Rupees ${amount} is added to wallet `)
+
+            console.log(paymentData.paymentMethodData)
+            console.log(paymentData)
+            confirmPayment()
+            
+
+        }
+        }
         
-        
-                    <Col 
-                     style={{margin:"auto"}}
-                    >
-                      <Label style={{fontSize:"22px",marginTop:"20px"}}>Bill Amount (in <b>&#8377;</b>):</Label>
-                      <Input
-                        id="walletAmount"
-                        name="amount"
-                        value={amount}
-                        placeholder="Enter your Amount"
-                        type="number"
-                        min="1"
-                        onChange={
-                          e => setAmount(e.target.value)
-                        }
-                        style={{fontSize:"18px"}}
-                     
-                      />
-                    </Col>
-                  </FormGroup>
-                  <h6>Please Click below button to pay</h6>
-                
-                  <FormGroup>
-                    <Col
-                      sm={{
-                        offset: 0
-                      }}
-                    >
-                         <GooglePayButton
-                          environment="TEST"
-                          buttonSizeMode="fill"
-                          paymentRequest ={paymentRequest}
-                          buttonType="pay"
-                          // style={{width: "10%", height: 40}}
-                
-                          onLoadPaymentData={paymentData =>{
-
-                          }}
-                          onPaymentAuthorized={
-                              
-                            paymentData => {
-                              console.log("Transaction Successful")
-                              console.log(`Rupees ${amount} is added to wallet `)
-
-                              console.log(paymentData.paymentMethodData)
-                              console.log(paymentData)
-                              confirmPayment()
-                             
-
-                            }
-                          }
-                          
-                      />
-                    </Col>
-                  </FormGroup>
+    />
+    </Col>
+    </FormGroup>
+    </div>
+         
           </Card>
-          <div id ="success" style={{fontSize:"22px",color:"#72e625",shadowColor:"black"}}></div>
+          <div id ="success" style={{fontSize:"21px", textAlign:"center",color:"#72e625",shadowColor:"black"}}></div>
      </Card>
     
      </Card>
      <PatientBillingHistory/>
      
         </div>
-      
-        </ReactScrollbar>
+    
     )
   
   }

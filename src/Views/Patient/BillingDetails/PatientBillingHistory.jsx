@@ -41,10 +41,10 @@ export default class PatientBillingHistory extends React.Component {
    
     const grid =<Grid
     style={{
-        width:"65%",
-        height:"500px",
+        // width:"65%",
+    maxHeight:"500px",
     //   position: "relative",
-    // margin:"0 auto",
+    margin:"auto",
         fontSize:"16px"
     }}
 
@@ -101,7 +101,7 @@ Download as PDF
   </Grid>
     
     return (<div>
-			<CardColumns
+			<Card
 			 body
 			 inverse
 			 style={{
@@ -115,7 +115,8 @@ Download as PDF
 			inverse
 			style={{
 			backgroundColor: '#04c0c1',
-			borderColor: '#333',
+      borderColor: '#333',
+      padding:"5px",
 			textAlign: 'center'        
 			}}
 			>
@@ -129,7 +130,7 @@ Download as PDF
               {grid}
             </GridPDFExport>
 			</Card>
-			</CardColumns>
+			</Card>
 
           </div>)
   }

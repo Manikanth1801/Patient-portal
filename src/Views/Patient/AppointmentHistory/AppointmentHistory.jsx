@@ -41,10 +41,10 @@ export default class AppointmentHistory extends React.Component {
    
     const grid =<Grid
     style={{
-        // width:"1000px",
+        maxWidth:"1100px",
         height:"500px",
     //   position: "relative",
-        margin:"10px",
+        margin:"auto",
         fontSize:"16px",
         maxHeight:"inherit",
     }}
@@ -155,10 +155,13 @@ Download as PDF
 			</CardTitle>
 			</Card>
 			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
-            {grid}
+        <div>
+        {grid}
             <GridPDFExport ref={gridPDFExport}>
               {grid}
             </GridPDFExport>
+        </div>
+
 			</Card>
 			{/* </Card> */}
 
