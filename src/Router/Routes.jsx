@@ -1,16 +1,15 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { Login, Register, ErrorPage, ForgotPassword, UserVerification } from '../Views';
-import { AppointmentHistory, PatientDashboard, Demographics, Immunization, Medcication_Allergies, PatientVitals, Profile, ScheduleAppointment, BillingDetails, Wallet}  from '../Views/Patient/';
-import { Billing, AdminDashboard, ManagePatientRecords, ManagePhysicianRecords, ManageUsers, PatientVisitHistory } from '../Views/Admin';
+import { AppointmentHistory, PatientDashboard, Demographics, Immunization, Medcication_Allergies, PatientVitals, Profile, ScheduleAppointment, BillingDetails, Wallet, PatientInfo}  from '../Views/Patient/';
+import { Billing, AdminDashboard, ManagePatientRecords, ManagePhysicianRecords, ManageUsers, PatientVisitHistory, AdminProfile } from '../Views/Admin';
 import { PatientDetails, PhysicianDashboard, PhysicianProfile, PhysicianAppointmentHistory } from '../Views/Physician';
-import { PatientInfo } from '../Views/Patient/PatientInfo';
 import Header from '../Common/Header/Header';
 import LeftNav from '../Common/LeftNav/LeftNav';
 import Footer from '../Common/Footer/Footer';
 
-class Routes extends React.Component {
-    render() {
+class Routes extends React.Component {    
+    render() {   
         const token = localStorage.getItem("accessToken");
         return (
             <div>
@@ -21,7 +20,7 @@ class Routes extends React.Component {
                     <Route path="/userVerification" render={() => <UserVerification />} />
                     <Route path="/changePassword" render={() => <ForgotPassword />} />
                     {/* patient Routes */}
-                    {token ?
+                    {token && (token !== undefined && token !== null && token !== "") &&
                     <>
                     
                     <Route path="/patient/dashboard" render={() => <PatientDashboard />} />
@@ -41,17 +40,17 @@ class Routes extends React.Component {
                     <Route path="/admin/manageUsers" render={() => <ManageUsers />} />
                     <Route path="/admin/billingData" render={() => <Billing />} />
                     <Route path="/admin/patientVisitHistory" render={() => <PatientVisitHistory />} />
+                    <Route path="/admin/adminProfile" render={() => <AdminProfile />} />
+
                     {/* Physician Routes */}
                     <Route path="/physician/patientDetails" render={() => <PatientDetails />} />
                     <Route path="/physician/dashboard" render={() => <PhysicianDashboard />} />
-                    <Route path="/physician/physicianProfile" render={() => <PhysicianProfile />} />
                     <Route path="/physician/physicianAppointmentHistory" render={() => <PhysicianAppointmentHistory />} />
                     
                     </>
-                    : 
-                    <Route path="/UnauthorizedAccess" render={() => <ErrorPage/>} />
-                    }
+                    } 
                     {/* Other Routes */}
+                    <Route path="/UnauthorizedAccess" render={() => <ErrorPage/>} />
                     <Route path="/page_expired" render={() => <ErrorPage/>} />
                     <Route path="*" render={() => <ErrorPage />} status={404} />
                 </Switch>

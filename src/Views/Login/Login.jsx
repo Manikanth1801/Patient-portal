@@ -4,6 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import { AvForm, AvField } from 'availity-reactstrap-validation';
 import logo from '../../Assets/Images/logo.png';
 import './Login.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class Login extends React.Component {
     constructor(props) {
