@@ -7,5 +7,5 @@ export * from './PatientVitals';
 export * from './Profile';
 export * from './ScheduleAppointment';
 export * from './BillingDetails';
+export * from './PatientInfo'
 export * from './Wallet';
-

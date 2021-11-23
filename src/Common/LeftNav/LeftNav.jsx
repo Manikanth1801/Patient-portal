@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import "./LeftNav.css";
 import { withRouter } from "react-router-dom";
 import classNames from "classnames";

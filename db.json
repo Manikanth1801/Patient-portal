@@ -17,7 +17,46 @@
       "experience": "only for physician",
       "isLogged": false,
       "registrationDate": "currentDate",
-      "isApproved": "Need to approve or Phy and Admin, Patient Not required"
+      "isApproved": "Need to approve or Phy and Admin, Patient Not required",
+      "isActive": false
+    },
+    {
+      "email": "aditya@gmail.com",
+      "password": "$2a$10$lA/0w0R2i78cJxcVTXNpAuSofx.Rxs1ztQrUxlzcY5XaFKi7vX0lq",
+      "uuid": "",
+      "firstname": "Nammala",
+      "lastname": "Aditya",
+      "gender": "Male",
+      "retypePassword": "aditya123",
+      "dob": "1995-01-22",
+      "role": "Patient",
+      "isRegistered": false,
+      "mobile": "9638527410",
+      "specialization": null,
+      "experience": null,
+      "isLogged": false,
+      "registrationDate": "2021-11-22T04:49:05.226Z",
+      "isApproved": false,
+      "id": 3
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$wXHiHApUqySg5vDJs5SvmuyaCO29qwmIP8l4tmA61uvS4D/.LjFva",
+      "uuid": "",
+      "firstname": "Test",
+      "lastname": "Sample",
+      "gender": "Male",
+      "retypePassword": "test123",
+      "dob": "1996-01-12",
+      "role": "Physician",
+      "isRegistered": false,
+      "mobile": "7845562310",
+      "specialization": "Cardiology",
+      "experience": "10",
+      "isLogged": false,
+      "registrationDate": "2021-11-22T09:52:10.630Z",
+      "isApproved": false,
+      "id": 4
     }
   ],
   "patientProfile": [
@@ -125,6 +164,50 @@
       "lastname": "Chatanya",
       "gender": "male",
       "mobile": 7845122356
+    }
+  ],
+  "lookups": [
+    {
+      "specialization": [
+        {"id": 1,"name":"Anatomical Pathology"},
+        {"id": 2,"name":"Anesthesiology"},
+        {"id": 3,"name": "Cardiology"},
+        {"id": 4,"name": "Cardiovascular/Thoracic Surgery"},
+        {"id": 5,"name": "Clinical Immunology/Allergy"},
+        {"id": 6,"name": "Critical Care Medicine"},
+        {"id": 7,"name": "Dermatology"},
+        {"id": 8,"name": "Diagnostic Radiology"},
+        {"id": 9,"name": "Emergency Medicine"},
+        {"id": 10,"name": "Endocrinology and Metabolism"},
+        {"id": 11,"name": "Gastroenterology"},
+        {"id": 12,"name": "General Internal Medicine"},
+        {"id": 13,"name": "General/Clinical Pathology"},
+        {"id": 14,"name": "General Surgery"},
+        {"id": 15,"name": "Geriatric Medicine"},
+        {"id": 16,"name": "Hematology"},
+        {"id": 17,"name": "Medical Biochemistry"},
+        {"id": 18,"name": "Medical Genetics"},
+        {"id": 19,"name": "Medical Microbiology and Infectious Diseases"},
+        {"id": 20,"name": "Medical Oncology"},
+        {"id": 21,"name": "Nephrology"},
+        {"id": 22,"name": "Neurology"},
+        {"id": 23,"name": "Neurosurgery"},
+        {"id": 24,"name": "Nuclear Medicine"},
+        {"id": 25,"name": "Obstetrics/Gynecology"},
+        {"id": 26,"name": "Occupational Medicine"},
+        {"id": 27,"name": "Ophthalmology"},
+        {"id": 28,"name": "Orthopedic Surgery"},
+        {"id": 29,"name": "Otolaryngology"},
+        {"id": 30,"name": "Pediatrics"},
+        {"id": 31,"name": "Physical Medicine and Rehabilitation (PM & R)"},
+        {"id": 32,"name": "Plastic Surgery"},
+        {"id": 33,"name": "Psychiatry"},
+        {"id": 34,"name": "Rheumatology"},
+        {"id": 35,"name": "Respirology"},
+        {"id": 36,"name": "Radiation Oncology"},
+        {"id": 37,"name": "Public Health and Preventive Medicine (PhPm)"},
+        {"id": 38,"name": "Others"}
+      ]
     }
   ]
 }
