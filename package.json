@@ -3,13 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-    "@mui/styled-engine-sc": "^5.1.0",
->>>>>>> origin/master
-=======
->>>>>>> b7d8306c8ae9e2afed70033bbcb576e742cf5658
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
