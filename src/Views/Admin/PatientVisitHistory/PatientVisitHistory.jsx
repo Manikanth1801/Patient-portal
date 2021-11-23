@@ -80,6 +80,17 @@ export default class AdminPatientAppointmentHistory extends React.Component {
 	  width="150px"
 	  headerCell={ProductNameHeader}
 	  />
+	    
+		<Column field="physicianId" 
+	  title="Physician Id" 
+	  width="160px"
+	  headerCell={ProductNameHeader}
+	  />
+	  <Column field="physicianName" 
+	  title="Physician Name" 
+	  width="150px"
+	  headerCell={ProductNameHeader}
+	  />
 
 	<Column
 		field="specilization"
@@ -120,7 +131,7 @@ export default class AdminPatientAppointmentHistory extends React.Component {
   
 	</Grid>
 	  
-	  return (<div>
+	  return (<div >
   
 			  <Card
 			  body
@@ -131,8 +142,7 @@ export default class AdminPatientAppointmentHistory extends React.Component {
 		margin:"auto",
 		padding:"5px",
 		textAlign: 'center'  ,
-		width:"auto",  
-	   
+		  
 			  }}
 			  >
 			  <CardTitle tag="h2" style={{ textAlign: 'center'}}>
