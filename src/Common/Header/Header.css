@@ -1,6 +1,7 @@
 .header{
   background: #008688;
   height: 60px;
+  
 }
 .userMenu {
   background: #008688;
@@ -35,6 +36,20 @@
   padding-right: 16px;
   cursor: pointer;
 }
+.header.navbar.navbar-expand-md .container-fluid{
+  padding-left: 0;
+  margin-left: -18px;
+}
+.header.navbar .navbar-nav{
+  display: block;
+}
+.header.navbar ul li.nav-item {
+  display: inline-block;
+}
+ul.ml-auto.navbar-nav li.userBell {
+  position: relative;
+  top: 4px;
+}
 @media screen and (max-width: 767px) {
   .userBell {
     margin: unset;
@@ -52,6 +67,15 @@
     font-size: 23px;
     line-height: 36px;
   }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+  
+  .navbar-toggler {
+    border: 1px solid rgba(255, 255, 255);
+  }
 }
-
-
+.ctLogo{
+  border: 100px solid red !important;
+}

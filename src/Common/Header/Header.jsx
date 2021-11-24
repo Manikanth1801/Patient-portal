@@ -1,4 +1,4 @@
-import { faBars, faBell, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBell, faUserCircle, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Header.css";
@@ -17,6 +17,9 @@ import {
   Dropdown,
 } from "reactstrap";
 import { withRouter } from "react-router";
+import CtLogo from "../../Assets/Images/CtLogo";
+import IconButton from '@mui/material/IconButton';
+
 
 class Header extends React.Component {
   constructor(props) {
@@ -61,6 +64,11 @@ class Header extends React.Component {
 
   }
 
+  handleClick = () => {
+    localStorage.clear()
+    this.props.history.push("/")
+  }
+
   render() {
     return (
       <div>
@@ -68,18 +76,21 @@ class Header extends React.Component {
           <NavbarBrand>
             <div className="d-flex">
              <div className="header-drawer">
-              <FontAwesomeIcon icon={faBars} onClick={(ev)=>this.expandSideBar(ev)} />
+              {/* <FontAwesomeIcon icon={faBars} onClick={(ev)=>this.expandSideBar(ev)} /> */}
+              <CtLogo />
               </div>
-              <img src="/CTLogo.jpg" height="34px"></img>
-              <h2 className="pl-2" style={{color:"white"}}>
+              {/* <img src="/CTLogo.jpg" height="34px"></img> */}
+              {/* <h2 className="pl-2" style={{color:"white"}}>
                 WelCome to <span style={{textTransform:'capitalize'}}>{this.module}</span>
-              </h2>
+              </h2> */}
             </div>
           </NavbarBrand>
 
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+          {/* <NavbarToggler onClick={this.toggle} />
+          <Collapse  isOpen={this.state.isOpen} navbar>
+            
+          </Collapse> */}
+          <Nav className="ml-auto" navbar>
               <NavItem className="userBell">
                 <FontAwesomeIcon icon={faBell}></FontAwesomeIcon>
               </NavItem>
@@ -88,18 +99,16 @@ class Header extends React.Component {
                   isOpen={this.state.dropdownOpen}
                   toggle={this.toggleDropdown}
                 >
-                  <DropdownToggle className="userMenu user p-0">
-                    <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
+                  <DropdownToggle className="userMenu user">
+                    {/* <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon> */}
+                    <FontAwesomeIcon icon={faSignOutAlt}></FontAwesomeIcon>
                   </DropdownToggle>
                   <DropdownMenu end>
-                    <DropdownItem>My profile</DropdownItem>
-
-                    <DropdownItem>Sign Out</DropdownItem>
+                    <DropdownItem onClick={this.handleClick}>Sign Out</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </NavItem>
             </Nav>
-          </Collapse>
         </Navbar>
       </div>
     );
