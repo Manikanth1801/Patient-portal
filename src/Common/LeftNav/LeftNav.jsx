@@ -70,6 +70,11 @@ class LeftNav extends Component {
         icon: <FontAwesomeIcon icon={faAllergies} title="Medical Allergies" />,
       },
       {
+        name: "Pay Bills",
+        link: "/patient/payBills",
+        icon: <FontAwesomeIcon icon={faMoneyBill} title="Pay Bills" />,
+      },
+      {
         name: "Billing Details",
         link: "/patient/billingDetails",
         icon: <FontAwesomeIcon icon={faMoneyBill} title="Billing Details" />,
