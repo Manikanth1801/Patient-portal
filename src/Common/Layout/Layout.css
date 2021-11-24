@@ -1,24 +1,28 @@
 #app-container {
-    display: flex;
-    
+  display: flex;
 }
 #header {
-    position: sticky;
-    top: 0px;
+  position: sticky;
+  top: 0px;
 }
 
 #sidebar {
-    display: block;
-    width: 240px;
+  display: block;
+  width: 240px;
 }
 
 #main-contain {
-    background-color: rgb(255, 255, 255);
-    width: 100%;
+  background-color: rgb(255, 255, 255);
+  width: calc(100% - 240px);
 }
 @media only screen and (max-width: 767px) {
-    #sidebar {
-        display: block;
-        width: 50px;
-    }
-    }
+  #sidebar {
+    display: block;
+    width: 50px;
+  }
+  #main-contain {
+    background-color: rgb(255, 255, 255);
+    width: calc(100% - 50px);
+    overflow: scroll;
+  }
+}
