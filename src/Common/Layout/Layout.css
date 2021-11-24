@@ -17,13 +17,6 @@
   overflow: scroll;
 }
 @media only screen and (max-width: 767px) {
-<<<<<<< HEAD
-    #sidebar { 
-        display: block;
-        width: 50px;
-    }
-    }
-=======
   #sidebar {
     width: 50px;
   }
@@ -32,4 +25,3 @@
     overflow: scroll;
   }
 }
->>>>>>> 8e1128976ee45c323e015885cde0f6a9aab43006
