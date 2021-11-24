@@ -57,6 +57,9 @@
       "registrationDate": "2021-11-24T06:15:18.611Z",
       "isApproved": false,
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 8e1128976ee45c323e015885cde0f6a9aab43006
       "id": 4
     },
     {
@@ -77,9 +80,12 @@
       "registrationDate": "2021-11-24T03:22:17.191Z",
       "isApproved": false,
       "id": 5
+<<<<<<< HEAD
 =======
       "id": 3
 >>>>>>> 2ee142e0d0699f3de3b01a075a1e60f736488020
+=======
+>>>>>>> 8e1128976ee45c323e015885cde0f6a9aab43006
     }
   ],
   "patientProfile": [
