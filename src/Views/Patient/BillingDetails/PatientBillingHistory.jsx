@@ -74,6 +74,7 @@ export default class PatientBillingHistory extends React.Component {
         filter: e.filter,
       });
     }}
+    scrollable={"virtual"}
     onScroll={this.scrollHandler}
     fixedScroll={true}
   >
@@ -87,19 +88,19 @@ Download as PDF
 
     <Column
       field="transactionId"
-    width="120px"
+    // width="120px"
       title="Bill ID"
       headerCell={ProductNameHeader}
     />
         <Column
       field="userName"
-    width="160px"
+    // width="160px"
       title="Sender"
       headerCell={ProductNameHeader}
     />
     <Column
       field="billingType"
-    width="180px"
+    // width="180px"
     //   filter="date"
       title="Paid for"
       headerCell={ProductNameHeader}
@@ -107,13 +108,13 @@ Download as PDF
 
     <Column
       field="billingDate"
-    width="190px"
+    // width="190px"
       title="Date of Billing"
       headerCell={ProductNameHeader}
     />
     <Column field="billingAmount" 
     title="Amount (&#8377;)"
-    width="180px"
+    // width="180px"
     headerCell={ProductNameHeader}
     />
 
@@ -144,6 +145,7 @@ Download as PDF
 			</CardTitle>
 			</Card>
 			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
+              
             {grid}
             <GridPDFExport ref={gridPDFExport}>
               {grid}

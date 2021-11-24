@@ -1,32 +1,27 @@
 #app-container {
     display: flex;
-}
-#header {
+  }
+  #header {
     position: sticky;
     top: 0px;
-}
-
-#sidebar {
+    z-index: 1;
+  }
+  #sidebar {
     display: block;
     width: 240px;
-    
-}
-
-#main-contain {
+  }
+  
+  #main-contain {
     background-color: rgb(255, 255, 255);
-    width: 100%;
-}
-@media only screen and (max-width: 767px) {
+    width: calc(100% - 240px);
+    overflow: scroll;
+  }
+  @media only screen and (max-width: 767px) {
     #sidebar {
-        display: block;
-        width: 50px;
-    }
-    img {
-        display: none;
-        
+      width: 50px;
     }
     #main-contain {
-        display: block;
-        width: 89%;
+      width: calc(100% - 50px);
+      overflow: scroll;
     }
-}
+  }

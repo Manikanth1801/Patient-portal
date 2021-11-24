@@ -112,7 +112,7 @@ const LayoutComponent = () => {
             <LeftNav />
           </div>
         )}
-        <div id="main-contain" style={{}}>
+        <div id="main-contain" style={{marginLeft:"auto",marginRight:"auto"}}>
           <Routes />
         </div>
       </div>
