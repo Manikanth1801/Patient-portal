@@ -113,7 +113,7 @@ class LeftNav extends Component {
       },
       {
         name: "Appointment History",
-        link: "/admin/billingData",
+        link: "/admin/appointmentHistory",
         icon: <FontAwesomeIcon icon={faClock} title="Appointment History" />,
       },
       {

@@ -40,7 +40,6 @@ export default class Billing extends React.Component {
     });
   };
 
- 
 
   render() {
 

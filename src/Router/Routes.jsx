@@ -28,7 +28,7 @@ import {
   ManageUsers,
   PatientVisitHistory,
   AdminProfile,
-  AdminAppointmentHistory,
+  
 } from "../Views/Admin";
 import {
   PatientDetails,
@@ -40,6 +40,7 @@ import Header from "../Common/Header/Header";
 import LeftNav from "../Common/LeftNav/LeftNav";
 import Footer from "../Common/Footer/Footer";
 import MasterData from "../Views/Admin/MasterData/MasterData";
+import AdminAppointmentHistory from "../Views/Admin/AdminAppointmentHistory/AdminAppointmentHistory";
 import JoinAppointment from "../Views/Physician/JoinAppointment/JoinAppointment";
 import Prescription from "../Views/Physician/Prescription/Prescription";
 

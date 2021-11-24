@@ -46,7 +46,7 @@ export default class AdminAppointmentHistory extends React.Component {
 
     const grid= <Grid
     style={{
-      height: "500px",
+      height: "550px",
       // overflow: "scroll",
       fontSize: "15px",
       // width:"100%"
@@ -71,13 +71,18 @@ export default class AdminAppointmentHistory extends React.Component {
 Download as PDF
 </Card>
 </GridToolbar>
-<Column
-      field="status"
+<Column field="patientId" 
+    title="Patient ID" 
     width="120px"
-      title="Status"
-      headerCell={ProductNameHeader}
+    headerCell={ProductNameHeader}
     />
-    <Column
+<Column field="patientName" 
+    title="Patient Name" 
+    width="150px"
+    headerCell={ProductNameHeader}
+    />
+
+<Column
       field="dateOfAppointment"
     width="130px"
     //   filter="date"
@@ -91,20 +96,27 @@ Download as PDF
       title="Time"
       headerCell={ProductNameHeader}
     />
+       <Column field="physicianId" 
+    title="Physician ID" 
+    width="120px"
+    headerCell={ProductNameHeader}
+    />
     <Column field="physicianName" 
     title="Physician Name" 
     width="150px"
     headerCell={ProductNameHeader}
     />
-   <Column field="physicianId" 
-    title="Physician ID" 
-    width="150px"
-    headerCell={ProductNameHeader}
-    />
+
         <Column
       field="specilization"
     width="160px"
       title="Specialization"
+      headerCell={ProductNameHeader}
+    />
+    <Column
+      field="status"
+    width="120px"
+      title="Status"
       headerCell={ProductNameHeader}
     />
     <Column
@@ -139,7 +151,7 @@ Download as PDF
 				//  margin:"auto",
 			   }}> */}
 			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
-			My Appointment List
+			Appointment Schedule and History
 			</CardTitle>
 			</Card>
 			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333', }}>
