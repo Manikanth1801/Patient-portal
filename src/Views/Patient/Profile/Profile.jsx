@@ -25,7 +25,7 @@ class Profile extends Component {
         }
     }
     handleChange = (e) => {
-        console.log('eee', e.target.value);
+        // console.log('eee', e.target.value);
         this.setState({
             [e.target.name]: e.target.value
         })
