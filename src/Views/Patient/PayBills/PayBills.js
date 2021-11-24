@@ -7,6 +7,7 @@ import {Modal,ModalHeader,ModalBody,ModalFooter} from 'reactstrap';
 import {Card,CardTitle,CardText,CardColumns} from 'reactstrap'
 import {Row,Col} from 'reactstrap'
 import {DropDownList} from '@progress/kendo-react-dropdowns'
+import {List} from 'reactstrap'
 // import { transitions, positions, Provider as AlertProvider } from 'react-alert'
 // import AlertTemplate from 'react-alert-template-basic'
 // import PatientBillingHistory from './PatientBillingHistory';
@@ -68,20 +69,18 @@ const paymentRequest= {
     document.getElementById('success').innerHTML=`Payment of <b>&#8377</b>${amount} is Successful for ${type}!`
     
     }
-    const reset =()=>{
-      document.getElementById("success").style.visibility = "hidden";
+    // const reset =()=>{
+    //   document.getElementById("success").style.visibility = "hidden";
 
-    }
+    // }
     return(
-              <div style={{width:"auto"}}>
+              <div >
        <Card
        body
        inverse
        style={{
            backgroundColor: '#eef1f1',
            borderColor: '#333',
-          // width:"auto",
-        //   margin:"auto",
           height:"100%"
          }}
        >
@@ -97,10 +96,10 @@ const paymentRequest= {
         }}
     >
       <CardTitle tag="h2" style={{ textAlign: 'center'}}>
-      Manage your Billing Details
+      Manage Your Billing
       </CardTitle>
     </Card>
-    <Card style={{margin:"auto", marginTop:"5px"}}>
+    <Card style={{ marginTop:"10px",}}>
     <Card
      body
 
@@ -112,12 +111,9 @@ const paymentRequest= {
 
                
  <Card style={{
-      backgroundColor: '#ffffff',
+      backgroundColor: '#eef1f1',
       borderColor: 'black',
-    //   margin:"auto",
-    //   minWidth:'45%',
-      // padding:'5px'
-      // maxWidth:"650px",
+
      color:"black",
       }}>
 
@@ -128,7 +124,7 @@ const paymentRequest= {
         backgroundColor: '#0a5669',
         textAlign: 'center',
         borderColor: 'black',
-        // margin:'-10px',
+    
         padding:"5px"    
       }}
   >
@@ -136,21 +132,25 @@ const paymentRequest= {
     Pay Here
     </CardTitle>
     </Card  >
-    <div >
-    <FormGroup style={{marginTop:"15px", textAlign:"center"}} >
 
+    <Card style={{margin:"auto", borderColor: 'black',
+    }}>
+    <div >
+    <FormGroup style={{marginTop:"10px", textAlign:"center"}} >
+      <div>
     <Label style={{fontSize:"20px"}}>Bill Type :</Label>
-    <DropDownList style={{fontSize:"18px", width:"80%"}} 
+    </div>
+    <DropDownList style={{fontSize:"18px",width:"100%"}} 
     data={options} defaultValue="Others" 
     value={type}
     onChange={e=> setType(e.target.value)}
     />
 
-
-    <Col 
-    style={{margin:"auto"}}
-    >
-    <Label style={{fontSize:"20px",marginTop:"20px"}}>Bill Amount (in <b>&#8377;</b>):</Label>
+    
+    <FormGroup style={{marginTop:"10px", textAlign:"center"}} >
+        <div>
+    <Label style={{fontSize:"20px",marginTop:"10px"}}>Bill Amount (in <b>&#8377;</b>):</Label>
+    </div>
     <Input
     id="walletAmount"
     name="amount"
@@ -161,10 +161,10 @@ const paymentRequest= {
     onChange={
         e => setAmount(e.target.value)
     }
-    style={{fontSize:"18px"}}
+    style={{fontSize:"18px", margin:"auto"}}
 
     />
-    </Col>
+    </FormGroup>
     </FormGroup>
  
     <FormGroup style={{color:"black", textAlign: 'center',}}>
@@ -202,17 +202,39 @@ const paymentRequest= {
     />
     </Col>
     </FormGroup>
+   
     </div>
-
-   
-         
+    </Card>
+    <div id ="success" style={{color: "green",fontsize:"20px", textAlign:"center",margin:"5px"}}></div>
           </Card>
-          <div id ="success" style={{fontSize:"21px", textAlign:"center",color:"#72e625",shadowColor:"black"}}></div>
+          <Card
+        body
+        
+        style={{
+        backgroundColor: '#eef1f1',
+        borderColor: '#333',
+        color:"black",
+        padding:"5px"
+        }}
+        >
+        <CardTitle tag="h3" style={{ textAlign: 'center'}}>
+        Note
+        </CardTitle>
+        <List type="unstyled" style={{ paddingLeft:"5px",textAlign: 'left',fontSize:"18px",color:"black" }}>
+        <li>
+        1. Amount once payed shall not be refunded
+        </li>
+        <li>
+        2. For payment related queries kindly connect with <b>admin@ctustech.com</b>
+        </li>
+        </List>
+        </Card>
      </Card>
-   
-       
+  
        
        </Card>
+
+  
      </Card>
      {/* <PatientBillingHistory/> */}
      

@@ -37,7 +37,7 @@ export default function App() {
 
 
 
-export const BillingData= [
+export const PatientBillingData= [
   {
     "id":1,
     "userId": 1,
