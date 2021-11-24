@@ -4,7 +4,6 @@ import Video from "./components/Video/Video";
 import VideoState from "./context/VideoState";
 
 import Options from "./components/options/Options";
-import Footer from "./components/Footer/Footer";
 import {Card,CardTitle,CardText,CardColumns} from 'reactstrap'
 const Home = () => {
   useEffect(() => {
@@ -25,7 +24,7 @@ const Home = () => {
     <VideoState>
       <div className="App" style={{height: "100%", width: "100%" }}>
 
-      <CardColumns
+      <Card
      body
      inverse
      style={{
@@ -50,9 +49,9 @@ const Home = () => {
   </Card>
         <Video />
         <Options />
-        {/* <Footer /> */}
+  
 
-        </CardColumns>
+        </Card>
       </div>
     </VideoState>
 
