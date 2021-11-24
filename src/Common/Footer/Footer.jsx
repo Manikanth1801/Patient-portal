@@ -12,41 +12,6 @@ class Footer extends Component {
     this.state = {};
   }
 
-<<<<<<< HEAD
-    render() {
-        return (
-            <footer style={{clear:"both"}}>
-                <Card>
-                    <CardBody className="text-center">
-                        {/* <CardTitle tag="h5">
-                            <img src={logo} id="CT-logo"></img>
-                        </CardTitle> */}
-                        {/* <CardSubtitle
-                            className="mb-2 text-muted"
-                            tag="h6"
-                        >
-                            Card subtitle
-                        </CardSubtitle> */}
-                        {/* <CardText className="footer-descp">
-                        At CitiusTech, we play a deep and meaningful role in powering the future of healthcare worldwide. We accelerate digital innovation in healthcare through specialized solutions, scalable platforms and out-of-the-box accelerators.
-                        </CardText> */}
-                        <CardText
-                            className="mb-2 text-muted"
-                            tag="h6"
-                        >
-                            <i className="fab fa-facebook-square"></i>
-                            <i className="fab fa-instagram-square"></i>
-                            <i className="fab fa-youtube-square"></i>
-                        </CardText>
-                        <CardText className="mb-2 text-left footer-text3">
-                            © 2021 CitiusTech. All rights reserved.
-                        </CardText>
-                    </CardBody>
-                </Card>
-            </footer>
-        )
-    }
-=======
   render() {
     return (
       <footer className="sticky-bottom">
@@ -112,7 +77,6 @@ class Footer extends Component {
       </footer>
     );
   }
->>>>>>> 731a528a9386fd0b014ebc2d9a5245228d9d03b8
 }
 
 export default Footer;
