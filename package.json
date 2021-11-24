@@ -16,6 +16,10 @@
     "@progress/kendo-data-query": "^1.5.5",
     "@progress/kendo-drawing": "^1.16.0",
     "@progress/kendo-licensing": "^1.2.1",
+<<<<<<< HEAD
+=======
+    "@progress/kendo-react-animation": "^4.12.0",
+>>>>>>> d4a5c2882a27fc7cfffc6db4cf61cf2cb627bb56
     "@progress/kendo-react-buttons": "^4.12.0",
     "@progress/kendo-react-data-tools": "^4.12.0",
     "@progress/kendo-react-dateinputs": "^4.12.0",
