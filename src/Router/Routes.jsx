@@ -17,7 +17,7 @@ import {
   Profile,
   ScheduleAppointment,
   BillingDetails,
-  Wallet,
+  PayBills,
   PatientInfo,
 } from "../Views/Patient/";
 import {
@@ -81,6 +81,10 @@ class Routes extends React.Component {
           <Route
             path="/patient/scheduleAppointment"
             render={() => <ScheduleAppointment />}
+          />
+            <Route
+            path="/patient/payBills"
+            render={() => <PayBills />}
           />
           <Route
             path="/patient/billingDetails"
