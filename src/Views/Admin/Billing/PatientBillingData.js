@@ -136,5 +136,27 @@ export const PatientBillingData=[
     "billingAmount": "500",
     "bllingStatus": false,
     "transactionId": "BillTid333"
-  }
+  },
+  {
+    "id":10,
+    "userI5d": 3,
+    "uuid": "",
+    "userName":"Chaitanya",
+    "billingType":"Vital Checkup",
+    "billingDate":"17-11-2021",
+    "billingAmount": "250",
+    "bllingStatus": false,
+    "transactionId": "BillTid251"
+  },
+  {
+    "id":11,
+    "userId": 2,
+    "uuid": "",
+    "userName":"Manoj",
+    "billingType":"CT scan",
+    "billingDate":"20-11-2021",
+    "billingAmount": "800",
+    "bllingStatus": false,
+    "transactionId": "BillTid273"
+  },
 ]

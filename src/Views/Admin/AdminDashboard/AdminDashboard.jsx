@@ -38,9 +38,10 @@ export default class AdminDashboard extends React.Component {
 			animationDuration:3000,
 			colorSet:"colorSet2",
 			theme: "light1",
+			// width:1000,
 			height:450,
 			zoomEnabled: true,
-			dataPointMaxWidth: 70,
+			dataPointMaxWidth: 80,
 			title: {
 
 			},
@@ -88,17 +89,17 @@ export default class AdminDashboard extends React.Component {
 		}
 		return (
 		<div>
+
+
 	<Card
 
 style={{
 	backgroundColor: '#eef1f1',
 	borderColor: '#333',
-// width:"100%",
-	margin:"auto",
 }}>
 
-
 <Cards1/>
+
 		<Card
 		style={{
 		backgroundColor: '#04c0c1',
@@ -112,9 +113,11 @@ style={{
 		</CardTitle>
 		</Card>
 		<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
+			<div>
 		<CanvasJSChart options = {options}
 			onRef={ref => this.chart = ref}
 		/>
+		</div>
 		</Card>
 		</Card>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
