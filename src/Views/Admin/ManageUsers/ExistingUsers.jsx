@@ -114,7 +114,6 @@ class ExistingUsers extends Component {
                             </td>
                         </tr>
                         ))}
-                        
                     </tbody>
                 </Table>
             </div>

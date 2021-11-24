@@ -35,7 +35,7 @@ class NewUsers extends Component {
         // }
     }
     approveUser(e){
-        e.target.innerText = 'Approved'
+        // e.target.innerText = 'Approved'
     }
 
     render() {
