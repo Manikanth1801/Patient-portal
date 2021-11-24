@@ -84,7 +84,7 @@ class LeftNav extends Component {
       {
         name: "Profile",
         link: "/admin/adminProfile",
-        icon: <FontAwesomeIcon icon={faHome} title="Dashboard" />,
+        icon: <FontAwesomeIcon icon={faUser} title="Dashboard" />,
       },
       {
         name: "Patient Records",
