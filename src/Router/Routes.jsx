@@ -23,12 +23,7 @@ class Routes extends React.Component {
                     {/* {token && (token !== undefined && token !== null && token !== "") &&
                     <>
                     <Header />
-<<<<<<< HEAD
-                    <LeftNav />
-                    <div className="rightContainer">
-=======
                     <LeftNav />                     */}
->>>>>>> 2ee142e0d0699f3de3b01a075a1e60f736488020
                     <Route path="/patient/dashboard" render={() => <PatientDashboard />} />
                     <Route path="/patient/appointment_history" render={() => <AppointmentHistory />} />
                     <Route path="/patient/immunization" render={() => <Immunization />} />                    
@@ -51,13 +46,7 @@ class Routes extends React.Component {
                     <Route path="/physician/patientDetails" render={() => <PatientDetails />} />
                     <Route path="/physician/dashboard" render={() => <PhysicianDashboard />} />
                     <Route path="/physician/physicianAppointmentHistory" render={() => <PhysicianAppointmentHistory />} />
-<<<<<<< HEAD
-                    <Route path="/physician/physicianProfile" render={() => <PhysicianProfile />} />
-                    </div>
-                    <Footer />
-=======
                     {/* <Footer />
->>>>>>> 2ee142e0d0699f3de3b01a075a1e60f736488020
                     </>
                     }  */}
                     {/* Other Routes */}
