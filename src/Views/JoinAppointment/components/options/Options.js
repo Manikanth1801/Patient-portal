@@ -64,8 +64,8 @@ const Options = () => {
 
   return (
     <div className={classes.options}>
-      <div style={{ marginBottom: "0.5rem" }}>
-        <h4>Account Info</h4>
+      <div style={{ marginBottom: "0.5rem" ,textAlign: "center" }}>
+        <h5>Enter your name</h5>
         <Input
           size="large"
           placeholder="Your name"
@@ -80,7 +80,8 @@ const Options = () => {
           className={classes.inputgroup}
         />
 
-        <div className={classes.share_options}>
+        <div className={classes.share_options} >
+          <div style={{margin: "auto" }}>
           <CopyToClipboard text={me}>
             <Button
               type="primary"
@@ -88,14 +89,16 @@ const Options = () => {
               className={classes.btn}
               tabIndex="0"
               onClick={() => message.success("Invite sent successfully!")}
+              
             >
               Send Invite
             </Button>
           </CopyToClipboard>
+          </div>
         </div>
       </div>
-      <div style={{ marginBottom: "0.5rem" }}>
-        <h4>Make a call</h4>
+      <div style={{ marginBottom: "0.5rem",textAlign: "center" }}>
+        <h5>Enter Invite Code</h5>
 
          {/* i changed */}
         <Input
