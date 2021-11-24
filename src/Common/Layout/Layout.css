@@ -4,8 +4,8 @@
 #header {
   position: sticky;
   top: 0px;
+  z-index: 1;
 }
-
 #sidebar {
   display: block;
   width: 240px;
@@ -14,14 +14,13 @@
 #main-contain {
   background-color: rgb(255, 255, 255);
   width: calc(100% - 240px);
+  overflow: scroll;
 }
 @media only screen and (max-width: 767px) {
   #sidebar {
-    display: block;
     width: 50px;
   }
   #main-contain {
-    background-color: rgb(255, 255, 255);
     width: calc(100% - 50px);
     overflow: scroll;
   }
