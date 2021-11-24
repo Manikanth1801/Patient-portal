@@ -10,7 +10,7 @@ import rows from "./rowData";
 const ManagePatientRecords= () => (
   <div>
     <h1 className="title">Material UI - Responsive Table</h1>
-    {/* <Paper className="container">
+    <Paper className="container">
       <Table>
         <TableHead>
           <TableRow>
@@ -35,7 +35,7 @@ const ManagePatientRecords= () => (
           ))}
         </TableBody>
       </Table>
-    </Paper> */}
+    </Paper>
   </div>
 );
 
