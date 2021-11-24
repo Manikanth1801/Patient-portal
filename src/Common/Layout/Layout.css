@@ -1,6 +1,5 @@
 #app-container {
     display: flex;
-    
 }
 #header {
     position: sticky;
@@ -10,6 +9,7 @@
 #sidebar {
     display: block;
     width: 240px;
+    
 }
 
 #main-contain {
@@ -27,6 +27,6 @@
     }
     #main-contain {
         display: block;
-        width: 87%;
+        width: 89%;
     }
 }

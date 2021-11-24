@@ -44,7 +44,7 @@ export default class PatientBillingHistory extends React.Component {
       e.target.scrollTop + 10 >=
       e.target.scrollHeight - e.target.clientHeight
     ) {
-      const moreData = BillingData.splice(0, 5);
+      // const moreData = BillingData.splice(0, 5);
 
       // if (moreData.length > 0) {
       //   this.setState({
@@ -59,10 +59,10 @@ export default class PatientBillingHistory extends React.Component {
    
     const grid =<Grid
     style={{
-    // width:"98%",
+   // width:"9",
     height:"500px",
     //   position: "relative",
-    // margin:"auto",
+    margin:"auto",
         fontSize:"16px"
     }}
 

@@ -99,6 +99,7 @@ const paymentRequest= {
       Manage your Billing Details
       </CardTitle>
     </Card>
+    <Card style={{margin:"auto", marginTop:"5px"}}>
     <Card
      body
 
@@ -118,6 +119,7 @@ const paymentRequest= {
       // maxWidth:"650px",
      color:"black",
       }}>
+
     <Card
     body
     inverse
@@ -200,11 +202,16 @@ const paymentRequest= {
     </Col>
     </FormGroup>
     </div>
+
+   
          
           </Card>
           <div id ="success" style={{fontSize:"21px", textAlign:"center",color:"#72e625",shadowColor:"black"}}></div>
      </Card>
-    
+   
+       
+       
+       </Card>
      </Card>
      <PatientBillingHistory/>
      
