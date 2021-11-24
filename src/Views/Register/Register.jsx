@@ -24,82 +24,89 @@ class Register extends React.Component {
             otherSpecilization: null,
             experience: null,
             isDone: false,
-            uuid: '', 
+            uuid: '',
             lookupData: [],
-            isOthersSelected: false
+            isOthersSelected: false,
+            isChecked: false
         }
     }
-    componentDidMount(){
+    componentDidMount() {
         axios.get("http://localhost:8000/lookups")
-        .then(res => {
-            let lookupData = res.data[0].specialization
-            this.setState({
-                lookupData
+            .then(res => {
+                let lookupData = res.data[0].specialization
+                this.setState({
+                    lookupData
+                })
             })
-        })
-        .catch(err => {
-            console.log(err)
-        })
+            .catch(err => {
+                console.log(err)
+            })
     }
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         })
-        if(e.target.name === "specilization"){
-            if(e.target.value === "Others"){
+        if (e.target.name === "specilization") {
+            if (e.target.value === "Others") {
                 this.setState({
                     isOthersSelected: true,
                 })
-            }else{
+            } else {
                 this.setState({
                     isOthersSelected: false
-                }) 
+                })
             }
         }
     };
-    handleSubmit = (e) => {
+    handleSubmit = (e, errors, values) => {
         e.preventDefault()
-        let data = {
-            uuid: this.state.uuid,
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            gender: this.state.gender,
-            email: this.state.email,
-            password: this.state.password,
-            retypePassword: this.state.retypePassword,
-            dob: this.state.dob,
-            role: this.state.role,
-            isRegistered: false,
-            mobile: this.state.mobile,
-            specialization: this.state.specilization,
-            experience: this.state.experience,
-            isLogged: false,
-            registrationDate: new Date(),
-            isApproved: false
+        if (errors.length === 0) {
+            let data = {
+                uuid: this.state.uuid,
+                firstname: this.state.firstname,
+                lastname: this.state.lastname,
+                gender: this.state.gender,
+                email: this.state.email,
+                password: this.state.password,
+                retypePassword: this.state.retypePassword,
+                dob: this.state.dob,
+                role: this.state.role,
+                isRegistered: false,
+                mobile: this.state.mobile,
+                specialization: this.state.specilization,
+                experience: this.state.experience,
+                isLogged: false,
+                registrationDate: new Date(),
+                isApproved: false,
+            }
+            if(this.state.password === this.state.retypePassword){
+                axios.post("http://localhost:8000/users", data)
+                    .then(res => {
+                        if (res.data) {
+                            this.setState({ isDone: true })
+                            alert("Your Registration is Success.")
+                            this.myFormRef && this.myFormRef.reset();
+                        }
+                        this.setState({
+                            isOthersSelected: false,
+                            role: ""
+                        })
+                    })
+                    .catch(err => {
+                        if (err) {
+                            alert("something went wrong.Please try after some time")
+                            console.log(err)
+                            this.myFormRef && this.myFormRef.reset();
+                        }
+                        this.setState({
+                            isOthersSelected: false,
+                            role: ""
+                        })
+                    })
+            }else{
+                alert("The Password's must be same!")
+            }
         }
-        axios.post("http://localhost:8000/users", data)
-            .then(res => {
-                if (res.data) {
-                    this.setState({ isDone: true })
-                    alert("Your Registration is Success.")
-                    this.myFormRef && this.myFormRef.reset();
-                }
-                this.setState({
-                    isOthersSelected: false,
-                    role: ""
-                })
-            })
-            .catch(err => {
-                if (err) {
-                    alert("something went wrong.Please try after some time")
-                    console.log(err)
-                    this.myFormRef && this.myFormRef.reset();
-                }
-                this.setState({
-                    isOthersSelected: false,
-                    role: ""
-                })
-            })
     };
 
     render() {
@@ -109,11 +116,11 @@ class Register extends React.Component {
                 <div className="py-3 d-flex justify-content-center bg-color">
                     <img src={logo} alt="Logo" className="img-fluid ml-5 my-3" />
                 </div>
-                <div className="border border-dark container px-0" style={{ marginTop: "1%",backgroundColor: "#ffffff" }}>
+                <div className="border border-dark container px-0" style={{ marginTop: "1%", backgroundColor: "#ffffff" }}>
                     <div className="text-center">
                         <h2 className="col-12 text-light py-2" style={{ backgroundColor: "#000000" }} >REGISTRATION FORM</h2>
                     </div>
-                    
+
                     <div className="row pl-3 my-2 ml-2">
                         <AvForm onSubmit={this.handleSubmit} ref={c => (this.myFormRef = c)} className="col-12 col-md-12 col-lg-10 col-xl-12">
                             <div className="row ">
@@ -159,7 +166,7 @@ class Register extends React.Component {
                                 <div className="form-group col-5 col-lg-4">
                                     <AvField type="email" name="email" value={this.state.email} onChange={this.handleChange} className="form-control" validate={{
                                         required: { value: true, errorMessage: 'Email id is required' },
-                                        pattern: { value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, errorMessage: 'Email id is Invalid' }
+                                        pattern: { value: /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/, errorMessage: 'Email id is Invalid' }
                                     }} />
                                 </div>
                             </div>
@@ -221,18 +228,18 @@ class Register extends React.Component {
                                 </div>
                             }
                             {
-                                (role === "Physician" && this.state.isOthersSelected) ? 
-                                <div className="row">
-                                    <div className="col-5 col-lg-4">
-                                        <label className="h6"></label>
+                                (role === "Physician" && this.state.isOthersSelected) ?
+                                    <div className="row">
+                                        <div className="col-5 col-lg-4">
+                                            <label className="h6"></label>
+                                        </div>
+                                        <div className="form-group col-5 col-lg-4">
+                                            <AvField type="text" name="otherSpecilization" value={this.state.otherSpecilization} onChange={this.handleChange} className="form-control" validate={{
+                                                required: { value: true, errorMessage: 'specilization is required' }
+                                            }} />
+                                        </div>
                                     </div>
-                                    <div className="form-group col-5 col-lg-4">
-                                    <AvField type="text" name="otherSpecilization" value={this.state.otherSpecilization} onChange={this.handleChange} className="form-control" validate={{
-                                        required: { value: true, errorMessage: 'specilization is required' }
-                                    }} />
-                                    </div>
-                                </div>
-                                : ""
+                                    : ""
                             }
                             {
                                 role === "Physician" &&

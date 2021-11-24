@@ -51,9 +51,7 @@ class UserVerification extends Component {
         window.confirmationResult.confirm(code).then((result) => {
             // User signed in successfully.
             const user = result.user;
-            console.log('user is', user)
-            alert("User is verified")
-            // ...
+            this.handleModal()
         }).catch((error) => {
             // User couldn't sign in (bad verification code?)
         });
@@ -63,10 +61,16 @@ class UserVerification extends Component {
             [e.target.name]: e.target.value
         })
     }
-    handleModal = (e) => {
-        e.preventDefault()
+    handleModal = () => {
         this.setState({
-            isShow: !this.state.isShow
+            isShow: true
+        })
+    }
+    closeModal = () => {
+        this.setState({
+            isShow: false
+        },() => {
+            this.props.history.push("/changePassword")
         })
     }
     render() {
@@ -106,13 +110,13 @@ class UserVerification extends Component {
                         }
                     </div>
                 </form>
-                <Modal isOpen={isShow} toggle={this.handleModal}>
-                    <ModalHeader toggle={this.handleModal}>
+                <Modal isOpen={isShow} toggle={this.closeModal}>
+                    <ModalHeader toggle={this.closeModal}>
                         <ModalBody>
-                            <p>OTP Validation is Successfull.Please set the Password.</p>
+                            <p>OTP Validation is Successfull.You can Reset the Password Now.</p>
                         </ModalBody>
                         <ModalFooter>
-                            <Button onClick={this.handleModal}>Close</Button>
+                            <Button onClick={this.closeModal}>Close</Button>
                         </ModalFooter>
                     </ModalHeader>
                 </Modal>

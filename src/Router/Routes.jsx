@@ -17,12 +17,13 @@ class Routes extends React.Component {
                     {/* General Routes */}
                     <Route path="/" exact render={(props) => <Login {...props} />} />
                     <Route path="/registration" render={() => <Register />} />
-                    <Route path="/userVerification" render={() => <UserVerification />} />
+                    <Route path="/userVerification" render={(props) => <UserVerification {...props}/>} />
                     <Route path="/changePassword" render={() => <ForgotPassword />} />
                     {/* patient Routes */}
-                    {token && (token !== undefined && token !== null && token !== "") &&
+                    {/* {token && (token !== undefined && token !== null && token !== "") &&
                     <>
-                    
+                    <Header />
+                    <LeftNav />                     */}
                     <Route path="/patient/dashboard" render={() => <PatientDashboard />} />
                     <Route path="/patient/appointment_history" render={() => <AppointmentHistory />} />
                     <Route path="/patient/immunization" render={() => <Immunization />} />                    
@@ -41,14 +42,13 @@ class Routes extends React.Component {
                     <Route path="/admin/billingData" render={() => <Billing />} />
                     <Route path="/admin/patientVisitHistory" render={() => <PatientVisitHistory />} />
                     <Route path="/admin/adminProfile" render={() => <AdminProfile />} />
-
                     {/* Physician Routes */}
                     <Route path="/physician/patientDetails" render={() => <PatientDetails />} />
                     <Route path="/physician/dashboard" render={() => <PhysicianDashboard />} />
                     <Route path="/physician/physicianAppointmentHistory" render={() => <PhysicianAppointmentHistory />} />
-                    
+                    {/* <Footer />
                     </>
-                    } 
+                    }  */}
                     {/* Other Routes */}
                     <Route path="/UnauthorizedAccess" render={() => <ErrorPage/>} />
                     <Route path="/page_expired" render={() => <ErrorPage/>} />
