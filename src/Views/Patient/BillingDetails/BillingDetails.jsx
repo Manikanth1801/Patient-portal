@@ -86,7 +86,7 @@ Download as PDF
         <Column
       field="userName"
     width="200px"
-      title="Sender"
+      title="Payed by"
       headerCell={ProductNameHeader}
     />
     <Column

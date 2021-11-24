@@ -15,6 +15,7 @@ import {List} from 'reactstrap'
 export default function Paybill (){
 
   const options = [
+    "Appointments",
     "CT Scan",
     "MRI Scan",
     "Vital Check",
@@ -24,7 +25,7 @@ export default function Paybill (){
   ];
 
   const [type,setType] =useState();
-  const [amount,setAmount] = useState(1);
+  const [amount,setAmount] = useState(100);
 
 const paymentRequest= {    
   apiVersion: 2,
@@ -207,28 +208,34 @@ const paymentRequest= {
     </Card>
     <div id ="success" style={{color: "green",fontsize:"20px", textAlign:"center",margin:"5px"}}></div>
           </Card>
+
           <Card
         body
         
         style={{
-        backgroundColor: '#eef1f1',
+        backgroundColor: '#ffffff',
         borderColor: '#333',
-        color:"black",
-        padding:"5px"
+        margin:"5px",
+        padding:"5px",
         }}
         >
         <CardTitle tag="h3" style={{ textAlign: 'center'}}>
         Note
         </CardTitle>
-        <List type="unstyled" style={{ paddingLeft:"5px",textAlign: 'left',fontSize:"18px",color:"black" }}>
+        <List type="bullet" style={{ textAlign: 'left',fontSize:"18px" ,color:"black"}}>
         <li>
-        1. Amount once payed shall not be refunded
+        1. Consultation fee is <b>&#8377;500</b>.
         </li>
         <li>
-        2. For payment related queries kindly connect with <b>admin@ctustech.com</b>
+        2. Amount once Paid will not be refunded.
+        </li>
+        <li>
+        3. For payment related queries kindly connect with <b>admin@ctustech.com</b>
         </li>
         </List>
         </Card>
+ 
+
      </Card>
   
        
