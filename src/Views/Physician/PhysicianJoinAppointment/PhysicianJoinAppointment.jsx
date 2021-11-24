@@ -1,5 +1,5 @@
 import React from 'react'
-// import JoinAppointment from '../JoinAppointment/JoinAppointment'
+import JoinAppointment from './src/Views/JoinAppointment/'
 
 export default function PhysicianJoinAppointment() {
     return (
