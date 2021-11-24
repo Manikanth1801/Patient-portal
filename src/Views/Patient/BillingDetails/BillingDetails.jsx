@@ -73,14 +73,14 @@ const paymentRequest= {
 
     }
     return(
-              <div>
+              <div style={{width:"auto"}}>
        <Card
        body
        inverse
        style={{
            backgroundColor: '#eef1f1',
            borderColor: '#333',
-          //  width:"62%",
+          // width:"auto",
           margin:"auto",
          }}
        >
@@ -115,7 +115,7 @@ const paymentRequest= {
       margin:"auto",
     //   minWidth:'45%',
       // padding:'5px'
-      maxWidth:"650px",
+      // maxWidth:"650px",
      color:"black",
       }}>
     <Card
@@ -137,7 +137,7 @@ const paymentRequest= {
     <FormGroup style={{marginTop:"15px", textAlign:"center"}} >
 
     <Label style={{fontSize:"20px"}}>Bill Type :</Label>
-    <DropDownList style={{fontSize:"18px", width:"100%"}} 
+    <DropDownList style={{fontSize:"18px", width:"80%"}} 
     data={options} defaultValue="Others" 
     value={type}
     onChange={e=> setType(e.target.value)}

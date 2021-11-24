@@ -27,24 +27,42 @@ class ProductNameHeader extends React.Component {
 
 export default class PatientBillingHistory extends React.Component {
 
+
+
       
   total = BillingData.length;
-  pageSize = BillingData.length;
-//   pageSize = 5;
+  // pageSize = BillingData.length;
+  pageSize = 10;
+
   state = {
     data: BillingData.slice(0, this.pageSize),
-    skip: 0,
-    exporting: false
   };
+  scrollHandler = (event) => {
+    const e = event.nativeEvent;
+
+    if (
+      e.target.scrollTop + 10 >=
+      e.target.scrollHeight - e.target.clientHeight
+    ) {
+      const moreData = BillingData.splice(0, 5);
+
+      // if (moreData.length > 0) {
+      //   this.setState({
+      //     BillingData: this.state.BillingData.concat(moreData),
+      //   });
+      // }
+    }
+  };
+
 
   render() {
    
     const grid =<Grid
     style={{
-        // width:"65%",
+    // width:"98%",
     height:"500px",
     //   position: "relative",
-    margin:"auto",
+    // margin:"auto",
         fontSize:"16px"
     }}
 
@@ -56,7 +74,8 @@ export default class PatientBillingHistory extends React.Component {
         filter: e.filter,
       });
     }}
-
+    onScroll={this.scrollHandler}
+    fixedScroll={true}
   >
 <GridToolbar>
 <Card style={{position: "absolute", padding:"10px", fontSize:"15px",right:"10px"}} title="Export PDF" className="k-button k-primary" onClick={this.exportPDF} disabled={this.state.exporting}>

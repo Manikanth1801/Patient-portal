@@ -38,7 +38,7 @@ export default class AdminDashboard extends React.Component {
 			animationDuration:3000,
 			colorSet:"colorSet2",
 			theme: "light1",
-			height:550,
+			height:450,
 			zoomEnabled: true,
 			dataPointMaxWidth: 70,
 			title: {

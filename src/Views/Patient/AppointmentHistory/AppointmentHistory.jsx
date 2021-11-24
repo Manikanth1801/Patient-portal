@@ -37,18 +37,30 @@ export default class AppointmentHistory extends React.Component {
     exporting: false
   };
 
+  scrollHandler = (event) => {
+    const e = event.nativeEvent;
+
+    if (
+      e.target.scrollTop + 10 >=
+      e.target.scrollHeight - e.target.clientHeight
+    ) {
+      const moreData = AppointmentData.splice(0, 10);
+    }
+  };
   render() {
    
     const grid =<Grid
     style={{
-        maxWidth:"1100px",
+        width:"98%",
+        // minWidth:"100px",
         height:"500px",
     //   position: "relative",
         margin:"auto",
         fontSize:"16px",
-        maxHeight:"inherit",
+        // maxHeight:"inherit",
     }}
-
+    onScroll={this.scrollHandler}
+    fixedScroll={true}
     data={filterBy(AppointmentData, this.state.filter)}
     filterable={true}
     filter={this.state.filter}
@@ -69,13 +81,13 @@ Download as PDF
 
     <Column
       field="status"
-    width="130px"
+    width="120px"
       title="Status"
       headerCell={ProductNameHeader}
     />
     <Column
       field="dateOfAppointment"
-    width="160px"
+    width="120px"
     //   filter="date"
       title="Date"
       headerCell={ProductNameHeader}
@@ -83,24 +95,24 @@ Download as PDF
 
     <Column
       field="time"
-    width="110px"
+    width="120px"
       title="Time"
       headerCell={ProductNameHeader}
     />
     <Column field="physicianName" 
     title="Physician Name" 
-    width="180px"
+    width="120px"
     headerCell={ProductNameHeader}
     />
         <Column
       field="specilization"
-    width="180px"
+    width="120px"
       title="Specialization"
       headerCell={ProductNameHeader}
     />
     <Column
       field="notes"
-    width="300px"
+    width="120px"
       title="Prescriptions/Notes"
       headerCell={ProductNameHeader}
     />
@@ -119,6 +131,7 @@ Download as PDF
     
     return (<div>
 
+        <div style={{}}>
 			<Card
 			body
 			inverse
@@ -126,27 +139,37 @@ Download as PDF
 			backgroundColor: '#04c0c1',
       borderColor: '#333',
       margin:"auto",
-      padding:"20px",
+      padding:"5px",
       textAlign: 'center'  ,
-      width:"auto",      
+    // width:"auto",      
 			}}
 			>
+      			{/* <Card
+			 style={{
+				 backgroundColor: '#eef1f1',
+				 borderColor: '#333',
+				//  width:"80%",
+				//  margin:"auto",
+			   }}> */}
 			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
 			My Appointment List
 			</CardTitle>
 			</Card>
 			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
-        <div>
+  
         {grid}
             <GridPDFExport ref={gridPDFExport}>
               {grid}
             </GridPDFExport>
-        </div>
 
 			</Card>
 			{/* </Card> */}
 
-          </div>)
+          </div>
+          
+          </div>
+          
+  )
   }
 
   pageChange = event => {
