@@ -39,7 +39,7 @@ export default class AdminDashboard extends React.Component {
 			colorSet:"colorSet2",
 			theme: "light1",
 			// width:1000,
-			height:450,
+			// height:450,
 			zoomEnabled: true,
 			dataPointMaxWidth: 80,
 			title: {
@@ -67,7 +67,7 @@ export default class AdminDashboard extends React.Component {
 			data: [
 				{
 				type: "column",
-				color:"#6f42f5",
+				color:"#21de82",
 				name: "Bar View",
 				showInLegend: "true",
 				xValueFormatString: "####",
