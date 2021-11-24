@@ -27,7 +27,8 @@ class Register extends React.Component {
             uuid: '',
             lookupData: [],
             isOthersSelected: false,
-            isChecked: false
+            isChecked: false,
+            usersData:[]
         }
     }
     componentDidMount() {
@@ -41,6 +42,18 @@ class Register extends React.Component {
             .catch(err => {
                 console.log(err)
             })
+        this.getData();
+    }
+    getData = () => {
+        axios.get("http://localhost:8000/users")
+        .then(res => {
+            this.setState({
+                usersData: res.data
+            })
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
     handleChange = (e) => {
         this.setState({
@@ -60,6 +73,7 @@ class Register extends React.Component {
     };
     handleSubmit = (e, errors, values) => {
         e.preventDefault()
+        const { usersData, email } = this.state
         if (errors.length === 0) {
             let data = {
                 uuid: this.state.uuid,
@@ -79,30 +93,36 @@ class Register extends React.Component {
                 registrationDate: new Date(),
                 isApproved: false,
             }
+
+            let duplicate = usersData.filter(ele => ele.email === email)
             if(this.state.password === this.state.retypePassword){
-                axios.post("http://localhost:8000/users", data)
-                    .then(res => {
-                        if (res.data) {
-                            this.setState({ isDone: true })
-                            alert("Your Registration is Success.")
-                            this.myFormRef && this.myFormRef.reset();
-                        }
-                        this.setState({
-                            isOthersSelected: false,
-                            role: ""
+                if(duplicate.length === 0){
+                    axios.post("http://localhost:8000/users", data)
+                        .then(res => {
+                            if (res.data) {
+                                this.setState({ isDone: true })
+                                alert("Your Registration is Success.")
+                                this.myFormRef && this.myFormRef.reset();
+                            }
+                            this.setState({
+                                isOthersSelected: false,
+                                role: ""
+                            })
                         })
-                    })
-                    .catch(err => {
-                        if (err) {
-                            alert("something went wrong.Please try after some time")
-                            console.log(err)
-                            this.myFormRef && this.myFormRef.reset();
-                        }
-                        this.setState({
-                            isOthersSelected: false,
-                            role: ""
+                        .catch(err => {
+                            if (err) {
+                                alert("something went wrong.Please try after some time")
+                                console.log(err)
+                                this.myFormRef && this.myFormRef.reset();
+                            }
+                            this.setState({
+                                isOthersSelected: false,
+                                role: ""
+                            })
                         })
-                    })
+                }else{
+                    alert("User Alredty exists..Please Proceed with Login To access the Dashboard !!")
+                }
             }else{
                 alert("The Password's must be same!")
             }
