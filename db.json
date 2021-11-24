@@ -11,13 +11,13 @@
       "retypePassword": 12345,
       "dob": "683078400",
       "role": "patient",
-      "isRegistered": "false",
+      "isRegistered": false,
       "mobile": 7845122356,
       "specialization": null,
       "experience": "only for physician",
       "isLogged": false,
-      "registrationDate": "currentDate",
-      "isApproved": "Need to approve or Phy and Admin, Patient Not required",
+      "registrationDate": "2021-11-22T04:49:05.226Z",
+      "isApproved": false,
       "isActive": false
     },
     {
