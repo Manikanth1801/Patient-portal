@@ -39,10 +39,11 @@ const Home = () => {
     style={{
         backgroundColor: '#04c0c1',
         borderColor: '#333',
-        textAlign: 'center'        
+        textAlign: 'center'  
+        ,padding:"5px"      
       }}
   >
-    <CardTitle tag="h2" style={{ textAlign: 'center',padding:"5px"}}>
+    <CardTitle tag="h2" style={{ textAlign: 'center',color:"white"}}>
       Join Online Consultation
     </CardTitle>
   </Card>

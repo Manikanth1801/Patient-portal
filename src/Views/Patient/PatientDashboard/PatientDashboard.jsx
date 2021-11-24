@@ -132,16 +132,16 @@ export default class PatientDashboard extends React.Component {
 			   }}>
 		<Cards/>
 			<Card
-			body
-			inverse
+			
 			style={{
 			backgroundColor: '#04c0c1',
 			borderColor: '#333',
 			textAlign: 'center' ,
-			padding:"10px",       
+			padding:"5px",     
+			
 			}}
 			>
-			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
+			<CardTitle tag="h2" style={{ textAlign: 'center',color:"white"  }}>
 			My Appointment History
 			</CardTitle>
 			</Card>

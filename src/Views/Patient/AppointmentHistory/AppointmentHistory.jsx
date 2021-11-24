@@ -235,7 +235,7 @@ Download as PDF
     />
     <Column field="physicianName" 
     title="Physician Name" 
-    width="150px"
+    width="180px"
     headerCell={ProductNameHeader}
     />
    <Column field="physicianId" 
@@ -245,7 +245,7 @@ Download as PDF
     />
         <Column
       field="specilization"
-    width="160px"
+    width="140px"
       title="Specialization"
       headerCell={ProductNameHeader}
     />
@@ -280,7 +280,7 @@ Download as PDF
 				//  width:"80%",
 				//  margin:"auto",
 			   }}> */}
-			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
+			<CardTitle tag="h2" style={{ textAlign: 'center',color:"white"}}>
 			My Appointment List
 			</CardTitle>
 			</Card>
