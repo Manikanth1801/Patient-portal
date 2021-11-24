@@ -114,6 +114,24 @@
       "registrationDate": "2021-11-24T12:37:21.395Z",
       "isApproved": false,
       "id": 7
+    },
+    {
+      "email": "test@test.com",
+      "password": "$2a$10$8xsb0Tq/ohqdkI4NnS1CVentvqdYJ.1AfwbZxTpJ3gWiInaX7XIpi",
+      "firstname": "Nistala",
+      "lastname": "Chaitanya",
+      "gender": "Male",
+      "retypePassword": "test123",
+      "dob": "1991-08-25",
+      "role": "Patient",
+      "isRegistered": false,
+      "mobile": "9638527410",
+      "specialization": null,
+      "experience": null,
+      "isLogged": false,
+      "registrationDate": "2021-11-24T15:10:45.924Z",
+      "isApproved": false,
+      "id": 8
     }
   ],
   "patientProfile": [

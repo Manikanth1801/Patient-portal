@@ -24,7 +24,6 @@ class Register extends React.Component {
             otherSpecilization: null,
             experience: null,
             isDone: false,
-            uuid: '',
             lookupData: [],
             isOthersSelected: false,
             isChecked: false,
@@ -76,7 +75,6 @@ class Register extends React.Component {
         const { usersData, email } = this.state
         if (errors.length === 0) {
             let data = {
-                uuid: this.state.uuid,
                 firstname: this.state.firstname,
                 lastname: this.state.lastname,
                 gender: this.state.gender,
