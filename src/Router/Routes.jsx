@@ -20,12 +20,13 @@ class Routes extends React.Component {
                     {/* General Routes */}
                     <Route path="/" exact render={(props) => <Login {...props} />} />
                     <Route path="/registration" render={() => <Register />} />
-                    <Route path="/userVerification" render={() => <UserVerification />} />
+                    <Route path="/userVerification" render={(props) => <UserVerification {...props}/>} />
                     <Route path="/changePassword" render={() => <ForgotPassword />} />
                     {/* patient Routes */}
-                    {token && (token !== undefined && token !== null && token !== "") &&
+                    {/* {token && (token !== undefined && token !== null && token !== "") &&
                     <>
-                    
+                    <Header />
+                    <LeftNav />                     */}
                     <Route path="/patient/dashboard" render={() => <PatientDashboard />} />
                     <Route path="/patient/appointment_history" render={() => <AppointmentHistory />} />
                     <Route path="/patient/immunization" render={() => <Immunization />} />                    
@@ -45,17 +46,21 @@ class Routes extends React.Component {
                     <Route path="/admin/patientVisitHistory" render={() => <PatientVisitHistory />} />
                     <Route path="/admin/masterData" render={() => <MasterData/>} />
                     <Route path="/admin/adminProfile" render={() => <AdminProfile />} />
-
                     {/* Physician Routes */}
                     <Route path="/physician/profile" render={() => <PhysicianProfile />} />
                     <Route path="/physician/patientDetails" render={() => <PatientDetails />} />
                     <Route path="/physician/dashboard" render={() => <PhysicianDashboard />} />
+<<<<<<< HEAD
                     <Route path="/physician/joinAppointment" render={() => <JoinAppointment />} />
                     <Route path="/physician/appointmentHistory" render={() => <PhysicianAppointmentHistory />} />
                     <Route path="/physician/Prescription" render={() => <Prescription />} />
                     
+=======
+                    <Route path="/physician/physicianAppointmentHistory" render={() => <PhysicianAppointmentHistory />} />
+                    {/* <Footer />
+>>>>>>> 2ee142e0d0699f3de3b01a075a1e60f736488020
                     </>
-                    } 
+                    }  */}
                     {/* Other Routes */}
                     <Route path="/UnauthorizedAccess" render={() => <ErrorPage/>} />
                     <Route path="/page_expired" render={() => <ErrorPage/>} />

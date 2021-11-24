@@ -21,41 +21,42 @@
       "isActive": false
     },
     {
-      "email": "aditya@gmail.com",
-      "password": "$2a$10$lA/0w0R2i78cJxcVTXNpAuSofx.Rxs1ztQrUxlzcY5XaFKi7vX0lq",
-      "uuid": "",
-      "firstname": "Nammala",
-      "lastname": "Aditya",
-      "gender": "Male",
-      "retypePassword": "aditya123",
-      "dob": "1995-01-22",
-      "role": "Patient",
-      "isRegistered": false,
-      "mobile": "9638527410",
-      "specialization": null,
-      "experience": null,
-      "isLogged": false,
-      "registrationDate": "2021-11-22T04:49:05.226Z",
-      "isApproved": false,
-      "id": 3
-    },
-    {
-      "email": "test@test.com",
-      "password": "$2a$10$wXHiHApUqySg5vDJs5SvmuyaCO29qwmIP8l4tmA61uvS4D/.LjFva",
+      "email": "testadmin@test.com",
+      "password": "$2a$10$ExH8Wh8lqMB7OeQkrZ68m.GBnyBVnwUNSwAoDrq2V9Ia7eb3EuVr2",
       "uuid": "",
       "firstname": "Test",
-      "lastname": "Sample",
+      "lastname": "Account",
       "gender": "Male",
       "retypePassword": "test123",
       "dob": "1996-01-12",
-      "role": "Physician",
+      "role": "Admin",
       "isRegistered": false,
-      "mobile": "7845562310",
-      "specialization": "Cardiology",
-      "experience": "10",
+      "mobile": "7418529630",
+      "specialization": null,
+      "experience": null,
       "isLogged": false,
-      "registrationDate": "2021-11-22T09:52:10.630Z",
+      "registrationDate": "2021-11-24T06:06:42.838Z",
       "isApproved": false,
+      "id": 2
+    },
+    {
+      "email": "chaitanyaNistala@gmail.com",
+      "password": "$2a$10$fF0vuGwkAv7pgVpIKu3RKOdMMAvF75c/5GEW.aiJ..gSruNU3j5eq",
+      "uuid": "",
+      "firstname": "NISTALA",
+      "lastname": "VENKATA CHAITANYA",
+      "gender": "Male",
+      "retypePassword": "chaitanya123",
+      "dob": "1992-08-25",
+      "role": "Admin",
+      "isRegistered": false,
+      "mobile": "7997011244",
+      "specialization": null,
+      "experience": null,
+      "isLogged": false,
+      "registrationDate": "2021-11-24T06:15:18.611Z",
+      "isApproved": false,
+<<<<<<< HEAD
       "id": 4
     },
     {
@@ -76,6 +77,9 @@
       "registrationDate": "2021-11-24T03:22:17.191Z",
       "isApproved": false,
       "id": 5
+=======
+      "id": 3
+>>>>>>> 2ee142e0d0699f3de3b01a075a1e60f736488020
     }
   ],
   "patientProfile": [
