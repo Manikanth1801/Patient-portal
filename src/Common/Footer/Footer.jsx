@@ -15,7 +15,18 @@ class Footer extends Component {
   render() {
     return (
       <footer className="sticky-bottom">
-        <div className="row container offset-md-1 ">
+        <div className="text-center">
+            <p className="text-white"> © 2021 CitiusTech. All rights reserved.</p>
+            
+                  <a href="#"><FacebookOutlined/></a>
+              
+                  <a href="#"><Instagram/></a>
+              
+                  <a href="#"><Twitter/></a>
+              
+        </div>
+        
+        {/* <div className="row container offset-md-1 ">
           <div className="col-sm-12 col-md-5 my-3 mx-2">
             <div className="img">
               <img
@@ -62,7 +73,7 @@ class Footer extends Component {
           </div>
           </div>
           
-        </div>
+        </div> */}
       </footer>
     );
   }

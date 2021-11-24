@@ -69,7 +69,7 @@ class Header extends React.Component {
           <NavbarBrand>
             <div className="d-flex">
              <div className="header-drawer">
-              <FontAwesomeIcon icon={faBars} onClick={(ev)=>this.expandSideBar(ev)} />
+              {/* <FontAwesomeIcon icon={faBars} onClick={(ev)=>this.expandSideBar(ev)} /> */}
               <CtLogo />
               </div>
               {/* <img src="/CTLogo.jpg" height="34px"></img> */}
@@ -79,9 +79,11 @@ class Header extends React.Component {
             </div>
           </NavbarBrand>
 
-          <NavbarToggler onClick={this.toggle} />
+          {/* <NavbarToggler onClick={this.toggle} />
           <Collapse  isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            
+          </Collapse> */}
+          <Nav className="ml-auto" navbar>
               <NavItem className="userBell">
                 <FontAwesomeIcon icon={faBell}></FontAwesomeIcon>
               </NavItem>
@@ -90,7 +92,7 @@ class Header extends React.Component {
                   isOpen={this.state.dropdownOpen}
                   toggle={this.toggleDropdown}
                 >
-                  <DropdownToggle className="userMenu user p-0">
+                  <DropdownToggle className="userMenu user">
                     <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
                   </DropdownToggle>
                   <DropdownMenu end>
@@ -101,7 +103,6 @@ class Header extends React.Component {
                 </Dropdown>
               </NavItem>
             </Nav>
-          </Collapse>
         </Navbar>
       </div>
     );

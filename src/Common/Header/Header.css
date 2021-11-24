@@ -35,6 +35,20 @@
   padding-right: 16px;
   cursor: pointer;
 }
+.header.navbar.navbar-expand-md .container-fluid{
+  padding-left: 0;
+  margin-left: -18px;
+}
+.header.navbar .navbar-nav{
+  display: block;
+}
+.header.navbar ul li.nav-item {
+  display: inline-block;
+}
+ul.ml-auto.navbar-nav li.userBell {
+  position: relative;
+  top: 4px;
+}
 @media screen and (max-width: 767px) {
   .userBell {
     margin: unset;
