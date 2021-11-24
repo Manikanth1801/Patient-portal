@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {CanvasJSChart} from 'canvasjs-react-charts'
 import {Card,CardTitle,CardText,CardColumns} from 'reactstrap'
-import Cards from './Cards'
+import Cards1 from './Cards'
 import {dataPoints} from './DashboardData.js'
 //INSTALL - npm install canvasjs
 // const dataPoints =[];
@@ -88,6 +88,7 @@ export default class AdminDashboard extends React.Component {
 		}
 		return (
 		<div>
+		<Cards1/>
 			<Card
 			 style={{
 				 backgroundColor: '#eef1f1',
@@ -95,7 +96,7 @@ export default class AdminDashboard extends React.Component {
 				//  width:"80%",
 				//  margin:"auto",
 			   }}>
-		<Cards/>
+			
 			<Card
 			style={{
 			backgroundColor: '#04c0c1',

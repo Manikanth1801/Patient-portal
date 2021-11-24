@@ -14,7 +14,7 @@ export default class Cards extends React.Component{
                 <div>
                 <Row style={{padding:'10px', textAlign:"center",position:"relative"}}>
                     <Col >
-                        <Card body style={{padding:'2px', minWidth:"150px"}}>
+                        <Card body style={{padding:'2px', minWidth:"150px",borderColor:"black"}}>
                             <CardTitle tag="h5">
                             Physicians
                             </CardTitle>
@@ -22,7 +22,7 @@ export default class Cards extends React.Component{
                         </Card>
                         </Col>
                         <Col >
-                        <Card body style={{padding:'2px', minWidth:"150px"}}>
+                        <Card body style={{padding:'2px', minWidth:"150px",borderColor:"black"}}>
                             <CardTitle tag="h5">
                             Specializations
                             </CardTitle>
@@ -30,7 +30,7 @@ export default class Cards extends React.Component{
                         </Card>
                         </Col>
                         <Col >
-                        <Card body style={{padding:'2px', minWidth:"150px"}}>
+                        <Card body style={{padding:'2px', minWidth:"150px",borderColor:"black"}}>
                             <CardTitle tag="h5">
                             Patients
                             </CardTitle >
@@ -38,7 +38,7 @@ export default class Cards extends React.Component{
                         </Card>
                         </Col>
                         <Col >
-                        <Card body style={{padding:'2px', minWidth:"150px"}}>
+                        <Card body style={{padding:'2px', minWidth:"150px",borderColor:"black"}}>
                             <CardTitle tag="h5">
                             Appointments
                             </CardTitle>
