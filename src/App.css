@@ -1,6 +1,7 @@
 .rightContainer{
-    width: 65%;
+    width: 75%;
     margin-left: 10px;
+    float: left;
 }
 
 /* common CSS */

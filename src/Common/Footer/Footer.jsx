@@ -15,18 +15,18 @@ class Footer extends Component {
             <footer style={{clear:"both"}}>
                 <Card>
                     <CardBody className="text-center">
-                        <CardTitle tag="h5">
+                        {/* <CardTitle tag="h5">
                             <img src={logo} id="CT-logo"></img>
-                        </CardTitle>
+                        </CardTitle> */}
                         {/* <CardSubtitle
                             className="mb-2 text-muted"
                             tag="h6"
                         >
                             Card subtitle
                         </CardSubtitle> */}
-                        <CardText className="footer-descp">
+                        {/* <CardText className="footer-descp">
                         At CitiusTech, we play a deep and meaningful role in powering the future of healthcare worldwide. We accelerate digital innovation in healthcare through specialized solutions, scalable platforms and out-of-the-box accelerators.
-                        </CardText>
+                        </CardText> */}
                         <CardText
                             className="mb-2 text-muted"
                             tag="h6"

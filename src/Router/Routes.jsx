@@ -24,6 +24,7 @@ class Routes extends React.Component {
                     <>
                     <Header />
                     <LeftNav />
+                    <div className="rightContainer">
                     <Route path="/patient/dashboard" render={() => <PatientDashboard />} />
                     <Route path="/patient/appointment_history" render={() => <AppointmentHistory />} />
                     <Route path="/patient/immunization" render={() => <Immunization />} />                    
@@ -48,7 +49,7 @@ class Routes extends React.Component {
                     <Route path="/physician/dashboard" render={() => <PhysicianDashboard />} />
                     <Route path="/physician/physicianAppointmentHistory" render={() => <PhysicianAppointmentHistory />} />
                     <Route path="/physician/physicianProfile" render={() => <PhysicianProfile />} />
-
+                    </div>
                     <Footer />
                     </>
                     } 
