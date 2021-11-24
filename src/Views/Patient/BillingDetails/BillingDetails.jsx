@@ -72,6 +72,12 @@ Download as PDF
 </Card>
 </GridToolbar>
 <Column
+      field="id"
+    width="100px"
+      title="No."
+      headerCell={ProductNameHeader}
+    />
+<Column
       field="transactionId"
     width="160px"
       title="Bill ID"
@@ -99,7 +105,7 @@ Download as PDF
     />
     <Column field="billingAmount" 
     title="Amount (&#8377;)"
-    width="220px"
+    width="200px"
     headerCell={ProductNameHeader}
     />
     

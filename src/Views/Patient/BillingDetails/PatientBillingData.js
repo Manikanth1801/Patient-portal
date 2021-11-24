@@ -50,7 +50,7 @@ export const PatientBillingData= [
     "transactionId": "Tid 01"
   },
   {
-    "id":1,
+    "id":2,
     "userId": 2,
     "uuid": "",
     "userName":"Siddharth",
@@ -61,7 +61,7 @@ export const PatientBillingData= [
     "transactionId": "Tid 02"
   },
   {
-    "id":1,
+    "id":3,
     "userId": 3,
     "uuid": "",
     "userName":"Siddharth",
@@ -72,7 +72,7 @@ export const PatientBillingData= [
     "transactionId": "Tid 03"
   },
   {
-    "id":1,
+    "id":4,
     "userId": 2,
     "uuid": "",
     "userName":"Siddharth",
@@ -83,8 +83,8 @@ export const PatientBillingData= [
     "transactionId": "Tid 02"
   },
   {
-    "id":1,
-    "userId": 3,
+    "id":5,
+    "userI5d": 3,
     "uuid": "",
     "userName":"Siddharth",
     "billingType":"CT scan",
@@ -94,7 +94,7 @@ export const PatientBillingData= [
     "transactionId": "Tid 03"
   },
   {
-    "id":1,
+    "id":6,
     "userId": 2,
     "uuid": "",
     "userName":"Siddharth",
@@ -105,7 +105,7 @@ export const PatientBillingData= [
     "transactionId": "Tid 02"
   },
   {
-    "id":1,
+    "id":7,
     "userId": 3,
     "uuid": "",
     "userName":"Siddharth",
@@ -116,7 +116,7 @@ export const PatientBillingData= [
     "transactionId": "Tid 03"
   },
   {
-    "id":1,
+    "id":8,
     "userId": 3,
     "uuid": "",
     "userName":"Siddharth",
@@ -127,7 +127,7 @@ export const PatientBillingData= [
     "transactionId": "Tid 03"
   },
   {
-    "id":1,
+    "id":9,
     "userId": 3,
     "uuid": "",
     "userName":"Siddharth",

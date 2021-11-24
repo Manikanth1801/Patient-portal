@@ -1,4 +1,4 @@
-import { faBars, faBell, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBell, faUserCircle, faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Header.css";
@@ -18,6 +18,8 @@ import {
 } from "reactstrap";
 import { withRouter } from "react-router";
 import CtLogo from "../../Assets/Images/CtLogo";
+import IconButton from '@mui/material/IconButton';
+
 
 class Header extends React.Component {
   constructor(props) {
@@ -62,6 +64,11 @@ class Header extends React.Component {
 
   }
 
+  handleClick = () => {
+    localStorage.clear()
+    this.props.history.push("/")
+  }
+
   render() {
     return (
       <div>
@@ -93,12 +100,11 @@ class Header extends React.Component {
                   toggle={this.toggleDropdown}
                 >
                   <DropdownToggle className="userMenu user">
-                    <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
+                    {/* <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon> */}
+                    <FontAwesomeIcon icon={faSignOutAlt}></FontAwesomeIcon>
                   </DropdownToggle>
                   <DropdownMenu end>
-                    <DropdownItem>My profile</DropdownItem>
-
-                    <DropdownItem>Sign Out</DropdownItem>
+                    <DropdownItem onClick={this.handleClick}>Sign Out</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </NavItem>

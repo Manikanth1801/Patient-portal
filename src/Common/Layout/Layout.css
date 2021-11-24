@@ -13,8 +13,8 @@
 
 #main-contain {
   background-color: rgb(255, 255, 255);
-  width: calc(100% - 240px);
-  overflow: scroll;
+  width: 100%;
+  overflow-x: auto;
 }
 @media only screen and (max-width: 767px) {
   #sidebar {
