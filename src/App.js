@@ -10,8 +10,8 @@ import LayoutComponent from "./Common/Layout/Layout"
 function App() {
   return(
     <div>
-      <LayoutComponent />
-      {/* <Routes /> */}
+      {/* <LayoutComponent /> */}
+      <Routes />
     </div>
   )
 }
