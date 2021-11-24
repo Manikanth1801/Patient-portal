@@ -31,7 +31,7 @@ const Home = () => {
          backgroundColor: '#eef1f1',
          borderColor: '#333',
         //  width:"62%",
-        margin:"auto",
+        // margin:"auto",
        }}
      >
       <Card
