@@ -133,7 +133,7 @@ Download as PDF
 				//  width:"80%",
 				//  margin:"auto",
 			   }}> */}
-			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
+			<CardTitle tag="h2" style={{ textAlign: 'center',color:"white"}}>
 			My Billing History
 			</CardTitle>
 			</Card>
@@ -171,5 +171,5 @@ Download as PDF
     this.setState({
       exporting: false
     });
-  };
+  }
 }

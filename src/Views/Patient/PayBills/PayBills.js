@@ -82,7 +82,7 @@ const paymentRequest= {
        style={{
            backgroundColor: '#eef1f1',
            borderColor: '#333',
-          height:"100%"
+          // height:"100%"
          }}
        >
          
@@ -96,11 +96,11 @@ const paymentRequest= {
           ,padding:"5px"      
         }}
     >
-      <CardTitle tag="h2" style={{ textAlign: 'center'}}>
+      <CardTitle tag="h2" style={{ textAlign: 'center',color:"white"}}>
       Manage Your Billing
       </CardTitle>
     </Card>
-    <Card style={{ marginTop:"10px",}}>
+    <Card style={{ }}>
     <Card
      body
 
@@ -129,7 +129,7 @@ const paymentRequest= {
         padding:"5px"    
       }}
   >
-    <CardTitle tag="h4" style={{ textAlign: 'center'}}>
+    <CardTitle tag="h4" style={{ textAlign: 'center',color:"white"}}>
     Pay Here
     </CardTitle>
     </Card  >

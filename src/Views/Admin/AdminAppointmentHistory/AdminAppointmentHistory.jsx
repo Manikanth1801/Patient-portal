@@ -103,13 +103,13 @@ Download as PDF
     />
     <Column field="physicianName" 
     title="Physician Name" 
-    width="150px"
+    width="190px"
     headerCell={ProductNameHeader}
     />
 
         <Column
       field="specilization"
-    width="160px"
+    width="140px"
       title="Specialization"
       headerCell={ProductNameHeader}
     />
@@ -119,13 +119,13 @@ Download as PDF
       title="Status"
       headerCell={ProductNameHeader}
     />
-    <Column
+    {/* <Column
       field="notes"
     width="250px"
       title="Prescriptions/Notes"
       headerCell={ProductNameHeader}
     />
-    
+     */}
   
   </Grid>
   
@@ -150,8 +150,8 @@ Download as PDF
 				//  width:"80%",
 				//  margin:"auto",
 			   }}> */}
-			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
-			Appointment Schedule and History
+			<CardTitle tag="h2" style={{ textAlign: 'center',color:"white"}}>
+			Appointment Schedules and History
 			</CardTitle>
 			</Card>
 			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333', }}>

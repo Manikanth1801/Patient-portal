@@ -12,7 +12,7 @@ export default class Cards extends React.Component{
 
         return(
                 <div>
-                <Row style={{padding:'10px', textAlign:"center",position:"relative"}}>
+                <Row style={{padding:'10px', textAlign:"center"}}>
                     <Col >
                         <Card body style={{padding:'2px', minWidth:"150px",borderColor:"black"}}>
                             <CardTitle tag="h5">

@@ -123,17 +123,18 @@ export default class PhysicianDashboard extends React.Component {
 		}
 		return (
 		<div>
+
+<Cards/>
 <Card
 
 	style={{
 		backgroundColor: '#eef1f1',
 		borderColor: '#333',
-	//  width:"80%",
-		margin:"auto",
+		// margin:"auto",
 	}}>
 
 
-<Cards/>
+
 			<Card
 			style={{
 			backgroundColor: '#04c0c1',
@@ -152,6 +153,9 @@ export default class PhysicianDashboard extends React.Component {
 			/>
 			</Card>
 			</Card>
+			
+			
+			
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 		</div>
 		);
