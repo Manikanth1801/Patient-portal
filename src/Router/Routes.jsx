@@ -41,7 +41,7 @@ import LeftNav from "../Common/LeftNav/LeftNav";
 import Footer from "../Common/Footer/Footer";
 import MasterData from "../Views/Admin/MasterData/MasterData";
 import AdminAppointmentHistory from "../Views/Admin/AdminAppointmentHistory/AdminAppointmentHistory";
-import JoinAppointment from "../Views/Physician/JoinAppointment/JoinAppointment";
+import JoinAppointment from "../Views/Physician/PhysicianJoinAppointment/PhysicianJoinAppointment";
 import Prescription from "../Views/Physician/Prescription/Prescription";
 
 class Routes extends React.Component {
