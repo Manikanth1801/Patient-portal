@@ -28,6 +28,7 @@ import {
   ManageUsers,
   PatientVisitHistory,
   AdminProfile,
+  AdminAppointmentHistory,
 } from "../Views/Admin";
 import {
   PatientDetails,
@@ -111,6 +112,7 @@ class Routes extends React.Component {
           />
           <Route path="/admin/masterData" render={() => <MasterData />} />
           <Route path="/admin/adminProfile" render={() => <AdminProfile />} />
+          <Route path="/admin/appointmentHistory" render={() => <AdminAppointmentHistory />} />
           {/* Physician Routes */}
           <Route
             path="/physician/profile"

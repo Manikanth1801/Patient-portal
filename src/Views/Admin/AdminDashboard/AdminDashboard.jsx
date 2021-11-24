@@ -88,40 +88,40 @@ export default class AdminDashboard extends React.Component {
 		}
 		return (
 		<div>
-		<Cards1/>
-			<Card
-			 style={{
-				 backgroundColor: '#eef1f1',
-				 borderColor: '#333',
-				//  width:"80%",
-				//  margin:"auto",
-			   }}>
-			
-			<Card
-			style={{
-			backgroundColor: '#04c0c1',
-			borderColor: '#333',
-			textAlign: 'center'        
-			}}
-			>
-			<CardTitle tag="h2" style={{ textAlign: 'center', color:"white"}}>
-			Patient Visit History
-			</CardTitle>
-			</Card>
-			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
-			<CanvasJSChart options = {options} 
-				 onRef={ref => this.chart = ref}
-			/>
-			</Card>
-			</Card>
+	<Card
+
+style={{
+	backgroundColor: '#eef1f1',
+	borderColor: '#333',
+//  width:"80%",
+	margin:"auto",
+}}>
+
+
+<Cards1/>
+		<Card
+		style={{
+		backgroundColor: '#04c0c1',
+		borderColor: '#333',
+		textAlign: 'center',
+		padding:"5px",       
+		}}
+		>
+		<CardTitle tag="h3" style={{ textAlign: 'center',color:"white"}}>
+		Patient Appoinment History
+		</CardTitle>
+		</Card>
+		<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
+		<CanvasJSChart options = {options}
+			onRef={ref => this.chart = ref}
+		/>
+		</Card>
+		</Card>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 		</div>
 		);
 	}
 	
-	componentDidMount(){
 
-
-	}
 
 }

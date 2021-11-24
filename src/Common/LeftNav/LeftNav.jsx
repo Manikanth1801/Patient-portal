@@ -112,9 +112,14 @@ class LeftNav extends Component {
         icon: <FontAwesomeIcon icon={faHandshake} title="Master Data" />,
       },
       {
-        name: "Billing Data",
+        name: "Appointment History",
         link: "/admin/billingData",
-        icon: <FontAwesomeIcon icon={faMoneyBillAlt} title="Billing Data" />,
+        icon: <FontAwesomeIcon icon={faClock} title="Appointment History" />,
+      },
+      {
+        name: "Billing History",
+        link: "/admin/billingData",
+        icon: <FontAwesomeIcon icon={faMoneyBillAlt} title="Billing History" />,
       },
     ];
     this.physicianMenu = [

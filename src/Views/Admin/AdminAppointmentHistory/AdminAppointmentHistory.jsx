@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-grid';
 import { GridPDFExport } from '@progress/kendo-react-pdf';
-import { PatientBillingData } from './PatientBillingData';
+import { AppointmentData } from './PatientAppointmentData';
 import { filterBy,orderBy } from '@progress/kendo-data-query';
 // import './AppointmentHistory.css'
 
@@ -26,12 +26,12 @@ class ProductNameHeader extends React.Component {
   }
 
 
-export default class Billing extends React.Component {
+export default class AdminAppointmentHistory extends React.Component {
 
   // total = AppointmentData.length;
   // pageSize = 5
   state = {
-    data: PatientBillingData.slice(0, this.pageSize),
+    data: AppointmentData.slice(0, this.pageSize),
     skip: 0,
   };
   pageChange = (event) => {
@@ -53,7 +53,7 @@ export default class Billing extends React.Component {
       // margin:"auto"
     }}
     // rowHeight={40}
-    data={filterBy(PatientBillingData, this.state.filter)}
+    data={filterBy(AppointmentData, this.state.filter)}
     filterable={true}
     filter={this.state.filter}
     onFilterChange={(e) => {
@@ -72,41 +72,46 @@ Download as PDF
 </Card>
 </GridToolbar>
 <Column
-      field="id"
-    width="100px"
-      title="No."
-      headerCell={ProductNameHeader}
-    />
-<Column
-      field="transactionId"
-    width="160px"
-      title="Bill ID"
-      headerCell={ProductNameHeader}
-    />
-        <Column
-      field="userName"
-    width="200px"
-      title="Paid by"
+      field="status"
+    width="120px"
+      title="Status"
       headerCell={ProductNameHeader}
     />
     <Column
-      field="billingType"
-    width="220px"
+      field="dateOfAppointment"
+    width="130px"
     //   filter="date"
-      title="Paid for"
+      title="Date"
       headerCell={ProductNameHeader}
     />
 
     <Column
-      field="billingDate"
-    width="230px"
-      title="Date of Billing"
+      field="time"
+    width="120px"
+      title="Time"
       headerCell={ProductNameHeader}
     />
-    <Column field="billingAmount" 
-    title="Amount (&#8377;)"
-    width="200px"
+    <Column field="physicianName" 
+    title="Physician Name" 
+    width="150px"
     headerCell={ProductNameHeader}
+    />
+   <Column field="physicianId" 
+    title="Physician ID" 
+    width="150px"
+    headerCell={ProductNameHeader}
+    />
+        <Column
+      field="specilization"
+    width="160px"
+      title="Specialization"
+      headerCell={ProductNameHeader}
+    />
+    <Column
+      field="notes"
+    width="250px"
+      title="Prescriptions/Notes"
+      headerCell={ProductNameHeader}
     />
     
   
@@ -134,7 +139,7 @@ Download as PDF
 				//  margin:"auto",
 			   }}> */}
 			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
-			Billing and Transaction History
+			My Appointment List
 			</CardTitle>
 			</Card>
 			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333', }}>
@@ -156,7 +161,7 @@ Download as PDF
 
   createState(skip, take) {
     return {
-      data: PatientBillingData.slice(skip, skip + take),
+      data: AppointmentData.slice(skip, skip + take),
       skip: skip
     };
   }
