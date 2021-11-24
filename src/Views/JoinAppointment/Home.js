@@ -22,32 +22,32 @@ const Home = () => {
  }, [])
   return (
     <VideoState>
-      <div className="App" style={{height: "100%", width: "100%" }}>
+      <div >
 
       <Card
-     body
-     inverse
+    
      style={{
          backgroundColor: '#eef1f1',
          borderColor: '#333',
         //  width:"62%",
         // margin:"auto",
+        
        }}
      >
       <Card
-    body
-    inverse
+  
     style={{
         backgroundColor: '#04c0c1',
         borderColor: '#333',
         textAlign: 'center'        
       }}
   >
-    <CardTitle tag="h1" style={{ textAlign: 'center'}}>
+    <CardTitle tag="h2" style={{ textAlign: 'center',padding:"5px"}}>
       Join Online Consultation
     </CardTitle>
   </Card>
-        <Video />
+  <div style={{marginLeft:"0px"}}><Video /></div>
+        
         <Options />
   
 

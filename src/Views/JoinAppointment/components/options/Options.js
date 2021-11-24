@@ -7,14 +7,6 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import VideoContext from "../../context/VideoContext";
 import Hang from "../../assests/hang.svg";
 import {
-  TwitterIcon,
-  TwitterShareButton,
-  WhatsappShareButton,
-  WhatsappIcon,
-  FacebookIcon,
-  FacebookShareButton,
-} from "react-share";
-import {
   UserOutlined,
   CopyOutlined,
   InfoCircleOutlined,
@@ -23,8 +15,8 @@ import {
 import { socket } from "../../context/VideoState";
 
 
-const meetingid ="56789"
-const username ="Dr. Mahesh"
+// const meetingid ="56789"
+// const username ="Dr. Mahesh"
 const Options = () => {
   const [idToCall, setIdToCall] = useState('');
 
@@ -73,7 +65,7 @@ const Options = () => {
   return (
     <div className={classes.options}>
       <div style={{ marginBottom: "0.5rem" }}>
-        <h2>Account Info</h2>
+        <h4>Account Info</h4>
         <Input
           size="large"
           placeholder="Your name"
@@ -95,19 +87,19 @@ const Options = () => {
               icon={<CopyOutlined />}
               className={classes.btn}
               tabIndex="0"
-              onClick={() => message.success("Code copied successfully!")}
+              onClick={() => message.success("Invite sent successfully!")}
             >
-              Copy code
+              Send Invite
             </Button>
           </CopyToClipboard>
         </div>
       </div>
       <div style={{ marginBottom: "0.5rem" }}>
-        <h2>Make a call</h2>
+        <h4>Make a call</h4>
 
          {/* i changed */}
         <Input
-          placeholder="Enter code to call"
+          placeholder="Enter invite code to call"
           size="large"
           className={classes.inputgroup}
           value={idToCall}

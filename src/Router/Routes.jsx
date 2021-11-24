@@ -42,6 +42,7 @@ import Footer from "../Common/Footer/Footer";
 import MasterData from "../Views/Admin/MasterData/MasterData";
 import AdminAppointmentHistory from "../Views/Admin/AdminAppointmentHistory/AdminAppointmentHistory";
 import JoinAppointment from "../Views/Physician/PhysicianJoinAppointment/PhysicianJoinAppointment";
+import PatientJoinAppointment from "../Views/Physician/PhysicianJoinAppointment/PhysicianJoinAppointment";
 import Prescription from "../Views/Physician/Prescription/Prescription";
 
 class Routes extends React.Component {
@@ -84,6 +85,7 @@ class Routes extends React.Component {
             path="/patient/scheduleAppointment"
             render={() => <ScheduleAppointment />}
           />
+           <Route path="/patient/joinAppointment" render={() => <JoinAppointment />} />
             <Route
             path="/patient/payBills"
             render={() => <PayBills />}
