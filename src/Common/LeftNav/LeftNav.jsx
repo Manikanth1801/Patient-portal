@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-
 import "./LeftNav.css";
 import { withRouter } from "react-router-dom";
 import classNames from "classnames";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 class LeftNav extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {open:props.open,
+      drawerWidth:props.drawerWidth,
+      handleDrawerClose:props.handleDrawerClose,
+      theme:props.theme,};
     this.module =
       (this.props.location.pathname.includes("/patient/") && "patient") ||
       (this.props.location.pathname.includes("/admin/") && "admin") ||
@@ -34,11 +39,10 @@ class LeftNav extends Component {
       { name: "Billing Data", link: "/admin/billingData" },
     ];
     this.physicianMenu = [
-        { name: "Physician Dashboard", link: "/physician/physicianDashboard" },
-        { name: "Patient Details", link: "/physician/patientDetails" },
-        { name: "Physician Profile", link: "/physician/physicianProfile" },
-        
-];
+      { name: "Physician Dashboard", link: "/physician/dashboard" },
+      { name: "Patient Details", link: "/physician/patientDetails" },
+      { name: "Physician Profile", link: "/physician/physicianProfile" },
+    ];
     this.menu =
       this.module === "patient"
         ? this.patientMenu
@@ -64,15 +68,18 @@ class LeftNav extends Component {
                   )}
                   key={menuItem.link}
                 >
-                  <Link to={menuItem.link}>{menuItem.name}</Link>
+                  <Link to={menuItem.link}><span className="leftNavIcon"><FontAwesomeIcon title={menuItem.name} icon={faUser}/></span>{menuItem.name}</Link>
                 </li>
               );
             })}
           </ul>
         </div>
       </div>
-    );
+    )
   }
+ 
 }
 
 export default withRouter(LeftNav);
+
+

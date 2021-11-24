@@ -1,6 +1,4 @@
-
-
-import { faBell, faUserCircle } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faBell, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import "./Header.css";
@@ -33,6 +31,7 @@ class Header extends React.Component {
     this.state = {
       dropdownOpen: false,
       isOpen: false,
+      isSideBarOpen: false,
     };
   }
 
@@ -50,12 +49,27 @@ class Header extends React.Component {
     ev.preventDefault();
     this.onSetOpen(!this.state.open);
   };
+  expandSideBar = (ev) =>{
+    ev.preventDefault();
+    this.setState({
+      isSideBarOpen: !this.state.isSideBarOpen
+      
+    })
+    
+    this.props.openSideBar(this.state.isSideBarOpen);
+
+
+  }
+
   render() {
     return (
       <div>
         <Navbar expand="md" className="header">
           <NavbarBrand>
             <div className="d-flex">
+             <div className="header-drawer">
+              <FontAwesomeIcon icon={faBars} onClick={(ev)=>this.expandSideBar(ev)} />
+              </div>
               <img src="/CTLogo.jpg" height="34px"></img>
               <h2 className="pl-2" style={{color:"white"}}>
                 WelCome to <span style={{textTransform:'capitalize'}}>{this.module}</span>
@@ -93,3 +107,5 @@ class Header extends React.Component {
 }
 
 export default withRouter(Header);
+
+

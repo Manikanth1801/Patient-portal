@@ -35,3 +35,9 @@
 .sidebar_menu a:hover{
     text-decoration: none;
 }
+
+.leftNavIcon{
+  padding-right: 16px;
+    padding-left: 4px;
+    font-size: 20px;
+}
