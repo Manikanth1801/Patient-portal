@@ -1,223 +1,181 @@
-import React,{useState} from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import GooglePayButton from "@google-pay/button-react";
-// import ReactScrollbar from 'react-scrollbar-js';
-import {Form,FormGroup,Label,Button,Input,FormText} from 'reactstrap';
-import {Modal,ModalHeader,ModalBody,ModalFooter} from 'reactstrap';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Grid, GridColumn as Column, GridToolbar } from '@progress/kendo-react-grid';
+import { GridPDFExport } from '@progress/kendo-react-pdf';
+import { BillingData } from './PatientBillingData.js';
+import { filterBy,orderBy } from '@progress/kendo-data-query';
+// import './AppointmentHistory.css'
+
 import {Card,CardTitle,CardText,CardColumns} from 'reactstrap'
-import {Row,Col} from 'reactstrap'
-import {DropDownList} from '@progress/kendo-react-dropdowns'
-// import { transitions, positions, Provider as AlertProvider } from 'react-alert'
-// import AlertTemplate from 'react-alert-template-basic'
-import PatientBillingHistory from './PatientBillingHistory';
+const gridPDFExport = React.createRef();
 
-export default function Paybill (){
 
-  const options = [
-    "CT Scan",
-    "MRI Scan",
-    "Vital Check",
-    "Vaccination",
-    "X-Ray",
-    "Others",
-  ];
-
-  const [type,setType] =useState();
-  const [amount,setAmount] = useState(1);
-
-const paymentRequest= {    
-  apiVersion: 2,
-  apiVersionMinor: 0,
-  allowedPaymentMethods: [
-  {
-  type: "CARD",
-  parameters: {
-  allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-  allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
-  },
-  tokenizationSpecification: {
-      type: 'PAYMENT_GATEWAY',
-      parameters: {
-        gateway: 'example',
-        gatewayMerchantId: 'exampleGatewayMerchantId',
-      },
-    },
-  }
-  ],
-  merchantInfo: {
-  merchantId:"siddhumithra@okhdfcbank",
-  merchantName: "CT APPointment"
-  
-  },
-  transactionInfo: {
-  totalPriceStatus: "FINAL",
-  totalPriceLabel: "Total",
-  checkoutOption: "COMPLETE_IMMEDIATE_PURCHASE",
-  totalPrice: amount.toString(),
-  currencyCode: "INR",
-  countryCode: "IN"
-  },
-  shippingAddressRequired:false,
-  callbackIntents:['PAYMENT_AUTHORIZATION']
+class ProductNameHeader extends React.Component {
+    render() {
+      return (
+          <span
+            style={{
+              fontWeight:"bold",
+              fontSize:"16px",
+            }}
+          >
+            {this.props.title}
+          </span>
+      );
+    }
   }
 
+export default class PatientBillingHistory extends React.Component {
 
-    const  confirmPayment=()=>{
-      // alert("Payment is successfull")
 
-    document.getElementById('success').innerHTML=`Payment of <b>&#8377</b>${amount} is Successful for ${type}!`
-    
+
+      
+  total = BillingData.length;
+  // pageSize = BillingData.length;
+  pageSize = 10;
+
+  state = {
+    data: BillingData.slice(0, this.pageSize),
+  };
+  scrollHandler = (event) => {
+    const e = event.nativeEvent;
+
+    if (
+      e.target.scrollTop + 10 >=
+      e.target.scrollHeight - e.target.clientHeight
+    ) {
+      // const moreData = BillingData.splice(0, 5);
+
+      // if (moreData.length > 0) {
+      //   this.setState({
+      //     BillingData: this.state.BillingData.concat(moreData),
+      //   });
+      // }
     }
-    const reset =()=>{
-      document.getElementById("success").style.visibility = "hidden";
+  };
 
-    }
-    return(
-              <div style={{width:"auto"}}>
-       <Card
-       body
-       inverse
-       style={{
-           backgroundColor: '#eef1f1',
-           borderColor: '#333',
-          // width:"auto",
-          margin:"auto",
-         }}
-       >
-         
-      <Card
-      body
-      inverse
-      style={{
-          backgroundColor: '#04c0c1',
-          borderColor: '#333',
-          textAlign: 'center'  
-          ,padding:"5px"      
-        }}
-    >
-      <CardTitle tag="h2" style={{ textAlign: 'center'}}>
-      Manage your Billing Details
-      </CardTitle>
-    </Card>
-    <Card style={{margin:"auto", marginTop:"5px"}}>
-    <Card
-     body
 
-     style={{
-        backgroundColor: '#eef1f1',
-      borderColor: 'black',
-      }}
-       >   
-
-               
- <Card style={{
-      backgroundColor: '#ffffff',
-      borderColor: 'black',
-      margin:"auto",
-    //   minWidth:'45%',
-      // padding:'5px'
-      // maxWidth:"650px",
-     color:"black",
-      }}>
-
-    <Card
-    body
-    inverse
+  render() {
+   
+    const grid =<Grid
     style={{
-        backgroundColor: '#0a5669',
-        textAlign: 'center',
-        
-        // margin:'-10px',
-        padding:"5px"    
-      }}
-  >
-    <CardTitle tag="h4" style={{ textAlign: 'center'}}>
-    Pay Here
-    </CardTitle>
-    </Card >
-    <div >
-    <FormGroup style={{marginTop:"15px", textAlign:"center"}} >
-
-    <Label style={{fontSize:"20px"}}>Bill Type :</Label>
-    <DropDownList style={{fontSize:"18px", width:"80%"}} 
-    data={options} defaultValue="Others" 
-    value={type}
-    onChange={e=> setType(e.target.value)}
-    />
-
-
-    <Col 
-    style={{margin:"auto"}}
-    >
-    <Label style={{fontSize:"20px",marginTop:"20px"}}>Bill Amount (in <b>&#8377;</b>):</Label>
-    <Input
-    id="walletAmount"
-    name="amount"
-    value={amount}
-    placeholder="Enter your Amount"
-    type="number"
-    min="1"
-    onChange={
-        e => setAmount(e.target.value)
-    }
-    style={{fontSize:"18px"}}
-
-    />
-    </Col>
-    </FormGroup>
- 
-    <FormGroup style={{color:"black", textAlign: 'center',}}>
-    <h6 >Please Click below button to pay</h6>
-
-    <Col
-    sm={{
-    offset: 0
+   // width:"9",
+    height:"500px",
+    //   position: "relative",
+    margin:"auto",
+        fontSize:"16px"
     }}
-    >
-        <GooglePayButton
-        environment="TEST"
-        buttonSizeMode="fill"
-        paymentRequest ={paymentRequest}
-        buttonType="pay"
-        // style={{width: "10%", height: 40}}
 
-        onLoadPaymentData={paymentData =>{
+    data={filterBy(BillingData, this.state.filter)}
+    filterable={true}
+    filter={this.state.filter}
+    onFilterChange={(e) => {
+      this.setState({
+        filter: e.filter,
+      });
+    }}
+    scrollable={"virtual"}
+    onScroll={this.scrollHandler}
+    fixedScroll={true}
+  >
+<GridToolbar>
+<Card style={{position: "absolute", padding:"10px", fontSize:"15px",right:"10px"}} title="Export PDF" className="k-button k-primary" onClick={this.exportPDF} disabled={this.state.exporting}>
+Download as PDF
+</Card>
+</GridToolbar>
 
-        }}
-        onPaymentAuthorized={
-            
-        paymentData => {
-            console.log("Transaction Successful")
-            console.log(`Rupees ${amount} is added to wallet `)
+    {/* <Column field="ProductID" title="No" filterable={false} width="60px" headerCell={ProductNameHeader}/> */}
 
-            console.log(paymentData.paymentMethodData)
-            console.log(paymentData)
-            confirmPayment()
-            
-
-        }
-        }
-        
+    <Column
+      field="transactionId"
+    // width="120px"
+      title="Bill ID"
+      headerCell={ProductNameHeader}
     />
-    </Col>
-    </FormGroup>
-    </div>
+        <Column
+      field="userName"
+    // width="160px"
+      title="Sender"
+      headerCell={ProductNameHeader}
+    />
+    <Column
+      field="billingType"
+    // width="180px"
+    //   filter="date"
+      title="Paid for"
+      headerCell={ProductNameHeader}
+    />
 
-   
-         
-          </Card>
-          <div id ="success" style={{fontSize:"21px", textAlign:"center",color:"#72e625",shadowColor:"black"}}></div>
-     </Card>
-   
-       
-       
-       </Card>
-     </Card>
-     <PatientBillingHistory/>
-     
-        </div>
+    <Column
+      field="billingDate"
+    // width="190px"
+      title="Date of Billing"
+      headerCell={ProductNameHeader}
+    />
+    <Column field="billingAmount" 
+    title="Amount (&#8377;)"
+    // width="180px"
+    headerCell={ProductNameHeader}
+    />
+
+  </Grid>
     
-    )
-  
+    return (<div>
+			<Card
+			 body
+			 inverse
+			 style={{
+				 backgroundColor: '#eef1f1',
+				 borderColor: '#333',
+				//  width:"80%",
+				 margin:"auto",
+			   }}>
+			<Card
+			body
+			inverse
+			style={{
+			backgroundColor: '#04c0c1',
+      borderColor: '#333',
+      padding:"5px",
+			textAlign: 'center'        
+			}}
+			>
+			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
+			My Billing History
+			</CardTitle>
+			</Card>
+			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
+              
+            {grid}
+            <GridPDFExport ref={gridPDFExport}>
+              {grid}
+            </GridPDFExport>
+			</Card>
+			</Card>
+
+          </div>)
   }
 
+  pageChange = event => {
+    this.setState(this.createState(event.page.skip, event.page.take));
+  };
+
+  createState(skip, take) {
+    return {
+      data: BillingData.slice(skip, skip + take),
+      skip: skip
+    };
+  }
+
+  exportPDF = () => {
+    gridPDFExport.current.save(this.state.data, this.pdfExportDone);
+    this.setState({
+      exporting: true
+    });
+  };
+  pdfExportDone = () => {
+    this.setState({
+      exporting: false
+    });
+  };
+}
