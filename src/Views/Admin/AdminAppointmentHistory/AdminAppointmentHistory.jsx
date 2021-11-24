@@ -73,7 +73,7 @@ Download as PDF
 </GridToolbar>
 <Column field="patientId" 
     title="Patient ID" 
-    width="120px"
+    width="110px"
     headerCell={ProductNameHeader}
     />
 <Column field="patientName" 
@@ -98,7 +98,7 @@ Download as PDF
     />
        <Column field="physicianId" 
     title="Physician ID" 
-    width="120px"
+    width="130px"
     headerCell={ProductNameHeader}
     />
     <Column field="physicianName" 

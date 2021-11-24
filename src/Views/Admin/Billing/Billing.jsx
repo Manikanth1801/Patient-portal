@@ -72,8 +72,8 @@ Download as PDF
 </GridToolbar>
 <Column
       field="id"
-    width="100px"
-      title="No."
+    width="120px"
+      title="Sl.No."
       headerCell={ProductNameHeader}
     />
 <Column
@@ -98,7 +98,7 @@ Download as PDF
 
     <Column
       field="billingDate"
-    width="230px"
+    width="210px"
       title="Date of Billing"
       headerCell={ProductNameHeader}
     />
@@ -114,8 +114,7 @@ Download as PDF
     return (
       <div>
         <Card
-			body
-			inverse
+		
 			style={{
 			backgroundColor: '#04c0c1',
       borderColor: '#333',
@@ -132,11 +131,11 @@ Download as PDF
 				//  width:"80%",
 				//  margin:"auto",
 			   }}> */}
-			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
+			<CardTitle tag="h2" style={{ textAlign: 'center',color:"white" }}>
 			Billing and Transaction History
 			</CardTitle>
 			</Card>
-			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333', }}>
+			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
     <div >
   {grid}
       <GridPDFExport ref={gridPDFExport}>
