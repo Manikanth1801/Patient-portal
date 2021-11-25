@@ -15,7 +15,7 @@ import { TaskScheduler } from "./Scheduler";
 
 const sampleProducts = [
   {
-    ProductID: 1,
+    patientID: 1,
     ProductName: "Chai",
     SupplierID: 1,
     CategoryID: 1,
