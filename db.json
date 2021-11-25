@@ -16,7 +16,7 @@
       "experience": "only for physician",
       "isLogged": false,
       "registrationDate": "2021-11-22T04:49:05.226Z",
-      "isApproved": false
+      "isApproved": true
     },
     {
       "email": "testadmin@test.com",
@@ -51,7 +51,7 @@
       "experience": null,
       "isLogged": false,
       "registrationDate": "2021-11-24T06:15:18.611Z",
-      "isApproved": true,
+      "isApproved": false,
       "id": 4
     },
     {
@@ -87,7 +87,7 @@
       "experience": "5",
       "isLogged": false,
       "registrationDate": "2021-11-24T10:35:03.385Z",
-      "isApproved": false,
+      "isApproved": true,
       "id": 6
     },
     {
@@ -109,24 +109,6 @@
       "id": 7
     },
     {
-      "email": "test@test.com",
-      "password": "$2a$10$8xsb0Tq/ohqdkI4NnS1CVentvqdYJ.1AfwbZxTpJ3gWiInaX7XIpi",
-      "firstname": "Nistala",
-      "lastname": "Chaitanya",
-      "gender": "Male",
-      "retypePassword": "sid123",
-      "dob": "1997-07-01",
-      "role": "Patient",
-      "isRegistered": false,
-      "mobile": "9743854486",
-      "specialization": null,
-      "experience": null,
-      "isLogged": false,
-      "registrationDate": "2021-11-25T04:19:53.760Z",
-      "isApproved": false,
-      "id": 6
-    },
-    {
       "email": "siddhumithra@gmail.com",
       "password": "$2a$10$RmwcPBS.NjVfRotSptgqXuorCODrAk2TNLkxUDCoYWeGG/G0if.X6",
       "firstname": "Siddhartha",
@@ -141,7 +123,7 @@
       "experience": null,
       "isLogged": false,
       "registrationDate": "2021-11-25T06:10:46.151Z",
-      "isApproved": false,
+      "isApproved": true,
       "id": 8
     }
   ],
