@@ -26,7 +26,7 @@ class NewUsers extends Component {
 
     getOnlyDate(thisdate){
         var newDate = new Date(thisdate)
-        console.log("date is", newDate)
+        // console.log("date is", newDate)
         // if(newDate === 'Invalid Dat'){
             var dt = newDate.getDate()
             var mt = newDate.getMonth()
@@ -34,8 +34,35 @@ class NewUsers extends Component {
             return `${dt}/${mt}/${yr}`
         // }
     }
-    approveUser(e){
-        e.target.innerText = 'Approved'
+    approveUser(e, status, userId){
+        let postData
+        if(status == false){
+            postData = {
+                isApproved: true
+            }
+        } else {
+            postData = {
+                isApproved: false
+            }
+        }
+        let token = localStorage.getItem('accessToken')
+        if(token){
+            axios.defaults.headers.common["Authorization"] = `Bearer ${token}` 
+        }
+        axios.patch(`http://localhost:8000/users/${userId}`, postData)
+        .then(res => {
+            let newdata = this.state.userData
+            for(let i = 0; i < newdata.length; i++) {
+                if(newdata[i].id === userId){
+                    newdata[i] = res.data;
+                    break
+                }
+            }
+            this.setState({userData: newdata})
+        })
+        .catch(err => {
+            console.log(err)
+        })
     }
 
     render() {
@@ -62,7 +89,7 @@ class NewUsers extends Component {
                             <td>
                                 { user.isApproved ? 
                                 'Approved' : 
-                                <div className="common-btn" onClick={(e) => this.approveUser(e)}>Approve</div> 
+                                <div className="common-btn" onClick={(e) => this.approveUser(e, user.isApproved, user.id)}>Approve</div> 
                                 }
                             </td>
                         </tr>

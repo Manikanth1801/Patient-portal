@@ -1,5 +1,3 @@
-
-
 import React, { useRef } from "react";
 import { useLocation } from "react-router";
 import Routes from "../../Router/Routes";

@@ -26,5 +26,20 @@
     background-color: #008688;
     color: #fff;
     text-decoration: none;
-
+}
+.usersData-tbl{
+    height: 450px;
+    overflow: auto;
+    margin: 10px;
+}
+.usersData-tbl i {
+    margin-right: 15px;
+    cursor: pointer;
+    display: inline;
+}
+@media only screen and (max-width: 767px) {
+    .usersData-tbl i {
+        margin-right: 6px;
+        cursor: none;
+    }
 }
