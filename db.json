@@ -16,7 +16,7 @@
       "experience": "only for physician",
       "isLogged": false,
       "registrationDate": "2021-11-22T04:49:05.226Z",
-      "isApproved": true
+      "isApproved": false
     },
     {
       "email": "testadmin@test.com",
@@ -51,7 +51,7 @@
       "experience": null,
       "isLogged": false,
       "registrationDate": "2021-11-24T06:15:18.611Z",
-      "isApproved": false,
+      "isApproved": true,
       "id": 4
     },
     {
@@ -87,7 +87,7 @@
       "experience": "5",
       "isLogged": false,
       "registrationDate": "2021-11-24T10:35:03.385Z",
-      "isApproved": true,
+      "isApproved": false,
       "id": 6
     },
     {
