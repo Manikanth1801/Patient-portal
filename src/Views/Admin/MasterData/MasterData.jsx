@@ -18,7 +18,7 @@ class MasterData extends Component {
         axios.get("http://localhost:8000/lookups")
         .then(res => {
         console.log("Test data checked is",res)
-            this.setState({masterData: res.data[0]})
+            this.setState({masterData: res.data})
         })
         .catch(err => {
         console.log(err)
@@ -29,9 +29,10 @@ class MasterData extends Component {
     deleteRecored(e, recordId){
         // e.target.innerText = 'Approved'
         // specialization[0];
-        axios.delete(`http://localhost:8000/lookups/specialization/${recordId}`)
+        axios.delete(`http://localhost:8000/lookups/${recordId}`)
         .then(res => {
             console.log("deleteRecored === ",res)
+            // this.updaterecord()
         })
         .catch(err => {
             console.log(err)
@@ -46,13 +47,13 @@ class MasterData extends Component {
                 <div className="usersData-tbl">
                 <Table bordered responsive>
                     <tbody>
-                        { masterData.specialization && masterData.specialization.map((data, index) => (
+                        { masterData && masterData.map((data, index) => (
                         <tr key={index}>
                             <td>{data.name}</td>
                             <td className="text-right">
                                 <i className="far fa-trash-alt" onClick={(e) => this.deleteRecored(e, data.id)}></i>
-                                <i className="far fa-edit"></i>
-                                <i className="fas fa-plus"></i>
+                                {/* <i className="far fa-edit"></i>
+                                <i className="fas fa-plus"></i> */}
                             </td>
                         </tr>
                         ))}

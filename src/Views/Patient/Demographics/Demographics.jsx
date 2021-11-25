@@ -104,7 +104,7 @@ class Demographics extends Component {
                     <br />
                     <div className="row">
                         <div className="col-6" id='submit'>
-                            <button className="btn btn-outline-primary">Submit</button>
+                            <button className="btn btn-primary px-5 rounded-0">Submit</button>
                         </div>
                     </div>
                 </AvForm>

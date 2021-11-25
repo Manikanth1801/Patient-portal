@@ -82,9 +82,9 @@ class Header extends React.Component {
               <CtLogo />
               </div>
               {/* <img src="/CTLogo.jpg" height="34px"></img> */}
-              <h2 className="pl-2" style={{color:"white"}}>
+              {/* <h2 className="pl-2" style={{color:"white"}}>
                 WelCome to <span style={{textTransform:'capitalize'}}>{name}</span>
-              </h2>
+              </h2> */}
             </div>
           </NavbarBrand>
 

@@ -9,7 +9,8 @@ class NewUsers extends Component {
         super(props)
 
         this.state = {
-            userData: []
+            userData: [],
+            newUsersCount: 0
         }
     }
 
@@ -22,6 +23,17 @@ class NewUsers extends Component {
         .catch(err => {
         console.log(err)
         })
+
+        this.countNewUsers()
+    }
+
+    countNewUsers(){
+        let userdata = this.state.userData
+        for(let i = 0; i < userdata.length; i++) {
+            if(userdata[i].isApproved === false){
+                this.setState({ newUsersCount: this.state.newUsersCount + 1 })
+            }
+        }
     }
 
     getOnlyDate(thisdate){
@@ -35,6 +47,7 @@ class NewUsers extends Component {
         // }
     }
     approveUser(e, status, userId){
+        // debugger;
         let postData
         if(status == false){
             postData = {
@@ -69,6 +82,7 @@ class NewUsers extends Component {
         const userData = this.state.userData
         return (
             <div>
+                { this.state.newUsersCount > 0 ?
                 <Table bordered responsive>
                     <thead>
                         <tr>
@@ -81,22 +95,24 @@ class NewUsers extends Component {
                     </thead>
                     <tbody>
                         { userData && userData.map((user, index) => (
-                        <tr key={index}>
-                            <td>{user.firstname} {user.lastname}</td>
-                            <td>{user.role}</td>
-                            <td>{user.email}</td>
-                            <td>{this.getOnlyDate(user.registrationDate)}</td>
-                            <td>
-                                { user.isApproved ? 
-                                'Approved' : 
-                                <div className="common-btn" onClick={(e) => this.approveUser(e, user.isApproved, user.id)}>Approve</div> 
-                                }
-                            </td>
-                        </tr>
+                            user.isApproved === false &&
+                            <tr key={index}>
+                                <td>{user.firstname} {user.lastname}</td>
+                                <td>{user.role}</td>
+                                <td>{user.email}</td>
+                                <td>{this.getOnlyDate(user.registrationDate)}</td>
+                                <td>
+                                    {/* { user.isApproved ? 
+                                    'Approved' :  */}
+                                    <div className="common-btn" onClick={(e) => this.approveUser(e, user.isApproved, user.id)}>Approve</div> 
+                                    {/* } */}
+                                </td>
+                            </tr>
                         ))}
-                        
                     </tbody>
-                </Table>
+                </Table> : 
+                <div className="no-records">No new records available</div>
+                }
             </div>
         )
     }

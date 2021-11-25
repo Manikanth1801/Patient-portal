@@ -94,6 +94,7 @@ class ExistingUsers extends Component {
                     </thead>
                     <tbody>
                         { userData && userData.map((user, index) => (
+                            user.isApproved &&
                         <tr key={index}>
                             <td>{user.firstname} {user.lastname}</td>
                             <td>{user.role}</td>
