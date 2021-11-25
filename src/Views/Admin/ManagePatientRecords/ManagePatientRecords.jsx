@@ -1,3 +1,14 @@
+import React from 'react'
+import Record from '../../../Common/RecordManagement/Record'
+
+export default function ManagePatientRecords() {
+    return (
+        <div>
+            <Record/>
+        </div>
+    )
+}
+
 // import { StrictMode } from "react";
 // import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import * as React from "react";
