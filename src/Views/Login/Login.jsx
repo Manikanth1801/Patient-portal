@@ -96,7 +96,7 @@ class Login extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="py-5 d-flex justify-content-center bg-color" style={{ marginTop: "12.5%" }}></div>
+                <div className="py-5 d-flex justify-content-center bg-color" style={{ marginTop: "14.3%" }}></div>
             </div>
         )
     }

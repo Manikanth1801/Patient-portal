@@ -52,7 +52,7 @@ class Routes extends React.Component {
         <Switch>
           {/* General Routes */}
           <Route path="/" exact render={(props) => <Login {...props} />} />
-          <Route path="/registration" render={() => <Register />} />
+          <Route path="/registration" render={(props) => <Register {...props} />} />
           <Route
             path="/userVerification"
             render={(props) => <UserVerification {...props} />}

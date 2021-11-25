@@ -32,52 +32,43 @@ class Profile extends Component {
     };
 
     componentDidMount() {
-        // console.log('edit', this.state.edit)
-        axios.get("http://localhost:8000/users").then(resp => {
-            if (resp.data) {
-                resp.data.forEach((val) => {
-                    if (val.email == 'chaitanya@gmail.com') {
-                        this.setState({
-                            firstname: val.firstname,
-                            lastname: val.lastname,
-                            dob: val.dob,
-                            mobile: val.mobile,
-                            id: val.id
-                        })
-
-
-                    }
-
-                })
-
-
-            }
-        })
+       let data =  JSON.parse(localStorage.getItem('userDetails'));
+       this.setState({
+        firstname: data.firstname,
+        lastname: data.lastname,
+        dob: data.dob,
+        mobile: data.mobile,
+        id: data.id
+    })
+      
     }
 
     handleSubmit = (e, error, values) => {
-        console.log('userFirst', this.state)
+        let token = localStorage.getItem('accessToken')
+        let profileData = {
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            gender: this.state.gender,
+            ethnicity: this.state.ethnicity,
+            education: this.state.education,
+            employment: this.state.employment,
+            dob: this.state.dob,
+            address: this.state.address,
+            mobile: this.state.mobile,
+
+
+        }
         if (error == '') {
 
 
-
-            let profileData = {
-                firstname: this.state.firstname,
-                lastname: this.state.lastname,
-                gender: this.state.gender,
-                ethnicity: this.state.ethnicity,
-                education: this.state.education,
-                employment: this.state.employment,
-                dob: this.state.dob,
-                address: this.state.address,
-                mobile: this.state.mobile,
+            if (!this.state.edit) {
+          
 
 
-            }
-
-
-            console.log('profileData', profileData);
-
+            // console.log('profileData', profileData);
+            if(token){
+                axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+                }
             axios.post("http://localhost:8000/patientProfile", profileData)
                 .then(res => {
                     console.log('res', res)
@@ -92,13 +83,20 @@ class Profile extends Component {
                     }
                 })
             //    this.reset();
-
+            }
+          
             if (this.state.edit) {
-                console.log(this.state.userID);
-                axios.put('http://localhost:8000/users/this.state.id', {
+                alert(this.state.id)
+                console.log(this.state.id);
+                if(token){
+                    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+                    }
+                axios.patch(`http://localhost:8000/users/${this.state.id}`, {
                     firstname: profileData.firstname,
                     lastname: profileData.lastname,
                     mobile: profileData.mobile
+                }).then(res =>{
+                    console.log(res.data)
                 })
 
 
@@ -108,7 +106,7 @@ class Profile extends Component {
 
     handleEditClik = (e) => {
         this.setState({ edit: !this.state.edit })
-        console.log('disabled', this.state.edit, 'pencilIcon')
+        // console.log('disabled', this.state.edit, 'pencilIcon')
         this.setState({ disabled: !this.state.disabled })
 
     }
@@ -246,7 +244,7 @@ class Profile extends Component {
                         </div>
 
                         <div col-4>
-                            <button className="btn btn-outline-primary">Update</button>
+                            <button className="btn  btn-primary px-5 rounded-0">Update</button>
                         </div>
                         <div>
 
