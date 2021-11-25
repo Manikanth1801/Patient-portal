@@ -14,16 +14,6 @@ class Login extends React.Component {
             password: ''
         }
     }
-    componentDidMount(){
-        // axios.get("http://localhost:8000/users")
-        // .then(res => {
-        //     console.log("Test data checked is",res)
-        // })
-        // .catch(err => {
-        //     console.log(err)
-        // })
-        console.log("props are",this.props)
-    }
     handleChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -43,9 +33,11 @@ class Login extends React.Component {
                     console.log("login details are",res.data)
                     let token = res.data.accessToken;
                     let role = res.data.user.role;
+                    let userDetails = res.data.user;
                     this.myFormRef && this.myFormRef.reset();
                     if(token !== "" && token !== undefined && token !== null){
                         localStorage.setItem("accessToken",token)
+                        localStorage.setItem("userDetails",JSON.stringify(userDetails))
                         if(role === "Patient"){
                             this.props.history.push("/patient/dashboard/");
                         }else if(role === "Physician"){
