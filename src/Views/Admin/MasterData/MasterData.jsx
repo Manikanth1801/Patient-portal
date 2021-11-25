@@ -15,6 +15,11 @@ class MasterData extends Component {
     }
 
     componentDidMount(){
+        this.getMasterData()
+        // console.log("specialization   ", specialization);
+    }
+
+    getMasterData(){
         axios.get("http://localhost:8000/lookups")
         .then(res => {
         console.log("Test data checked is",res)
@@ -23,7 +28,6 @@ class MasterData extends Component {
         .catch(err => {
         console.log(err)
         })
-        // console.log("specialization   ", specialization);
     }
 
     deleteRecored(e, recordId){
@@ -32,7 +36,7 @@ class MasterData extends Component {
         axios.delete(`http://localhost:8000/lookups/${recordId}`)
         .then(res => {
             console.log("deleteRecored === ",res)
-            // this.updaterecord()
+            this.getMasterData()
         })
         .catch(err => {
             console.log(err)

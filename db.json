@@ -256,10 +256,6 @@
   ],
   "lookups": [
     {
-      "id": 1,
-      "name": "Anatomical Pathology"
-    },
-    {
       "id": 2,
       "name": "Anesthesiology"
     },
