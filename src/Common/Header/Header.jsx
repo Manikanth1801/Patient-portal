@@ -70,6 +70,8 @@ class Header extends React.Component {
   }
 
   render() {
+    let userDetails = JSON.parse(localStorage.getItem("userDetails"));
+    let name = userDetails.firstname + ' ' + userDetails.lastname
     return (
       <div>
         <Navbar expand="md" className="header">
@@ -80,9 +82,9 @@ class Header extends React.Component {
               <CtLogo />
               </div>
               {/* <img src="/CTLogo.jpg" height="34px"></img> */}
-              {/* <h2 className="pl-2" style={{color:"white"}}>
-                WelCome to <span style={{textTransform:'capitalize'}}>{this.module}</span>
-              </h2> */}
+              <h2 className="pl-2" style={{color:"white"}}>
+                WelCome to <span style={{textTransform:'capitalize'}}>{name}</span>
+              </h2>
             </div>
           </NavbarBrand>
 
