@@ -19,8 +19,8 @@
     -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
       <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/4.42.0/default/default-main.css"></link>
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
-    <link rel="canonical" href="https://video-chat-mihir.web.app/" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="canonical" href="https://video-chat-mihir.web.app/" /> -->
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -54,6 +54,30 @@
     crossorigin="anonymous"></script>
   <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
   <script src="https://kit.fontawesome.com/f90b59850b.js" crossorigin="anonymous"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker
+          .register("worker.js")
+          .then(
+            function (registration) {
+              console.log(
+                "Worker registration successful",
+                registration.scope
+              );
+            },
+            function (err) {
+              console.log("Worker registration failed", err);
+            }
+          )
+          .catch(function (err) {
+            console.log(err);
+          });
+      });
+    } else {
+      console.log("Service Worker is not supported by browser.");
+    }
+  </script>
 </body>
 
 </html>

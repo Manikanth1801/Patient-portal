@@ -38,9 +38,10 @@ export default class AdminDashboard extends React.Component {
 			animationDuration:3000,
 			colorSet:"colorSet2",
 			theme: "light1",
-			height:450,
+			// width:1000,
+			// height:450,
 			zoomEnabled: true,
-			dataPointMaxWidth: 70,
+			dataPointMaxWidth: 80,
 			title: {
 
 			},
@@ -66,7 +67,7 @@ export default class AdminDashboard extends React.Component {
 			data: [
 				{
 				type: "column",
-				color:"#6f42f5",
+				color:"#21de82",
 				name: "Bar View",
 				showInLegend: "true",
 				xValueFormatString: "####",
@@ -88,40 +89,42 @@ export default class AdminDashboard extends React.Component {
 		}
 		return (
 		<div>
-		<Cards1/>
-			<Card
-			 style={{
-				 backgroundColor: '#eef1f1',
-				 borderColor: '#333',
-				//  width:"80%",
-				//  margin:"auto",
-			   }}>
-			
-			<Card
-			style={{
-			backgroundColor: '#04c0c1',
-			borderColor: '#333',
-			textAlign: 'center'        
-			}}
-			>
-			<CardTitle tag="h2" style={{ textAlign: 'center', color:"white"}}>
-			Patient Visit History
-			</CardTitle>
-			</Card>
-			<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
-			<CanvasJSChart options = {options} 
-				 onRef={ref => this.chart = ref}
-			/>
-			</Card>
-			</Card>
+
+
+	<Card
+
+style={{
+	backgroundColor: '#eef1f1',
+	borderColor: '#333',
+}}>
+
+<Cards1/>
+
+		<Card
+		style={{
+		backgroundColor: '#04c0c1',
+		borderColor: '#333',
+		textAlign: 'center',
+		padding:"5px",       
+		}}
+		>
+		<CardTitle tag="h3" style={{ textAlign: 'center',color:"white"}}>
+		Patient Appoinment History
+		</CardTitle>
+		</Card>
+		<Card style={{backgroundColor: '#eef1f1',borderColor: '#333'}}>
+			<div>
+		<CanvasJSChart options = {options}
+			onRef={ref => this.chart = ref}
+		/>
+		</div>
+		</Card>
+		</Card>
 			{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
 		</div>
 		);
 	}
 	
-	componentDidMount(){
 
-
-	}
 
 }

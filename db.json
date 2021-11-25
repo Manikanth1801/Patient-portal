@@ -2,7 +2,6 @@
   "users": [
     {
       "id": 1,
-      "uuid": "",
       "firstname": "Nistala",
       "lastname": "Chaitanya",
       "gender": "male",
@@ -17,13 +16,11 @@
       "experience": "only for physician",
       "isLogged": false,
       "registrationDate": "2021-11-22T04:49:05.226Z",
-      "isApproved": false,
-      "isActive": false
+      "isApproved": false
     },
     {
       "email": "testadmin@test.com",
       "password": "$2a$10$ExH8Wh8lqMB7OeQkrZ68m.GBnyBVnwUNSwAoDrq2V9Ia7eb3EuVr2",
-      "uuid": "",
       "firstname": "Test",
       "lastname": "Account",
       "gender": "Male",
@@ -42,7 +39,6 @@
     {
       "email": "chaitanyaNistala@gmail.com",
       "password": "$2a$10$fF0vuGwkAv7pgVpIKu3RKOdMMAvF75c/5GEW.aiJ..gSruNU3j5eq",
-      "uuid": "",
       "firstname": "NISTALA",
       "lastname": "VENKATA CHAITANYA",
       "gender": "Male",
@@ -61,7 +57,6 @@
     {
       "email": "Pankaj.Gotefode@citiustech.com",
       "password": "$2a$10$raMPwCR3I1Sti2tg2v3pGeYrkFEarcFD6GRrNaMUMPaGy0nsKtRkO",
-      "uuid": "",
       "firstname": "Pankaj",
       "lastname": "Gotefode",
       "gender": "Male",
@@ -80,7 +75,6 @@
     {
       "email": "testphysician@test.com",
       "password": "$2a$10$BJMTPSn3N847UrXMZp0Zi.juhXGZ.jir5NDl2cG2EW/R.U26yEKnC",
-      "uuid": "",
       "firstname": "Test ",
       "lastname": "Physcian",
       "gender": "Male",
@@ -99,7 +93,6 @@
     {
       "email": "testpatient@test.com",
       "password": "$2a$10$7EdoY1huo1u0q4IOGh7Mte9Y51llsV.FAgfTyuNJZyiUrYynrUI0q",
-      "uuid": "",
       "firstname": "Test ",
       "lastname": "Accont",
       "gender": "Male",
@@ -121,15 +114,33 @@
       "firstname": "Nistala",
       "lastname": "Chaitanya",
       "gender": "Male",
-      "retypePassword": "test123",
-      "dob": "1991-08-25",
+      "retypePassword": "sid123",
+      "dob": "1997-07-01",
       "role": "Patient",
       "isRegistered": false,
-      "mobile": "9638527410",
+      "mobile": "9743854486",
       "specialization": null,
       "experience": null,
       "isLogged": false,
-      "registrationDate": "2021-11-24T15:10:45.924Z",
+      "registrationDate": "2021-11-25T04:19:53.760Z",
+      "isApproved": false,
+      "id": 6
+    },
+    {
+      "email": "siddhumithra@gmail.com",
+      "password": "$2a$10$RmwcPBS.NjVfRotSptgqXuorCODrAk2TNLkxUDCoYWeGG/G0if.X6",
+      "firstname": "Siddhartha",
+      "lastname": "N",
+      "gender": "Male",
+      "retypePassword": "sid123",
+      "dob": "1997-07-01",
+      "role": "Patient",
+      "isRegistered": false,
+      "mobile": "9743854486",
+      "specialization": null,
+      "experience": null,
+      "isLogged": false,
+      "registrationDate": "2021-11-25T06:10:46.151Z",
       "isApproved": false,
       "id": 8
     }
@@ -137,7 +148,6 @@
   "patientProfile": [
     {
       "id": 1,
-      "uuid": "",
       "firstname": "Nistala",
       "lastname": "Chatanya",
       "gender": "male",
@@ -154,7 +164,6 @@
   "patientDemographics": [
     {
       "id": 1,
-      "uuid": "",
       "medicalHistory": "",
       "familyMedicalHistory": "",
       "surgeries": "",
@@ -190,6 +199,8 @@
   "patientImmunization": [
     {
       "COVID-19Vaccine": "",
+      "COVID-19Doses": "",
+      "VaccineDate": "",
       "otherVaccnes": ""
     }
   ],
@@ -234,7 +245,6 @@
   "adminProfile": [
     {
       "id": 1,
-      "uuid": "",
       "firstname": "Nistala",
       "lastname": "Chatanya",
       "gender": "male",
