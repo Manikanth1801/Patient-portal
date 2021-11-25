@@ -11,13 +11,13 @@
       "retypePassword": 12345,
       "dob": "683078400",
       "role": "patient",
-      "isRegistered": false,
+      "isRegistered": true,
       "mobile": 7845122356,
       "specialization": null,
       "experience": "only for physician",
       "isLogged": false,
       "registrationDate": "2021-11-22T04:49:05.226Z",
-      "isApproved": false,
+      "isApproved": true,
       "isActive": false
     },
     {
@@ -36,7 +36,7 @@
       "experience": null,
       "isLogged": false,
       "registrationDate": "2021-11-24T06:06:42.838Z",
-      "isApproved": false,
+      "isApproved": true,
       "id": 2
     },
     {
@@ -55,7 +55,7 @@
       "experience": null,
       "isLogged": false,
       "registrationDate": "2021-11-24T06:15:18.611Z",
-      "isApproved": false,
+      "isApproved": true,
       "id": 4
     },
     {
@@ -68,13 +68,13 @@
       "retypePassword": "1234567890",
       "dob": "2008-08-13",
       "role": "Patient",
-      "isRegistered": false,
+      "isRegistered": true,
       "mobile": "8877654543",
       "specialization": null,
       "experience": null,
       "isLogged": false,
       "registrationDate": "2021-11-24T03:22:17.191Z",
-      "isApproved": false,
+      "isApproved": true,
       "id": 5
     }
   ],

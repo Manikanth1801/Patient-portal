@@ -16,17 +16,17 @@ class ExistingUsers extends Component {
     componentDidMount(){
         axios.get("http://localhost:8000/users")
         .then(res => {
-        console.log("Test data checked is",res.data)
+            console.log("Test data checked is",res.data)
             this.setState({userData: res.data})
         })
         .catch(err => {
-        console.log(err)
+            console.log(err)
         })
     }
 
     getOnlyDate(thisdate){
         var newDate = new Date(thisdate)
-        console.log("date is", newDate)
+        // console.log("date is", newDate)
         // if(newDate === 'Invalid Dat'){
             var dt = newDate.getDate()
             var mt = newDate.getMonth()
@@ -38,49 +38,43 @@ class ExistingUsers extends Component {
         let postData
         // debugger;
         if(status === 'activate'){
-            console.log("activateAccount ", e)
+            console.log("activateAccount ")
             e.target.classList.remove('active-btn')
             e.target.classList.add('deactive-btn')
             e.target.innerText = 'Deactivate'
-            // postData = {
-            //     isRegistered: true
-            // }
+            postData = {
+                isRegistered: true
+            }
         }
         else {
-            console.log("deactivateAccount ", e)
+            console.log("deactivateAccount ")
             e.target.classList.remove('deactive-btn')
             e.target.classList.add('active-btn')
             e.target.innerText = 'Activate'
-            // postData = {
-            //     isRegistered: false
-            // }
+            postData = {
+                isRegistered: false
+            }
         }
-        postData = {
-            isRegistered: false
+        
+        let token = localStorage.getItem('accessToken')
+        if(token){
+            axios.defaults.headers.common["Authorization"] = `Bearer ${token}` 
         }
-        // let token = localStorage.getItem('accessToken')
-        // if(token){
-        //     axios.defaults.headers.common["Authorization"] = 'Bearer ' + token
-        // }
-        // axios.patch("http://localhost:8000/users/1", postData)
-        // .then(res => {
-        //     alert(status)
-        // })
-        // .catch(err => {
-        //     console.log(err)
-        // })
-        let token = localStorage.getItem("accessToken")
-        axios.patch("http://localhost:8000/users/1", postData, {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        })
+        axios.patch(`http://localhost:8000/users/${userId}`, postData)
         .then(res => {
-            console.log("Success")
+            let newdata = this.state.userData
+            for(let i = 0; i < newdata.length; i++) {
+                if(newdata[i].id === userId){
+                    newdata[i] = res.data;
+                    break
+                }
+            }
+            this.setState({userData: newdata})
         })
-        .catch(error => {
-            console.log(error)
+        .catch(err => {
+            console.log(err)
         })
+        
     }
 
     render() {
