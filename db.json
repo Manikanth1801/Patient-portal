@@ -76,6 +76,24 @@
       "registrationDate": "2021-11-24T03:22:17.191Z",
       "isApproved": false,
       "id": 5
+    },
+    {
+      "email": "siddhumithra@gmail.com",
+      "password": "$2a$10$gcP86WpA1E37hrzULD5ioujtMPRQIRsHRNGHZ0EltTvwzzfEX1N9W",
+      "firstname": "Siddhartha",
+      "lastname": "N",
+      "gender": "Male",
+      "retypePassword": "sid123",
+      "dob": "1997-07-01",
+      "role": "Patient",
+      "isRegistered": false,
+      "mobile": "9743854486",
+      "specialization": null,
+      "experience": null,
+      "isLogged": false,
+      "registrationDate": "2021-11-25T04:19:53.760Z",
+      "isApproved": false,
+      "id": 6
     }
   ],
   "patientProfile": [

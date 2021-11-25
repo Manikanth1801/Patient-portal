@@ -24,8 +24,8 @@ export default function Paybill (){
     "Others",
   ];
 
-  const [type,setType] =useState();
-  const [amount,setAmount] = useState(100);
+  const [type,setType] =useState("Appointments");
+  const [amount,setAmount] = useState(500);
 
 const paymentRequest= {    
   apiVersion: 2,
@@ -67,7 +67,7 @@ const paymentRequest= {
     const  confirmPayment=()=>{
       // alert("Payment is successfull")
 
-    document.getElementById('success').innerHTML=`Payment of <b>&#8377</b>${amount} is Successful for ${type}!`
+    document.getElementById('success').innerHTML=`<h4 style='color:green;'>Payment of <b>&#8377</b>${amount} is Successful for ${type}!</h4>`
     
     }
     // const reset =()=>{
@@ -142,7 +142,7 @@ const paymentRequest= {
     <Label style={{fontSize:"20px"}}>Bill Type :</Label>
     </div>
     <DropDownList style={{fontSize:"18px",width:"100%"}} 
-    data={options} defaultValue="Others" 
+    data={options} defaultValue="Appointments" 
     value={type}
     onChange={e=> setType(e.target.value)}
     />
@@ -206,7 +206,7 @@ const paymentRequest= {
    
     </div>
     </Card>
-    <div id ="success" style={{color: "green",fontsize:"20px", textAlign:"center",margin:"5px"}}></div>
+    <div id ="success" style={{fontWeight:"bold",color: "green", textAlign:"center",margin:"5px"}}></div>
           </Card>
 
           <Card
