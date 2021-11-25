@@ -129,7 +129,7 @@ Download as PDF
         
 			}}
 			>
-			<CardTitle tag="h2" style={{ textAlign: 'center'}}>
+			<CardTitle tag="h2" style={{ textAlign: 'center',color:"white"}}>
 			My Appointment List
 			</CardTitle>
 			</Card>

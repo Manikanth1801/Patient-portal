@@ -34,7 +34,7 @@ export default class PatientDashboard extends React.Component {
 		const options = {
             exportEnabled: true,
 			animationEnabled: true,
-			animationDuration:3000,
+			animationDuration:3500,
 			colorSet:"colorSet2",
 			theme: "light1",
 			// height:600,

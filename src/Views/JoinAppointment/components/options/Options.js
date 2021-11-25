@@ -88,7 +88,11 @@ const Options = () => {
               icon={<CopyOutlined />}
               className={classes.btn}
               tabIndex="0"
-              onClick={() => message.success("Invite sent successfully!")}
+              onClick={
+                () => message.success("Invite code has been e-mailed!")
+              
+              
+              }
               
             >
               Send Invite

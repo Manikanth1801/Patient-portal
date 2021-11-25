@@ -7,12 +7,12 @@ export default function PhysicianJoinAppointment() {
     return (
         <div>
         <JoinAppointment/>
-  <InputGroup size="lg" style={{width:"600px",margin:"auto"}}>
+  {/* <InputGroup size="lg" style={{width:"600px",margin:"auto"}}>
     <Input placeholder="Enter Prescriptions/Comments" />
     <Button color="success" >
       Submit
     </Button>
-  </InputGroup>
+  </InputGroup> */}
 
 
         </div>

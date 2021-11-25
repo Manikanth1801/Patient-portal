@@ -18,7 +18,7 @@ export default class Cards extends React.Component{
                             <CardTitle tag="h5">
                             Physicians
                             </CardTitle>
-                            <CountUp style={{fontSize:"30px", color:"#008688", fontWeight:'bold'}} end ={26} duration={1.5}/>
+                            <CountUp style={{fontSize:"30px", color:"#008688", fontWeight:'bold'}} end ={26} duration={3}/>
                         </Card>
                         </Col>
                         <Col >
@@ -26,7 +26,7 @@ export default class Cards extends React.Component{
                             <CardTitle tag="h5">
                             Specializations
                             </CardTitle>
-                            <CountUp style={{fontSize:"30px",color:"#008688", fontWeight:'bold'}} end ={12} duration={1.5}/>
+                            <CountUp style={{fontSize:"30px",color:"#008688", fontWeight:'bold'}} end ={12} duration={3}/>
                         </Card>
                         </Col>
                         <Col >
@@ -34,7 +34,7 @@ export default class Cards extends React.Component{
                             <CardTitle tag="h5">
                             Patients
                             </CardTitle >
-                            <CountUp style={{fontSize:"30px",color:"#008688", fontWeight:'bold'}} end ={50} duration={1.5}/>
+                            <CountUp style={{fontSize:"30px",color:"#008688", fontWeight:'bold'}} end ={50} duration={3}/>
                         </Card>
                         </Col>
                         <Col >
@@ -42,7 +42,7 @@ export default class Cards extends React.Component{
                             <CardTitle tag="h5">
                             Appointments
                             </CardTitle>
-                            <CountUp style={{fontSize:"30px",color:"#008688", fontWeight:'bold'}} end ={81} duration={1.5}/>
+                            <CountUp style={{fontSize:"30px",color:"#008688", fontWeight:'bold'}} end ={81} duration={3}/>
                         </Card>
                     </Col>
                 </Row>
