@@ -19,8 +19,8 @@ class PhysicianProfile extends Component {
             specilization:'',
             experience:'',
             disabled: false,
-            edit: false
-
+            edit: false,
+            id:''
         }
     }
 
@@ -31,26 +31,16 @@ class PhysicianProfile extends Component {
     };
 
     componentDidMount() {
-        axios.get("http://localhost:8000/users").then(resp => {
-            if (resp.data) {
-                resp.data.forEach((val) => {
-                    if (val.email == 'chaitanya@gmail.com') {
-                        this.setState({
-                            firstname: val.firstname,
-                            lastname: val.lastname,
-                            mobile: val.mobile,
-                            gender: val.gender,
-                            id: val.id
-                        })
-
-
-                    }
-
-                })
-
-
-            }
+        let data =  JSON.parse(localStorage.getItem('userDetails'));
+        this.setState({
+            firstname: data.firstname,
+            lastname: data.lastname,
+            mobile: data.mobile,
+            gender: data.gender,
+            id: data.id
         })
+       
+
     }
 
 
@@ -66,25 +56,29 @@ class PhysicianProfile extends Component {
 
 
     handleSubmit = (e, error, values) => {
-        // console.log('userFirst', this.state)
+        let token = localStorage.getItem('accessToken')
+        let profileData = {
+            firstname: this.state.firstname,
+            lastname: this.state.lastname,
+            gender: this.state.gender,
+            mobile: this.state.mobile,
+            specilization:this.state.specilization,
+            experience:this.state.experience
+
+
+        }
+
+
+
         if (error == '') {
 
+            if (!this.state.edit) {
 
-
-            let profileData = {
-                firstname: this.state.firstname,
-                lastname: this.state.lastname,
-                gender: this.state.gender,
-                mobile: this.state.mobile,
-                specilization:this.state.specilization,
-                experience:this.state.experience
-
-
-            }
-
-
-            console.log('profileData', profileData);
-
+           
+            // console.log('profileData', profileData);
+            if(token){
+                axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+                }
             axios.post("http://localhost:8000/physicianProfile", profileData)
                 .then(res => {
                     // console.log('res', res)
@@ -99,9 +93,23 @@ class PhysicianProfile extends Component {
                     }
                 })
             //    this.reset();
+            }
+
+        if (this.state.edit) {
+            console.log(this.state.id);
+            if(token){
+                axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+                }
+            axios.patch(`http://localhost:8000/users/${this.state.id}`, {
+                firstname: profileData.firstname,
+                lastname: profileData.lastname,
+                mobile: profileData.mobile,
+                gender: profileData.gender
+            }).then(res =>{
+                alert("profile update is done")
+            })
+
         }
-        else{
-            console.log('error')
         }
     }
 
@@ -182,6 +190,7 @@ class PhysicianProfile extends Component {
                                     <option value="0 - 2">0 - 2 years</option>
                                     <option value="2 - 5">2 - 5 years</option>
                                     <option value="5 - 10">5 - 10 years</option>
+                                    <option value="5 - 10">10+</option>
                                 </AvField>
                             </div>
                         </div>

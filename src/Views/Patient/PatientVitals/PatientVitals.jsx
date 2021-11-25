@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {TextField,Typography, Button} from '@material-ui/core'
 import Box from '@mui/material/Box';
-
+import axios from 'axios';
 
 class PatientVitals extends Component {
    
@@ -39,7 +39,24 @@ class PatientVitals extends Component {
             sugarLevel:this.state.sugarLevel
 
         }
-        // console.log('vital',vitalData)
+        let token = localStorage.getItem('accessToken')
+        if(token){
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        }
+       
+        axios.post("http://localhost:8000/patientVitals",vitalData)
+            .then(res => {
+                console.log('res', res.data)
+                if (res.data) {
+                    alert("Vitals updated")
+                }
+            })
+            .catch(err => {
+                if (err) {
+                    alert("something went wrong.Please try after some time")
+                    console.log(err);
+                }
+            })
     }
 
     render() {
@@ -76,7 +93,7 @@ class PatientVitals extends Component {
                                      type="number"
                                      value={this.state.height}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  />
                                   <TextField style={{width:'25%'}}
                                      variant="outlined"
@@ -86,7 +103,7 @@ class PatientVitals extends Component {
                                      type="number"
                                      value={this.state.bloodPressure}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  />
                                    <TextField style={{width:'25%'}}
                                      variant="outlined"
@@ -96,7 +113,7 @@ class PatientVitals extends Component {
                                      type="number"
                                      value={this.state.pulse}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  />
      
                                     <TextField style={{width:'25%'}}
@@ -107,7 +124,7 @@ class PatientVitals extends Component {
                                      type="number"
                                      value={this.state.respiration}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  /> 
                                    <TextField style={{width:'25%'}}
                                      variant="outlined"
@@ -117,7 +134,7 @@ class PatientVitals extends Component {
                                      name ="temperature"
                                      value={this.state.temperature}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  /> 
                                     <TextField style={{width:'25%'}}
                                      variant="outlined"
@@ -127,7 +144,7 @@ class PatientVitals extends Component {
                                      name= "sugarLevel"
                                      value={this.state.sugarLevel}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  /> 
                                   <center>
                              <Button variant="contained" type="submit">Submit</Button>

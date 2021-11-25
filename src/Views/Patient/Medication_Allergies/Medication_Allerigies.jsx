@@ -57,20 +57,15 @@ class Medication_Allerigies extends Component {
 
   }
    
-  console.log('medData',medData)
 let token = localStorage.getItem('accessToken')
-// if(token){
-//   axios.defaults.headers.common["Authorization"] = 'Bearer ' + token;
-// }
-  axios.post("http://localhost:8000/medicationAndAllergies", medData,{
-    headers: {
-      Authorization: `Bearer ${token}`,
-      },
-  })
+if(token){
+  axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+}
+  axios.post("http://localhost:8000/medicationAndAllergies",medData)
   .then(res => {
       // console.log('res', res)
       if (res.data) {
-          alert("Profile update is Success.")
+          alert("medicationAndAllergies is updated.")
       }
   })
 

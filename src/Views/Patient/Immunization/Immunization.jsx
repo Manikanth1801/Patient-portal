@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -11,14 +11,14 @@ import MenuItem from '@mui/material/MenuItem';
 import Checkbox from '@mui/material/Checkbox';
 import ListItemText from '@mui/material/ListItemText';
 import { Button } from '@mui/material';
+import axios  from 'axios';
 
 
 
 
 
 
-
-class Immunization extends PureComponent {
+class Immunization extends Component {
     constructor(props) {
         super(props)
 
@@ -35,8 +35,9 @@ class Immunization extends PureComponent {
                 'Rotavirus', 
                 'DTap'
             ],
-            dob:'',
-            Dose:''
+            VaccineDate:'',
+            dose:'',
+            otherVaccnes:''
     
         }
 
@@ -57,14 +58,32 @@ class Immunization extends PureComponent {
     handleSubmit = (e) => {
         e.preventDefault()
        let immunData = {
-        dob: this.state.dob,
-        Dose: this.state.Dose,
+        VaccineDate: this.state.VaccineDate,
+        dose: this.state.dose,
         COVID_Vaccine:this.state.COVID_Vaccine,
-        personName:this.state.personName
+        otherVaccnes:this.state.personName
 
        }
-    //    console.log('immundata',immunData)
+       console.log('otherVaccnes',immunData.otherVaccnes)
    
+    let token = localStorage.getItem('accessToken')
+    if(token){
+    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    }
+    axios.post("http://localhost:8000/patientImmunization",immunData)
+        .then(res => {
+            console.log('res', res.data)
+            if (res.data) {
+                alert("immunData updated")
+            }
+        })
+        .catch(err => {
+            if (err) {
+                alert("something went wrong.Please try after some time")
+                console.log(err);
+            }
+        })
+
     }
 
 
@@ -82,10 +101,11 @@ class Immunization extends PureComponent {
             },
         };
         return (
-            <div  style ={{paddingLeft:'10%'}}>
+            <div  style ={{paddingLeft:'10%'}} className = ''>
                 <form onSubmit={this.handleSubmit}>
-                <div className='pl-5 mb-5'>
                 <Typography variant="h6">Patient Immunization</Typography>
+                <div className='pl-5 mb-5 border ' style = {{display : 'inline-block',paddingTop:'10px',paddingRight:'40px'}}>
+             
                
                 <div>
                  <label>COVID19 Vaccine</label>
@@ -113,15 +133,15 @@ class Immunization extends PureComponent {
                                     variant="outlined"
                                     label="Number of Doses"
                                     placeholder="Number of Doses"
-                                    name="Dose"
+                                    name="dose"
                                     type="number"
-                                     value={this.state.Dose}
+                                     value={this.state.dose}
                                     onChange={this.handleChange}
 
                                 />
                                 <div>
-                                <h5>Vaccinated Date</h5>
-                                <input style={{width:'25%'}} type='date'name="dob" value={this.state.dob} onChange={this.handleChange} className="form-control" />
+                                <h5 style = {{marginTop:'10px'}}>Vaccinated Date</h5>
+                                <input style={{width:'100%'}} type='date'name="VaccineDate" value={this.state.VaccineDate} onChange={this.handleChange} className="form-control" />
                                 </div>
                             </div>
 
