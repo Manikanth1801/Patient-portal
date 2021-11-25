@@ -99,8 +99,9 @@ class Register extends React.Component {
                         .then(res => {
                             if (res.data) {
                                 this.setState({ isDone: true })
-                                alert("Your Registration is Success.")
+                                alert("Your Registration is Success. Please continue with Login !!")
                                 this.myFormRef && this.myFormRef.reset();
+                                this.props.history.push("/")
                             }
                             this.setState({
                                 isOthersSelected: false,
@@ -119,7 +120,7 @@ class Register extends React.Component {
                             })
                         })
                 }else{
-                    alert("User Alredty exists..Please Proceed with Login To access the Dashboard !!")
+                    alert("User Alredty exists..Please continue with Login To access the Dashboard !!")
                 }
             }else{
                 alert("The Password's must be same!")

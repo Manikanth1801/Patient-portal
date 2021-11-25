@@ -31,10 +31,12 @@ class Demographics extends Component {
                 insuranceProvider: this.state.insuranceProvider
 
             }
-            console.log('demoData', demoData);
-            axios.post("http://localhost:8000/patientDemographics", demoData)
+            let token = localStorage.getItem('accessToken')
+            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+           
+            axios.post("http://localhost:8000/patientDemographics",demoData)
                 .then(res => {
-                    console.log('res', res)
+                    console.log('res', res.data)
                     if (res.data) {
                         alert("Demographics update is Success.")
                     }
