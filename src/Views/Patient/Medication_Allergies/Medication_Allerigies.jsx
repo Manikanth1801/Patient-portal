@@ -103,10 +103,12 @@ const MenuProps = {
                 autoComplete="off"
             >
       <Typography variant="h6">Medication and Allergies</Typography>
-      <form onSubmit={this.handleSubmit}>
-          <TextField style={{width:'50%'}}
+      <form  onSubmit={this.handleSubmit}>
+          <TextField style={{width:'50%',backgroundColor:'beige'}}
                          
                                 variant="outlined"
+                               
+                              
                                 label="Current Medication"
                                 placeholder="Current Medication"
                                 name = 'currentMedication'
@@ -116,7 +118,7 @@ const MenuProps = {
                                 
                             />
                             
-                            <TextField style={{width:'50%'}}
+                            <TextField style={{width:'50%',backgroundColor:'beige'}}
                                 variant="outlined"
                                 label="OTC  Medication"
                                 placeholder="OTC  Medication"
@@ -127,7 +129,7 @@ const MenuProps = {
                                
                                
                             />
-                             <TextField style={{width:'50%'}}
+                             <TextField style={{width:'50%',backgroundColor:'beige'}}
                                 variant="outlined"
                                 label="Herbs/Vitamin"
                                 placeholder="Herbs/Vitamin"
@@ -137,7 +139,7 @@ const MenuProps = {
                                 onChange={this.handleChange}
                                
                             />
-                              <TextField style={{width:'50%'}}
+                              <TextField style={{width:'50%',backgroundColor:'beige'}}
                                 variant="outlined"
                                 label="Social Drugs"
                                 placeholder="Social Drugs"
@@ -148,7 +150,7 @@ const MenuProps = {
                                
                             />
 
-                               <TextField style={{width:'50%'}}
+                               <TextField style={{width:'50%',backgroundColor:'beige'}}
                                 variant="outlined"
                                 label="Any past prescribed medication"
                                 placeholder="Any past prescribed medication"
@@ -158,7 +160,7 @@ const MenuProps = {
                                 onChange={this.handleChange}
                                
                             /> 
-                              <TextField style={{width:'50%'}}
+                              <TextField style={{width:'50%',backgroundColor:'beige'}}
                                 variant="outlined"
                                 label="Drug -Allergies"
                                 placeholder="Drug -Allergies"
@@ -173,6 +175,7 @@ const MenuProps = {
                                 
                                 <label>Allergies/Reaction-Other</label>
                         <Select 
+                            style={{backgroundColor:'beige'}}
                             labelId="demo-multiple-checkbox-label"
                             id="demo-multiple-checkbox"
                             placeholder = "Allergies/Reaction-Other"

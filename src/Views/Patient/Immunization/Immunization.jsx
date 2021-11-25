@@ -129,7 +129,7 @@ class Immunization extends Component {
                     {COVID_Vaccine === 'Yes' &&
                             <div className = 'm-5'>
 
-                                <TextField  
+                                <TextField style= {{backgroundColor:'beige'}}
                                     variant="outlined"
                                     label="Number of Doses"
                                     placeholder="Number of Doses"
@@ -155,7 +155,7 @@ class Immunization extends Component {
 
                     <FormControl sx={{ m: 1, width: 300 }}>
                         <InputLabel id="demo-multiple-checkbox-label">Other</InputLabel>
-                        <Select
+                        <Select style= {{backgroundColor:'beige'}}
                             labelId="demo-multiple-checkbox-label"
                             id="demo-multiple-checkbox"
                             multiple

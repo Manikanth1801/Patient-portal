@@ -73,7 +73,7 @@ class PatientVitals extends Component {
                  >
            <Typography variant="h6">Vitals</Typography>
            <form onSubmit={this.handleSubmit}>
-               <TextField style={{width:'25%'}}
+               <TextField style={{width:'25%', backgroundColor:'beige'}}
                               
                                      variant="outlined"
                                      label="weight in kg"
@@ -85,7 +85,7 @@ class PatientVitals extends Component {
                                      required
                                  />
                                  
-                                 <TextField style={{width:'25%'}}
+                                 <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="height in cms"
                                      placeholder="height in cms"
@@ -95,7 +95,7 @@ class PatientVitals extends Component {
                                      onChange={this.handleChange}
                                      required
                                  />
-                                  <TextField style={{width:'25%'}}
+                                  <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="BP in mm/Hg"
                                      placeholder="BP in mm/Hg"
@@ -105,7 +105,7 @@ class PatientVitals extends Component {
                                      onChange={this.handleChange}
                                      required
                                  />
-                                   <TextField style={{width:'25%'}}
+                                   <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="pulse in per min"
                                      placeholder="pulse in per min"
@@ -116,7 +116,7 @@ class PatientVitals extends Component {
                                      required
                                  />
      
-                                    <TextField style={{width:'25%'}}
+                                    <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="Respiration in per min"
                                      placeholder="Respiration in per min"
@@ -126,7 +126,7 @@ class PatientVitals extends Component {
                                      onChange={this.handleChange}
                                      required
                                  /> 
-                                   <TextField style={{width:'25%'}}
+                                   <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="Temperature F"
                                      placeholder="Temperature F"
@@ -136,7 +136,7 @@ class PatientVitals extends Component {
                                      onChange={this.handleChange}
                                      required
                                  /> 
-                                    <TextField style={{width:'25%'}}
+                                    <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="sugar level mmol/L"
                                      placeholder="sugar level mmol/L"

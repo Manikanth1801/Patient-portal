@@ -178,7 +178,7 @@ class AdminProfile extends Component {
                   </div>
 
                   <div col-4>
-                      <button className="btn btn-outline-primary">Update</button>
+                      <button className="btn btn-primary px-5 rounded-0">Update</button>
                   </div>
                   <div>
 
