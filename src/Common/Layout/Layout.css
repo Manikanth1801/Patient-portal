@@ -1,0 +1,27 @@
+#app-container {
+  display: flex;
+}
+#header {
+  position: sticky;
+  top: 0px;
+  z-index: 1;
+}
+#sidebar {
+  display: block;
+  width: 240px;
+}
+
+#main-contain {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  overflow-x: auto;
+}
+@media only screen and (max-width: 767px) {
+  #sidebar {
+    width: 45px;
+  }
+  #main-contain {
+    width: calc(100% - 45px);
+    overflow: scroll;
+  }
+}
