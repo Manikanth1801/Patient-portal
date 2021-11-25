@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {TextField,Typography, Button} from '@material-ui/core'
 import Box from '@mui/material/Box';
-
+import axios from 'axios';
 
 class PatientVitals extends Component {
    
@@ -39,7 +39,24 @@ class PatientVitals extends Component {
             sugarLevel:this.state.sugarLevel
 
         }
-        // console.log('vital',vitalData)
+        let token = localStorage.getItem('accessToken')
+        if(token){
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        }
+       
+        axios.post("http://localhost:8000/patientVitals",vitalData)
+            .then(res => {
+                console.log('res', res.data)
+                if (res.data) {
+                    alert("Vitals updated")
+                }
+            })
+            .catch(err => {
+                if (err) {
+                    alert("something went wrong.Please try after some time")
+                    console.log(err);
+                }
+            })
     }
 
     render() {
@@ -56,7 +73,7 @@ class PatientVitals extends Component {
                  >
            <Typography variant="h6">Vitals</Typography>
            <form onSubmit={this.handleSubmit}>
-               <TextField style={{width:'25%'}}
+               <TextField style={{width:'25%', backgroundColor:'beige'}}
                               
                                      variant="outlined"
                                      label="weight in kg"
@@ -68,7 +85,7 @@ class PatientVitals extends Component {
                                      required
                                  />
                                  
-                                 <TextField style={{width:'25%'}}
+                                 <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="height in cms"
                                      placeholder="height in cms"
@@ -76,9 +93,9 @@ class PatientVitals extends Component {
                                      type="number"
                                      value={this.state.height}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  />
-                                  <TextField style={{width:'25%'}}
+                                  <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="BP in mm/Hg"
                                      placeholder="BP in mm/Hg"
@@ -86,9 +103,9 @@ class PatientVitals extends Component {
                                      type="number"
                                      value={this.state.bloodPressure}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  />
-                                   <TextField style={{width:'25%'}}
+                                   <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="pulse in per min"
                                      placeholder="pulse in per min"
@@ -96,10 +113,10 @@ class PatientVitals extends Component {
                                      type="number"
                                      value={this.state.pulse}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  />
      
-                                    <TextField style={{width:'25%'}}
+                                    <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="Respiration in per min"
                                      placeholder="Respiration in per min"
@@ -107,9 +124,9 @@ class PatientVitals extends Component {
                                      type="number"
                                      value={this.state.respiration}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  /> 
-                                   <TextField style={{width:'25%'}}
+                                   <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="Temperature F"
                                      placeholder="Temperature F"
@@ -117,9 +134,9 @@ class PatientVitals extends Component {
                                      name ="temperature"
                                      value={this.state.temperature}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  /> 
-                                    <TextField style={{width:'25%'}}
+                                    <TextField style={{width:'25%',backgroundColor:'beige'}}
                                      variant="outlined"
                                      label="sugar level mmol/L"
                                      placeholder="sugar level mmol/L"
@@ -127,7 +144,7 @@ class PatientVitals extends Component {
                                      name= "sugarLevel"
                                      value={this.state.sugarLevel}
                                      onChange={this.handleChange}
-                                    
+                                     required
                                  /> 
                                   <center>
                              <Button variant="contained" type="submit">Submit</Button>

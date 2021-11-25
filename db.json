@@ -187,6 +187,7 @@
   ],
   "medicationAndAllergies": [
     {
+      "id": 1,
       "currentMedication": "Need to enter by Physician",
       "OTC": "",
       "healthProducts": "",
@@ -198,14 +199,16 @@
   ],
   "patientImmunization": [
     {
+      "id": 1,
       "COVID-19Vaccine": "",
-      "COVID-19Doses": "",
+      "dose": "",
       "VaccineDate": "",
       "otherVaccnes": ""
     }
   ],
   "patientVitals": [
     {
+      "id": 1,
       "bloodPressure": "",
       "respiration": "",
       "height": "",
