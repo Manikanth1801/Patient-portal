@@ -39,7 +39,9 @@ import Header from "../Common/Header/Header";
 import LeftNav from "../Common/LeftNav/LeftNav";
 import Footer from "../Common/Footer/Footer";
 import MasterData from "../Views/Admin/MasterData/MasterData";
-import JoinAppointment from "../Views/Physician/JoinAppointment/JoinAppointment";
+import AdminAppointmentHistory from "../Views/Admin/AdminAppointmentHistory/AdminAppointmentHistory";
+import JoinAppointment from "../Views/Physician/PhysicianJoinAppointment/PhysicianJoinAppointment";
+import PatientJoinAppointment from "../Views/Physician/PhysicianJoinAppointment/PhysicianJoinAppointment";
 import Prescription from "../Views/Physician/Prescription/Prescription";
 
 class Routes extends React.Component {
@@ -82,10 +84,11 @@ class Routes extends React.Component {
             path="/patient/scheduleAppointment"
             render={() => <ScheduleAppointment />}
           />
-            <Route
-            path="/patient/payBills"
-            render={() => <PayBills />}
+          <Route
+            path="/patient/joinAppointment"
+            render={() => <JoinAppointment />}
           />
+          <Route path="/patient/payBills" render={() => <PayBills />} />
           <Route
             path="/patient/billingDetails"
             render={() => <BillingDetails />}
@@ -111,6 +114,10 @@ class Routes extends React.Component {
           />
           <Route path="/admin/masterData" render={() => <MasterData />} />
           <Route path="/admin/adminProfile" render={() => <AdminProfile />} />
+          <Route
+            path="/admin/appointmentHistory"
+            render={() => <AdminAppointmentHistory />}
+          />
           {/* Physician Routes */}
           <Route
             path="/physician/profile"

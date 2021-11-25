@@ -1,5 +1,3 @@
-
-
 import React, { useRef } from "react";
 import { useLocation } from "react-router";
 import Routes from "../../Router/Routes";
@@ -19,6 +17,7 @@ const LayoutComponent = () => {
     sidebarEl.current.style.display = val ? "block" : "none";
   };
 
+  // localStorage.setItem("authToken", "12345");
   // return (
   //   <div className="Ap">
   //     {showHeader && (

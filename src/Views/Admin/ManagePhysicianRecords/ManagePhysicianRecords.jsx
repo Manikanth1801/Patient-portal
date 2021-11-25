@@ -1,21 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react'
+import Record from '../../../Common/RecordManagement/Record'
 
-class ManagePhysicianRecords extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            
-        }
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>This is Admin ManagePhysicianRecords page</h1>
-            </div>
-        )
-    }
+export default function ManagePhysicianRecords() {
+    return (
+        <>
+            <Record/>
+        </>
+    )
 }
-
-export default ManagePhysicianRecords

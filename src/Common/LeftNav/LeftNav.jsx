@@ -49,6 +49,11 @@ class LeftNav extends Component {
         icon: <FontAwesomeIcon icon={faClock} title="Schedule Appointment" />,
       },
       {
+        name: "Join Consultation",
+        link: "/patient/joinAppointment",
+        icon: <FontAwesomeIcon icon={faClock} title="Join Appointment" />,
+      },
+      {
         name: "Appointment History",
         link: "/patient/appointment_history",
         icon: <FontAwesomeIcon icon={faHistory} title="Appointment History" />,
@@ -112,9 +117,14 @@ class LeftNav extends Component {
         icon: <FontAwesomeIcon icon={faHandshake} title="Master Data" />,
       },
       {
-        name: "Billing Data",
+        name: "Appointment History",
+        link: "/admin/appointmentHistory",
+        icon: <FontAwesomeIcon icon={faClock} title="Appointment History" />,
+      },
+      {
+        name: "Billing History",
         link: "/admin/billingData",
-        icon: <FontAwesomeIcon icon={faMoneyBillAlt} title="Billing Data" />,
+        icon: <FontAwesomeIcon icon={faMoneyBillAlt} title="Billing History" />,
       },
     ];
     this.physicianMenu = [

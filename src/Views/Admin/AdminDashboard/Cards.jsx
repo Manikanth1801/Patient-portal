@@ -12,9 +12,10 @@ export default class Cards1 extends React.Component{
 
         return(
                 <div>
-                <Row style={{padding:'10px', textAlign:"center",position:"relative"}}>
+                    <Card>
+                <Row style={{padding:'10px', textAlign:"center"}}>
                     <Col >
-                        <Card body style={{padding:'2px', minWidth:"150px",borderColor:"black"}}>
+                        <Card body style={{padding:'2px', minWidth:"155px",borderColor:"black"}}>
                             <CardTitle tag="h5">
                             Physicians
                             </CardTitle>
@@ -22,7 +23,7 @@ export default class Cards1 extends React.Component{
                         </Card>
                         </Col>
                         <Col >
-                        <Card body style={{padding:'2px', minWidth:"150px",borderColor:"black"}}>
+                        <Card body style={{padding:'2px', minWidth:"155px",borderColor:"black"}}>
                             <CardTitle tag="h5">
                             Specializations
                             </CardTitle>
@@ -30,7 +31,7 @@ export default class Cards1 extends React.Component{
                         </Card>
                         </Col>
                         <Col >
-                        <Card body style={{padding:'2px', minWidth:"150px",borderColor:"black"}}>
+                        <Card body style={{padding:'2px', minWidth:"155px",borderColor:"black"}}>
                             <CardTitle tag="h5">
                             Patients
                             </CardTitle >
@@ -38,7 +39,7 @@ export default class Cards1 extends React.Component{
                         </Card>
                         </Col>
                         <Col >
-                        <Card body style={{padding:'2px', minWidth:"150px",borderColor:"black"}}>
+                        <Card body style={{padding:'2px', minWidth:"155px",borderColor:"black"}}>
                             <CardTitle tag="h5">
                             Appointments
                             </CardTitle>
@@ -46,6 +47,7 @@ export default class Cards1 extends React.Component{
                         </Card>
                     </Col>
                 </Row>
+                </Card>
             </div>
         )
     }

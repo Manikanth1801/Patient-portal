@@ -1,38 +1,38 @@
-import axios from "axios";
-import React from "react";
+// import axios from "axios";
+// import React from "react";
 
-const baseURL = "https://jsonplaceholder.typicode.com/posts";
+// const baseURL = "https://jsonplaceholder.typicode.com/posts";
 
-export default function App() {
-  const [post, setPost] = React.useState(null);
+// export default function App() {
+//   const [post, setPost] = React.useState(null);
 
-  React.useEffect(() => {
-    axios.get(`${baseURL}/1`).then((response) => {
-      setPost(response.data);
-    });
-  }, []);
+//   React.useEffect(() => {
+//     axios.get(`${baseURL}/1`).then((response) => {
+//       setPost(response.data);
+//     });
+//   }, []);
 
-  function updatePost() {
-    axios
-      .put(`${baseURL}/1`, {
-        title: "Hello World!",
-        body: "This is an updated post."
-      })
-      .then((response) => {
-        setPost(response.data);
-      });
-  }
+//   function updatePost() {
+//     axios
+//       .put(`${baseURL}/1`, {
+//         title: "Hello World!",
+//         body: "This is an updated post."
+//       })
+//       .then((response) => {
+//         setPost(response.data);
+//       });
+//   }
 
-  if (!post) return "No post!"
+//   if (!post) return "No post!"
 
-  return (
-    <div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
-      <button onClick={updatePost}>Update Post</button>
-    </div>
-  );
-}
+//   return (
+//     <div>
+//       <h1>{post.title}</h1>
+//       <p>{post.body}</p>
+//       <button onClick={updatePost}>Update Post</button>
+//     </div>
+//   );
+// }
 
 
 
@@ -41,121 +41,84 @@ export const AppointmentData=[
 
   {
     "id": 1,
-    "patientId": "UUID of patient",
+    "patientId": "PatCh001",
     "patientName": "Chaitanya",
-    "physicianId": "UUID of physician",
-    "physicianName": "Samuel",
-    "appointmentId": "CtAppointment001",
+    "physicianId": "PhyMS001",
+    "physicianName": "Dr.Mathew Samuel",
+    "appointmentId": "CTApp001",
     "specilization": "Cardiology",
     "dateOfAppointment": "10/11/2021",
     "time": "12PM IST",
     "status": "Completed",
-    "notes": "Please drink water on regular basis"
+    "notes": "Intake Captopril (Capoten) Enalapril (Vasotec) Fosinopril, 2 times a day for a week."
   },
   {
     "id": 2,
-    "patientId": "UUID of patient",
+    "patientId": "PatCh001",
     "patientName": "Chaitanya",
-    "physicianId": "UUID of physician",
-    "physicianName": "Samuel",
-    "appointmentId": "CtAppointment001",
+    "physicianId": "PhyMS001",
+    "physicianName": "Dr.Mathew Samuel",
+    "appointmentId": "CtApp008",
     "specilization": "Cardiology",
-    "dateOfAppointment": "10/11/2021",
-    "time": "12PM IST",
+    "dateOfAppointment": "10/15/2021",
+    "time": "2PM IST",
+    "status": "Completed",
+    "notes": "Continue with Captopril (Capoten) till next Consultation."
+  },
+  {
+    "id": 1,
+    "patientId": "PatCh001",
+    "patientName": "Chaitanya",
+    "physicianId": "PhyMS001",
+    "physicianName": "Dr.Mathew Samuel",
+    "appointmentId": "CtApp011",
+    "specilization": "Cardiology",
+    "dateOfAppointment": "10/28/2021",
+    "time": "3PM IST",
+    "status": "Completed",
+    "notes": "Please take ECG scan. Avoid alcohol for atleast 6 months."
+  },
+  {
+    "id": 2,
+    "patientId": "PatCh001",
+    "patientName": "Chaitanya",
+    "physicianId": "PhyRV084",
+    "physicianName": "Dr.Ravi Varma",
+    "appointmentId": "CtApp022",
+    "specilization": "Neurology",
+    "dateOfAppointment": "11/01/2021",
+    "time": "2PM IST",
+    "status": "Completed",
+    "notes": "Ajovy (fremanezumab-vfrm) for next 3 days, post lunch. Stop consumption in case of side effects."
+  },
+
+  {
+    "id": 2,
+    "patientId": "PatCh001",
+    "patientName": "Chaitanya",
+    "physicianId": "PhyMS001",
+    "physicianName": "Dr.Mathew Samuel",
+    "appointmentId": "CtApp044",
+    "specilization": "Cardiology",
+    "dateOfAppointment": "11/28/2021",
+    "time": "4PM IST",
     "status": "Scheduled",
-    "notes": ""
+    "notes": "NA"
   },
   {
     "id": 1,
-    "patientId": "UUID of patient",
+    "patientId": "PatCh001",
     "patientName": "Chaitanya",
-    "physicianId": "UUID of physician",
-    "physicianName": "Samuel",
-    "appointmentId": "CtAppointment001",
-    "specilization": "Cardiology",
-    "dateOfAppointment": "10/11/2021",
-    "time": "12PM IST",
-    "status": "Completed",
-    "notes": "Please drink water on regular basis"
-  },
-  {
-    "id": 1,
-    "patientId": "UUID of patient",
-    "patientName": "Chaitanya",
-    "physicianId": "UUID of physician",
-    "physicianName": "Samuel",
-    "appointmentId": "CtAppointment001",
-    "specilization": "Cardiology",
-    "dateOfAppointment": "18/11/2021",
-    "time": "12PM IST",
-    "status": "Completed",
-    "notes": "Please drink water on regular basis"
-  },
-  {
-    "id": 1,
-    "patientId": "UUID of patient",
-    "patientName": "Chaitanya",
-    "physicianId": "UUID of physician",
-    "physicianName": "David",
-    "appointmentId": "CtAppointment001",
-    "specilization": "Cardiology",
-    "dateOfAppointment": "19/11/2021",
-    "time": "12PM IST",
+    "physicianId": "PhyRV084",
+    "physicianName": "Dr.Ravi Varma",
+    "appointmentId": "CtApp011",
+    "specilization": "Neurology",
+    "dateOfAppointment": "11/29/2021",
+    "time": "3PM IST",
     "status": "Scheduled",
-    "notes": ""
+    "notes": "NA"
   },
-  {
-    "id": 1,
-    "patientId": "UUID of patient",
-    "patientName": "Chaitanya",
-    "physicianId": "UUID of physician",
-    "physicianName": "Samuel",
-    "appointmentId": "CtAppointment001",
-    "specilization": "Cardiology",
-    "dateOfAppointment": "10/11/2021",
-    "time": "12PM IST",
-    "status": "Completed",
-    "notes": "Please drink water on regular basis"
-  },
-  {
-    "id": 1,
-    "patientId": "UUID of patient",
-    "patientName": "Chaitanya",
-    "physicianId": "UUID of physician",
-    "physicianName": "Samuel",
-    "appointmentId": "CtAppointment001",
-    "specilization": "Cardiology",
-    "dateOfAppointment": "10/11/2021",
-    "time": "12PM IST",
-    "status": "Completed",
-    "notes": "Please drink water on regular basis"
-  },
-  {
-    "id": 1,
-    "patientId": "UUID of patient",
-    "patientName": "Chaitanya",
-    "physicianId": "UUID of physician",
-    "physicianName": "Samuel",
-    "appointmentId": "CtAppointment001",
-    "specilization": "Cardiology",
-    "dateOfAppointment": "10/11/2021",
-    "time": "12PM IST",
-    "status": "Completed",
-    "notes": "Please drink water on regular basis"
-  },
-  {
-    "id": 1,
-    "patientId": "UUID of patient",
-    "patientName": "Chaitanya",
-    "physicianId": "UUID of physician",
-    "physicianName": "Samuel",
-    "appointmentId": "CtAppointment001",
-    "specilization": "Cardiology",
-    "dateOfAppointment": "10/11/2021",
-    "time": "12PM IST",
-    "status": "Completed",
-    "notes": "Please drink water on regular basis"
-  },
+  
   
 
 ]

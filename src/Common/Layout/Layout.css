@@ -21,7 +21,7 @@
     width: 45px;
   }
   #main-contain {
-    width: calc(100% - 45px);
+    width: 100% ;
     overflow: scroll;
   }
 }

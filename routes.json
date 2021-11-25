@@ -1,12 +1,12 @@
 {
   "/users*": "/664/users$1",
-  "/patientProfile*": "/664/patientProfile$1",
-  "/patientDemographics*": "/664/patientDemographics$1",
-  "/patientAppointments*": "/664/patientAppointments$1",
-  "/medicationAndAllergies*": "/664/medicationAndAllergies$1",
-  "/patientImmunization*": "/664/patientImmunization$1",
-  "/patientVitals*": "/664/patientVitals$1",
-  "/patientBilling*": "/664/patientBilling$1",
-  "/physicianProfile*": "/664/physicianProfile$1",
-  "/adminProfile*": "/664/adminProfile$1"
+  "/patientProfile*": "/660/patientProfile$1",
+  "/patientDemographics*": "/660/patientDemographics$1",
+  "/patientAppointments*": "/660/patientAppointments$1",
+  "/medicationAndAllergies*": "/660/medicationAndAllergies$1",
+  "/patientImmunization*": "/660/patientImmunization$1",
+  "/patientVitals*": "/660/patientVitals$1",
+  "/patientBilling*": "/660/patientBilling$1",
+  "/physicianProfile*": "/660/physicianProfile$1",
+  "/adminProfile*": "/660/adminProfile$1"
 }
