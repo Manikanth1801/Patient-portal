@@ -1,21 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react'
+import Record from '../../../Common/RecordManagement/Record'
 
-class PatientDetails extends Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            
-        }
-    }
-
-    render() {
-        return (
-            <div>
-                <h1>This is Patient Details page</h1>
-            </div>
-        )
-    }
+export default function PatientDetails() {
+    return (
+        <div>
+            <Record />
+        </div>
+    )
 }
-
-export default PatientDetails
