@@ -33,7 +33,7 @@ class Register extends React.Component {
     componentDidMount() {
         axios.get("http://localhost:8000/lookups")
             .then(res => {
-                let lookupData = res.data[0].specialization
+                let lookupData = res.data
                 this.setState({
                     lookupData
                 })
