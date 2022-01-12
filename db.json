@@ -143,6 +143,42 @@
       "registrationDate": "2021-11-25T09:59:04.927Z",
       "isApproved": false,
       "id": 9
+    },
+    {
+      "email": "maniii@gmail.com",
+      "password": "$2a$10$GKG32iGo5GFPP6Ilu3iCZulvVGGEQsxINe1sfDRCR8kSoXVGQbAmS",
+      "firstname": "Manikantha",
+      "lastname": "Panigrahi",
+      "gender": "Male",
+      "retypePassword": "qwerty",
+      "dob": "1999-08-09",
+      "role": "",
+      "isRegistered": false,
+      "mobile": "7419638520",
+      "specialization": null,
+      "experience": null,
+      "isLogged": false,
+      "registrationDate": "2021-11-25T11:25:56.420Z",
+      "isApproved": false,
+      "id": 10
+    },
+    {
+      "email": "mani@gmail.com",
+      "password": "$2a$10$B9y/robHsbdWjWhWtuT7ROx2dDJZ9lSkxVYXc/MF1NIqVztde6lTu",
+      "firstname": "Manikantha",
+      "lastname": "Panigrahi",
+      "gender": "Male",
+      "retypePassword": "qwerty",
+      "dob": "1999-09-08",
+      "role": "Patient",
+      "isRegistered": false,
+      "mobile": "8520789963",
+      "specialization": null,
+      "experience": null,
+      "isLogged": false,
+      "registrationDate": "2021-11-25T11:49:07.353Z",
+      "isApproved": false,
+      "id": 11
     }
   ],
   "patientProfile": [
@@ -270,14 +306,6 @@
     {
       "id": 4,
       "name": "Cardiovascular/Thoracic Surgery"
-    },
-    {
-      "id": 5,
-      "name": "Clinical Immunology/Allergy"
-    },
-    {
-      "id": 6,
-      "name": "Critical Care Medicine"
     },
     {
       "id": 7,
